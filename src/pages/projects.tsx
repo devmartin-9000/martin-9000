@@ -180,15 +180,15 @@ export default function Projects() {
 				</div>
 			</div>
 			<div>
-				<div className="max-w-3xl mx-auto justify-center flex mt-4 rounded-4xl bg-primary p-4">
-					<h1 className="text-center text-sm md:text-base font-bold flex flex-row gap-4 items-center text-muted">
+				<div className="max-w-3xl mx-auto justify-center flex mt-4 rounded-full p-4 bg-primary">
+					<h1 className="text-center text-sm md:text-base font-bold flex flex-row px-8 bg-background  py-6 rounded-full gap-4 items-center text-muted-foreground hover:px-16 transition-discrete duration-500 ">
 						More projects? Visit GitHub
 						<Tooltip>
 							<TooltipTrigger asChild>
-								<div className="flex items-center gap-2 p-2 border rounded-4xl hover:scale-105 animate-bounce hover:animate-none duration-500 transition-all">
+								<div className="flex items-center gap-2 p-2 border border-primary-foreground rounded-4xl hover:scale-105 animate-bounce hover:animate-none duration-500 transition-all">
 									<a target="_blank" href="https://github.com/devmartin-9000">
 										<img
-											className="h-8 w-auto"
+											className="h-8 w-auto invert"
 											src="./assets/github-icon.svg"
 											alt="Github Icon"
 										/>
