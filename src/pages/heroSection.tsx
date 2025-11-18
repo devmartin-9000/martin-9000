@@ -56,7 +56,7 @@ const HeroSection = () => {
 									<a
 										href="https://github.com/devmartin-9000"
 										target="_blank"
-										className="text-center items-center flex flex-col gap-2 cursor-pointer border-b-4 border-border hover:border-primary duration-200 ease-in-out hover:scale-105 transition-transform"
+										className="text-sm text-muted-foreground text-center items-center flex flex-col gap-2 cursor-pointer border-b-4 border-border hover:border-primary duration-500 ease-in-out hover:scale-105 transition-transform"
 									>
 										<img
 											className="h-10 w-auto invert"
@@ -76,7 +76,7 @@ const HeroSection = () => {
 									<a
 										href="https://linkedin.com/in/devmartin-jack"
 										target="_blank"
-										className="text-center items-center flex flex-col gap-2 cursor-pointer border-b-4 border-border hover:border-primary duration-200 ease-in-out hover:scale-105 transition-transform"
+										className="text-sm text-muted-foreground text-center items-center flex flex-col gap-2 cursor-pointer border-b-4 border-border hover:border-primary duration-500 ease-in-out hover:scale-105 transition-transform"
 									>
 										<img
 											className="h-10 w-auto invert"
@@ -97,7 +97,7 @@ const HeroSection = () => {
 									<a
 										href="mailto:dev.martinjack9000@gmail.com"
 										target="_blank"
-										className="text-center items-center flex flex-col gap-2 cursor-pointer border-b-4 border-border hover:border-primary duration-200 ease-in-out hover:scale-105 transition-transform"
+										className="text-sm text-muted-foreground text-center items-center flex flex-col gap-2 cursor-pointer border-b-4 border-border hover:border-primary duration-500 ease-in-out hover:scale-105 transition-transform"
 									>
 										<img
 											className="h-10 w-auto invert"
@@ -117,7 +117,7 @@ const HeroSection = () => {
 									<a
 										href="https://x.com/MartinJack9000"
 										target="_blank"
-										className="text-center items-center flex flex-col gap-2 cursor-pointer border-b-4 border-border hover:border-primary duration-200 ease-in-out hover:scale-105 transition-transform"
+										className="text-sm text-muted-foreground text-center items-center flex flex-col gap-2 cursor-pointer border-b-4 border-border hover:border-primary duration-500 ease-in-out hover:scale-105 transition-transform"
 									>
 										<img
 											className="p-1 h-10 w-auto invert"

@@ -1,25 +1,25 @@
-import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
+import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
 import { WorkExperience } from "@/components/work-experience";
 
 const AboutMe = () => {
     return (
 			<section
 				id="about"
-				className="scroll-mt-18 py-0 bg-gradient-to-tr from-background via-accent/40 to-accent/50 bg-primary/10 h-full my-auto mx-auto justify-center w-full"
+				className="scroll-mt-18 py-0 bg-primary h-full my-auto mx-auto justify-center w-full"
 			>
 				{/* Main Div */}
-				<div className="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-4 w-full md:max-w-6xl mx-auto p-4 md:p-4">
+				<div className="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-4 w-full md:max-w-5xl mx-auto p-4 md:p-4">
 					{/* Left Column */}
 					<div className="">
 						<div className="text-center md:text-start">
 							{/* Title */}
-							<h1 className="heading font-semibold text-5xl md:text-7xl leading-snug border-b-2">
-								.About Me
+							<h1 className="text-muted font-extrabold text-5xl md:text-8xl leading-relaxed">
+								.about me
 							</h1>
 						</div>
 						{/* Main Paragraph */}
-						<div className="flex md:border-l opacity-90 flex-col p-4 text- items-center gap-4">
-							<p className="leading-snug text-sm text-muted-foreground">
+						<div className="flex md:border-l border-t opacity-90 flex-col p-4 text- items-center gap-4">
+							<p className="leading-snug text-sm text-muted">
 								My name is <span className="font-bold">Martin Jack</span>, I
 								live in Blantyre, Malawi. It has now been about a year since I
 								began shipping production code, and almost two years of
@@ -29,14 +29,14 @@ const AboutMe = () => {
 								naturally gravitate towards clean, thoughtful design and
 								well-crafted user interfaces.
 							</p>
-							<p className="leading-snug text-sm text-muted-foreground">
+							<p className="leading-snug text-sm text-muted">
 								Before moving into tech, I worked in Sales, Customer Support,
 								Operations, Admin, and Accounting. Those roles helped me develop
 								strong communication skills, patience, and the ability to
 								understand people’s needs, qualities that continue to be useful
 								in my work today.
 							</p>
-							<p className="leading-snug text-sm text-muted-foreground">
+							<p className="leading-snug text-sm text-muted">
 								My interest in technology started as a hobby. I spent my free
 								time exploring how devices worked, teaching myself small pieces
 								of code, and tweaking my computer or phone just to understand
@@ -44,7 +44,7 @@ const AboutMe = () => {
 								serious, and I eventually decided to transition into software
 								development full-time.
 							</p>
-							<p className="leading-snug text-sm text-muted-foreground">
+							<p className="leading-snug text-sm text-muted">
 								Outside of work, I enjoy simple things that recharge me;
 								exploring new food places, relaxing with video games, and
 								listening to electronic music or ambient lo-fi playlists on
@@ -59,8 +59,8 @@ const AboutMe = () => {
 							<CardBody className="bg-transparent relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] border light:border w-auto h-full p-6">
 								<CardItem translateZ="100" className="w-full mt-4">
 									<img
-										src="./assets/Thumbnail.jpg"
-										className="h-120 cursor-pointer w-auto mx-auto object-fill rounded-xs group-hover/card:shadow-xl"
+										src="./assets/Thumbnail-2.jpg"
+										className="h-120 cursor-pointer w-auto mx-auto object-fill rounded-xs group-hover/card:shadow-xl brightness-20 hover:brightness-70 duration-800 ease-in-out transition-all"
 										alt="thumbnail"
 										loading="lazy"
 									/>
@@ -70,9 +70,9 @@ const AboutMe = () => {
 					</div>
 				</div>
 				{/* Work Experience */}
-				<div className="bg-background items-center p-6 md:p-6 max-w-6xl mx-auto md:max-w-7xl">
-					<h1 className="heading font-semibold text-4xl text-center md:text-start md:text-7xl leading-snug">
-						.Work History
+				<div className="rounded-none md:rounded-t-4xl bg-background items-center p-6 md:p-6 max-w-6xl mx-auto md:max-w-5xl">
+					<h1 className="text-center md:text-start text-primary-foreground/80 font-extrabold text-5xl md:text-8xl leading-relaxed">
+						.work history
 					</h1>
 					<div className="mx-auto md:max-w-2xl">
 						<WorkExperience />

@@ -7,10 +7,11 @@ import {
 import { useEffect } from "react";
 
 import NavBar from "./components/ui/navBar";
-import { TracingBeam } from "./components/ui/tracing-beam";
+// import { TracingBeam } from "./components/ui/tracing-beam";
 import HeroSection from "./pages/heroSection";
 import AboutMe from "./pages/aboutMe";
 import Projects from "./pages/projects";
+import SkillSection from "./pages/skills";
 
 const ScrollManager = () => {
 	const location = useLocation();
@@ -33,15 +34,17 @@ const App = () => {
 		<Router>
 			<NavBar />
 			<ScrollManager />
-			<TracingBeam className="px-0">
+			{/* <TracingBeam className="px-0"> */}
 				<HeroSection />
+			{/* </TracingBeam> */}
 				<AboutMe />
 				<Projects />
-			</TracingBeam>
+				<SkillSection />
 			<Routes>
 				<Route path="/home" element={null} />
 				<Route path="/about" element={null} />
 				<Route path="/projects" element={null} />
+				<Route path="/skills" element={null} />
 			</Routes>
 		</Router>
 	);

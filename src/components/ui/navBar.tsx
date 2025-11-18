@@ -6,8 +6,8 @@ const NavBar = () => {
 	const [open, setOpen] = useState(false);
 
 	return (
-		<nav className="fixed top-0 left-0 w-full bg-primary/1 backdrop-blur-2xl shadow-md z-50">
-			<div className="flex items-center justify-between bg-primary/5 backdrop-blur-xl rounded-b-2xl px-4 py-3 md:py-2 md:max-w-6xl xl:max-w-7xl mx-auto">
+		<nav className="fixed top-0 left-0 p-2 w-full bg-background/50 backdrop-blur-2xl shadow-md z-50">
+			<div className="flex items-center justify-between bg-background/20 border backdrop-blur-xl rounded-2xl px-4 py-3 md:py-2 md:max-w-6xl mx-auto">
 				{/* Left Side Logo + Title */}
 
 				<Link to="/">
