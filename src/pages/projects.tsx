@@ -8,7 +8,7 @@ export default function Projects() {
 			id="projects"
 			className="scroll-mt-18 w-full max-w-7xl mx-auto py-8 px-4"
 		>
-			<h1 className="text-4xl md:text-7xl font-extrabold text-right mb-8">
+			<h1 className="heading font-semibold text-4xl text-center md:text-end mb-4 md:text-7xl leading-snug">
 				.Projects
 			</h1>
 			<div className="flex flex-col gap-4">
