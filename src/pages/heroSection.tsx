@@ -2,8 +2,11 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip
 
 const HeroSection = () => {
 	return (
-		<section id="home" className="mx-auto flex flex-col justify-center py-4">
-			<div className="bg-background w-95 md:w-full mx-auto justify-center rounded-t-4xl">
+		<section
+			id="home"
+			className="mx-auto flex flex-col justify-center py-4"
+		>
+			<div className="bg-background w-95 md:w-full mt-2 mx-auto justify-center rounded-t-4xl">
 				<div className="h-full max-w-5xl rounded-t-4xl p-4 border-b-transparent border-t-20 border border-l-accent border-r-accent border-primary mt-18 mx-auto flex flex-col">
 					<div className="text-wrap text-center">
 						<h2 className="font-bold text-xl sm:text-3xl md:text-3xl py-4">
@@ -56,7 +59,7 @@ const HeroSection = () => {
 									<a
 										href="https://github.com/devmartin-9000"
 										target="_blank"
-										className="text-sm text-muted-foreground text-center items-center flex flex-col gap-2 cursor-pointer border-b-4 border-border hover:border-primary duration-500 ease-in-out hover:scale-105 transition-transform"
+										className="text-sm text-muted-foreground text-center items-center flex flex-col gap-2 cursor-pointer border-b-4 border-border hover:border-primary duration-500 ease-in-out hover:scale-105 transition-all"
 									>
 										<img
 											className="h-10 w-auto invert"
@@ -76,7 +79,7 @@ const HeroSection = () => {
 									<a
 										href="https://linkedin.com/in/devmartin-jack"
 										target="_blank"
-										className="text-sm text-muted-foreground text-center items-center flex flex-col gap-2 cursor-pointer border-b-4 border-border hover:border-primary duration-500 ease-in-out hover:scale-105 transition-transform"
+										className="text-sm text-muted-foreground text-center items-center flex flex-col gap-2 cursor-pointer border-b-4 border-border hover:border-primary duration-500 ease-in-out hover:scale-105 transition-all"
 									>
 										<img
 											className="h-10 w-auto invert"
@@ -97,7 +100,7 @@ const HeroSection = () => {
 									<a
 										href="mailto:dev.martinjack9000@gmail.com"
 										target="_blank"
-										className="text-sm text-muted-foreground text-center items-center flex flex-col gap-2 cursor-pointer border-b-4 border-border hover:border-primary duration-500 ease-in-out hover:scale-105 transition-transform"
+										className="text-sm text-muted-foreground text-center items-center flex flex-col gap-2 cursor-pointer border-b-4 border-border hover:border-primary duration-500 ease-in-out hover:scale-105 transition-all"
 									>
 										<img
 											className="h-10 w-auto invert"
@@ -117,7 +120,7 @@ const HeroSection = () => {
 									<a
 										href="https://x.com/MartinJack9000"
 										target="_blank"
-										className="text-sm text-muted-foreground text-center items-center flex flex-col gap-2 cursor-pointer border-b-4 border-border hover:border-primary duration-500 ease-in-out hover:scale-105 transition-transform"
+										className="text-sm text-muted-foreground text-center items-center flex flex-col gap-2 cursor-pointer border-b-4 border-border hover:border-primary duration-500 ease-in-out hover:scale-105 transition-all"
 									>
 										<img
 											className="p-1 h-10 w-auto invert"

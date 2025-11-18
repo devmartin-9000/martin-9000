@@ -8,12 +8,12 @@ const AboutMe = () => {
 				className="scroll-mt-18 py-0 bg-primary h-full my-auto mx-auto justify-center w-full"
 			>
 				{/* Main Div */}
-				<div className="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-4 w-full md:max-w-5xl mx-auto p-4 md:p-4">
+				<div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-4 w-full md:max-w-5xl mx-auto p-4 md:p-4">
 					{/* Left Column */}
 					<div className="">
-						<div className="text-center md:text-start">
+						<div className="text-center lg:text-start">
 							{/* Title */}
-							<h1 className="text-muted font-extrabold text-5xl md:text-8xl leading-relaxed">
+							<h1 className="text-muted font-extrabold text-5xl sm:text-6xl md:text-8xl leading-relaxed">
 								.about me
 							</h1>
 						</div>
@@ -54,9 +54,9 @@ const AboutMe = () => {
 						</div>
 					</div>
 					{/* Right Column */}
-					<div className="hidden md:block">
+					<div className="hidden lg:block">
 						<CardContainer className="my-auto h-full">
-							<CardBody className="bg-transparent relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] border light:border w-auto h-full p-6">
+							<CardBody className="bg-transparent relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] border light:border w-auto h-full p-6">
 								<CardItem translateZ="100" className="w-full mt-4">
 									<img
 										src="./assets/Thumbnail-2.jpg"

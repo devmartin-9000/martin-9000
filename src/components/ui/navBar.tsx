@@ -54,9 +54,14 @@ const NavBar = () => {
 
 				{/* CTA Desktop */}
 				<div className="hidden md:block p-2">
-					<Button className="rounded-full" variant="default" size="lg">
-						Let's Chat
-					</Button>
+					<Link to="/contact">
+						<Button
+							variant="default"
+							size="lg"
+						>
+							Let's Chat
+						</Button>
+					</Link>
 				</div>
 
 				{/* Mobile Hamburger */}
@@ -113,15 +118,16 @@ const NavBar = () => {
 					>
 						Skills
 					</Link>
-
-					<Button
-						className="rounded-full mt-2"
-						variant="default"
-						size="lg"
-						onClick={() => setOpen(false)}
-					>
-						Let's Chat
-					</Button>
+					<Link to="/contact">
+						<Button
+							className="rounded-full mt-2"
+							variant="default"
+							size="lg"
+							onClick={() => setOpen(false)}
+						>
+							Let's Chat
+						</Button>
+					</Link>
 				</div>
 			)}
 		</nav>

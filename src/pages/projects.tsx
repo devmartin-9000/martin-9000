@@ -9,14 +9,14 @@ export default function Projects() {
 			className="scroll-mt-18 w-full bg-background mx-auto py-8 px-4"
 		>
 			<div className="max-w-5xl mx-auto">
-				<h1 className="text-center md:text-end mb-5 text-primary-foreground/80 font-extrabold text-5xl md:text-8xl leading-relaxed">
+				<h1 className="text-center lg:text-end mb-5 text-primary-foreground/80 font-extrabold text-5xl md:text-8xl leading-relaxed">
 					.projects
 				</h1>
 				<div className="flex flex-col gap-4">
 					{/* FINTRIQS BLOCK */}
-					<div className="bg-primary rounded-4xl p-2 md:p-10 flex flex-col md:flex-row gap-8 shadow-xl">
+					<div className="bg-primary rounded-4xl p-2 md:p-10 flex flex-col lg:flex-row gap-4 shadow-xl">
 						{/* LEFT SIDE — IMAGE + TITLE + TAGS */}
-						<div className="bg-primary border border-background rounded-4xl p-3 md:p-5 w-full md:w-1/2">
+						<div className="bg-primary border border-background rounded-4xl p-3 md:p-5 w-full lg:w-1/2">
 							{/* IMAGE */}
 							<div className="relative rounded-4xl overflow-hidden h-76 w-full group cursor-pointer">
 								<img
@@ -27,7 +27,7 @@ export default function Projects() {
 								/>
 
 								{/* Overlay */}
-								<div className="absolute inset-0 md:bg-background/50 bg-opacity-30 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 ease-in-out flex pb-4 md:pb-0 items-end md:items-center justify-center">
+								<div className="absolute inset-0 lg:bg-background/50 bg-opacity-30 opacity-100 lg:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 ease-in-out flex pb-4 lg:pb-0 items-end lg:items-center justify-center">
 									<a target="_blank" href="https://tinyurl.com/FINTRIQS">
 										<Tooltip>
 											<TooltipTrigger asChild>
@@ -72,7 +72,7 @@ export default function Projects() {
 						</div>
 
 						{/* RIGHT SIDE — PANEL */}
-						<div className="bg-background text-muted-foreground rounded-4xl p-6 md:p-10 w-full md:w-1/2">
+						<div className="bg-background text-muted-foreground rounded-4xl p-6 md:p-10 w-full lg:w-1/2">
 							<h2 className="text-primary-foreground/80 opacity-90 text-lg md:text-xl font-bold mb-4 text-center">
 								Project Summary
 							</h2>
@@ -99,9 +99,9 @@ export default function Projects() {
 						</div>
 					</div>
 					{/* HOOKLAB BLOCK */}
-					<div className="bg-primary rounded-4xl p-2 md:p-10 flex flex-col-reverse md:flex-row gap-8 shadow-xl">
+					<div className="bg-primary rounded-4xl p-2 md:p-10 flex flex-col-reverse lg:flex-row gap-4 shadow-xl">
 						{/* LEFT SIDE — PANEL */}
-						<div className="bg-background text-muted-foreground rounded-4xl p-6 md:p-10 w-full md:w-1/2">
+						<div className="bg-background text-muted-foreground rounded-4xl p-6 md:p-10 w-full lg:w-1/2">
 							<h2 className="text-primary-foreground/80 opacity-90 text-lg md:text-xl font-bold mb-4 text-center">
 								Project Summary
 							</h2>
@@ -130,7 +130,7 @@ export default function Projects() {
 						</div>
 
 						{/* RIGHT SIDE — IMAGE + TITLE + TAGS */}
-						<div className="bg-primary border border-background rounded-4xl p-3 md:p-5 w-full md:w-1/2">
+						<div className="bg-primary border border-background rounded-4xl p-3 md:p-5 w-full lg:w-1/2">
 							{/* IMAGE */}
 							<div className="relative rounded-4xl overflow-hidden h-76 w-full group cursor-pointer">
 								<img
@@ -141,7 +141,7 @@ export default function Projects() {
 								/>
 
 								{/* Overlay */}
-								<div className="absolute inset-0 md:bg-background/50 bg-opacity-30 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 ease-in-out flex pb-4 md:pb-0 items-end md:items-center justify-center">
+								<div className="absolute inset-0 lg:bg-background/50 bg-opacity-30 opacity-100 lg:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 ease-in-out flex pb-4 lg:pb-0 items-end lg:items-center justify-center">
 									<a target="_blank" href="https://tinyurl.com/HOOKLAB-ADS">
 										<Tooltip>
 											<TooltipTrigger asChild>
@@ -185,7 +185,7 @@ export default function Projects() {
 				</div>
 				<div>
 					<div className="max-w-2xl mx-auto justify-center flex mt-4 rounded-full p-2 bg-background">
-						<h1 className="text-center text-sm md:text-base font-bold flex flex-row px-6 bg-primary  py-2 rounded-full gap-4 items-center text-muted hover:px-16 transition-discrete duration-500 ">
+						<h1 className="text-center text-sm md:text-base font-bold flex flex-row px-6 bg-primary  py-2 rounded-full gap-4 items-center text-muted hover:px-20 transition-discrete duration-500 ">
 							More projects? Visit GitHub
 							<Tooltip>
 								<TooltipTrigger asChild>

@@ -1,3 +1,7 @@
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+import { CircleCheckIcon, CodeXml, DownloadIcon } from "lucide-react";
+import { Link } from "react-router-dom";
+
 const SkillSection = () => {
 
     type TechnicalAbility = {
@@ -63,7 +67,7 @@ const SkillSection = () => {
   return (
 		<section
 			id="skills"
-			className="scroll-mt-18 p-4 bg-primary h-full my-auto mx-auto justify-center w-full"
+			className="scroll-mt-18 p-4 bg-primary h-full  mx-auto justify-center w-full"
 		>
 			<div className="max-w-5xl mx-auto">
 				{/* Title */}
@@ -73,7 +77,7 @@ const SkillSection = () => {
 				<div className="bg-transparent grid md:grid-cols-2 gap-4 py-8">
 					{/* LEFT SIDE */}
 					<div className="p-4 border flex flex-col items-start justify-start rounded-4xl min-h-80 gap-2">
-						<h2 className="text-muted text-sm md:text-base font-semibold text-center leading-relaxed px-4 w-full border rounded-full mb-0">
+						<h2 className="bg-background/60 text-primary-foreground/70 text-sm md:text-base font-semibold text-center leading-relaxed px-4 w-full rounded-full mb-0">
 							Technical Abilities
 						</h2>
 						<p className="text-xs md:text-sm text-muted">
@@ -83,15 +87,16 @@ const SkillSection = () => {
 
 						{TechnicalAbilities.map((section) => (
 							<div key={section.subCategory} className="w-full">
-								<h3 className="text-start text-muted font-semibold text-sm md:text-base mb-2">
+								<h3 className="text-start text-muted/90 font-semibold text-sm md:text-base mb-2">
 									{section.subCategory}
 								</h3>
 								<div className="flex flex-wrap gap-3">
 									{section.items.map((item) => (
 										<p
 											key={item}
-											className="text-xs md:text-sm text-primary-foreground/70 bg-background/60 px-3 items-center text-center rounded-full"
+											className="flex text-xs md:text-sm text-muted border border-muted gap-2 items-center text-center rounded-full pr-2 pl-1"
 										>
+											<CodeXml className="text-green-600 h-4 w-auto" />
 											{item}
 										</p>
 									))}
@@ -102,7 +107,7 @@ const SkillSection = () => {
 
 					{/* RIGHT SIDE */}
 					<div className="p-4 border flex flex-col items-start justify-start rounded-4xl min-h-80 gap-2">
-						<h2 className="text-muted text-sm md:text-base font-semibold text-center leading-relaxed px-4 w-full border rounded-full mb-0">
+						<h2 className="bg-background/60 text-primary-foreground/70 text-sm md:text-base font-semibold text-center leading-relaxed px-4 w-full rounded-full mb-0">
 							Non-Technical / Soft Skills
 						</h2>
 						<p className="text-xs md:text-sm text-muted">
@@ -114,12 +119,13 @@ const SkillSection = () => {
 							<div className="mt-8 w-full">
 								<div className="flex flex-wrap gap-3">
 									{section.items.map((item) => (
-										<li
+										<p
 											key={item}
-											className="text-xs md:text-sm text-primary-foreground/70 bg-background/60 px-3 items-center text-center rounded-full"
+											className="flex text-xs md:text-sm text-muted border border-muted gap-2 items-center text-center rounded-full pr-2 pl-1"
 										>
+											<CircleCheckIcon className="text-blue-600 h-4 w-auto" />
 											{item}
-										</li>
+										</p>
 									))}
 								</div>
 							</div>
@@ -127,6 +133,23 @@ const SkillSection = () => {
 					</div>
 				</div>
 			</div>
+			<Tooltip>
+				<TooltipTrigger asChild>
+					<Link to="/home">
+						<div className="max-w-2xl mx-auto justify-center flex rounded-full p-2 bg-background">
+							<div className="flex items-center gap-2 p-2 rounded-4xl duration-500 transition-all">
+								<h1 className="text-center text-sm md:text-base font-bold flex flex-row px-6 bg-primary  py-2 rounded-full gap-4 items-center text-muted hover:px-20 transition-discrete duration-500 ">
+									Download Resume
+									<DownloadIcon />
+								</h1>
+							</div>
+						</div>
+					</Link>
+				</TooltipTrigger>
+				<TooltipContent>
+					<p className="text-xs">Opens in a new tab</p>
+				</TooltipContent>
+			</Tooltip>
 		</section>
 	);
 }
