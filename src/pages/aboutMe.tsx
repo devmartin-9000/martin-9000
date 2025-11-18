@@ -57,7 +57,7 @@ const AboutMe = () => {
 					<div className="hidden lg:block">
 						<CardContainer className="my-auto h-full">
 							<CardBody className="bg-transparent relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] border light:border w-auto h-full p-6">
-								<CardItem translateZ="100" className="w-full mt-4">
+								<CardItem translateZ="100" className="w-full mt-4 transition-all duration-400">
 									<img
 										src="./assets/Thumbnail-2.jpg"
 										className="h-120 cursor-pointer w-auto mx-auto object-fill rounded-xs group-hover/card:shadow-xl brightness-20 hover:brightness-70 duration-800 ease-in-out transition-all"

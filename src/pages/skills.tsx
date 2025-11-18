@@ -1,5 +1,5 @@
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
-import { CircleCheckIcon, CodeXml, DownloadIcon } from "lucide-react";
+import { CircleCheckIcon, CodeXml, DownloadIcon, Sparkle } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const SkillSection = () => {
@@ -139,8 +139,9 @@ const SkillSection = () => {
 						<div className="max-w-2xl mx-auto justify-center flex rounded-full p-2 bg-background">
 							<div className="flex items-center gap-2 p-2 rounded-4xl duration-500 transition-all">
 								<h1 className="text-center text-sm md:text-base font-bold flex flex-row px-6 bg-primary  py-2 rounded-full gap-4 items-center text-muted hover:px-20 transition-discrete duration-500 ">
-									Download Resume
-									<DownloadIcon />
+								  	Home
+								  	<Sparkle />
+									{/* <DownloadIcon /> */}
 								</h1>
 							</div>
 						</div>

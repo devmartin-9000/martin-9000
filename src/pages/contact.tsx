@@ -23,7 +23,7 @@ const ContactSection: React.FC = () => {
 				{/* Content */}
 				<div className="relative z-10 flex flex-col items-center text-center gap-4">
 					<h1 className="text-5xl md:text-6xl font-bold text-muted">
-						Let&apos;s Get In Touch.
+						Let's Get In Touch.
 					</h1>
 					<p className="max-w-2xl text-lg sm:text-xl md:text-2xl text-muted">
 						Let's connect and discuss how I can bring value to your team. I'm
