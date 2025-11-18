@@ -3,7 +3,7 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip
 const HeroSection = () => {
 	return (
 		<section id="home" className="mx-auto flex flex-col justify-center py-4">
-			<div className="bg-background w-full mx-auto justify-center rounded-t-4xl">
+			<div className="bg-background w-95 mx-auto justify-center rounded-t-4xl">
 				<div className="h-full max-w-5xl rounded-t-4xl p-4 border-b-transparent border-t-20 border border-l-accent border-r-accent border-primary mt-18 mx-auto flex flex-col">
 					<div className="text-wrap text-center">
 						<h2 className="font-bold text-xl sm:text-3xl md:text-3xl py-4">
