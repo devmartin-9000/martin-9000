@@ -21,9 +21,7 @@ const HeroSection = () => {
 						</h1>
 
 						<p className="max-w-md mx-auto py-2 text-sm md:text-md text-muted-foreground">
-							I create straightforward, user-friendly interfaces with an eye for
-							detail. I’m always learning, always refining, and always aiming to
-							build something genuinely helpful.
+							I create straightforward, user-friendly interfaces with focus on good design, usability and efficient. I'm always learning, always refining, and always aiming to build	something genuinely helpul.
 						</p>
 
 						<div className="w-full flex flex-wrap mx-auto border border-accent p-4 md:p-8 rounded-t-3xl bg-accent/1 gap-2 md:gap-4 text-xs items-center justify-center mt-5">
