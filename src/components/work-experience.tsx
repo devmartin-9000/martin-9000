@@ -67,7 +67,7 @@ export const workExperienceData = [
 		period: "Jul. 2024 - Dec. 2024",
 		description: [
 			"Provided technical support to an E-Learning community spanning 8+ countries, resolving over 200+ issues and inquiries with an average response time of under 6 hours.",
-			"Reviewed and documented internal community engagement stats, and improving knowledge base completeness by more than 15% as reflected in the learner support ticket flags.",
+			"Reviewed and documented internal community engagement stats, and improving knowledge base completeness by more than 30% as reflected in the learner support ticket flags.",
 			"Actively collected user feedback on platform features, synthesizing insights into reports that played a key role in ensuring an enhanced overall user satisfaction.",
 		],
 	},

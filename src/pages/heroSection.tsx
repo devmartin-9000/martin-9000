@@ -4,7 +4,7 @@ const HeroSection = () => {
 	return (
 		<section id="home" className="mx-auto flex flex-col justify-center py-4">
 			<div className="bg-background w-80 md:w-full mx-auto justify-center rounded-t-4xl">
-				<div className="h-full w-full max-w-5xl rounded-t-4xl p-4 border-b-transparent border-t-20 border border-l-accent border-r-accent border-primary mt-18 mx-auto flex flex-col">
+				<div className="h-full w-full md:max-w-5xl rounded-t-4xl p-4 border-b-transparent border-t-20 border border-l-accent border-r-accent border-primary mt-18 mx-auto flex flex-col">
 					<div className="text-wrap text-center">
 						<h2 className="font-bold text-xl sm:text-3xl md:text-3xl py-4">
 							Hey there, Welcome!
@@ -23,7 +23,7 @@ const HeroSection = () => {
 
 						<p className="max-w-md leading-relaxed mx-auto py-2 text-sm md:text-md text-muted-foreground">
 							I create straightforward, user-friendly interfaces with focus on
-							good design, usability and efficient. I'm always learning, always
+							good design, usability and efficiency. I'm always learning, always
 							refining, and always aiming to build something genuinely helpul.
 						</p>
 
