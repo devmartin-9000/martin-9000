@@ -16,6 +16,7 @@ const NavBar = () => {
 							src="./assets/logo.svg"
 							alt="Logo"
 							className="h-10 w-10 hover:scale-105 transition-transform duration-200 ease-in-out"
+							loading="lazy"
 						/>
 						<h1 className="font-bold text-2xl md:text-3xl hover:scale-105 transition-transform duration-200 ease-in-out">
 							.martin

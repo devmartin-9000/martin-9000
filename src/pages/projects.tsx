@@ -22,6 +22,7 @@ export default function Projects() {
 								src="./assets/fintriqs-thumbnail.png"
 								alt="FINTRIQS Thumbnail"
 								className="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
+								loading="lazy"
 							/>
 
 							{/* Overlay */}
@@ -134,6 +135,7 @@ export default function Projects() {
 								src="./assets/hooklab-thumbnail-2.png"
 								alt="Hooklab Thumbnail"
 								className="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
+								loading="lazy"
 							/>
 
 							{/* Overlay */}
@@ -191,6 +193,7 @@ export default function Projects() {
 											className="h-8 w-auto invert"
 											src="./assets/github-icon.svg"
 											alt="Github Icon"
+											loading="lazy"
 										/>
 									</a>
 								</div>

@@ -62,6 +62,7 @@ const HeroSection = () => {
 											className="h-10 w-auto invert"
 											src="./assets/github-icon.svg"
 											alt="Github Icon"
+											loading="lazy"
 										/>
 										GitHub
 									</a>
@@ -81,6 +82,7 @@ const HeroSection = () => {
 											className="h-10 w-auto invert"
 											src="./assets/linkedin-icon.svg"
 											alt="LinkedIn Icon"
+											loading="lazy"
 										/>
 										LinkedIn
 									</a>
@@ -101,6 +103,7 @@ const HeroSection = () => {
 											className="h-10 w-auto invert"
 											src="./assets/email-icon.svg"
 											alt="Email Icon"
+											loading="lazy"
 										/>
 										E-mail
 									</a>
@@ -120,6 +123,7 @@ const HeroSection = () => {
 											className="p-1 h-10 w-auto invert"
 											src="./assets/x-icon.png"
 											alt="X Icon"
+											loading="lazy"
 										/>
 										X (Twitter)
 									</a>
