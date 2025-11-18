@@ -25,9 +25,9 @@ const AboutMe = () => {
 								began shipping production code, and almost two years of
 								dedicated coding experience overall. What motivates me is the
 								opportunity to build things that look good, feel smooth, and
-								genuinely useful to people. I’m a very visual thinker, so I naturally
-								gravitate towards clean, thoughtful design and well-crafted user
-								interfaces.
+								genuinely useful to people. I’m a very visual thinker, so I
+								naturally gravitate towards clean, thoughtful design and
+								well-crafted user interfaces.
 							</p>
 							<p className="leading-snug text-sm text-muted-foreground">
 								Before moving into tech, I worked in Sales, Customer Support,
@@ -59,7 +59,7 @@ const AboutMe = () => {
 							<CardBody className="bg-transparent relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] border light:border w-auto h-full p-6">
 								<CardItem translateZ="100" className="w-full mt-4">
 									<img
-										src="Thumbnail.jpg"
+										src="./assets/Thumbnail.jpg"
 										className="h-120 cursor-pointer w-auto mx-auto object-fill rounded-xs group-hover/card:shadow-xl"
 										alt="thumbnail"
 										loading="lazy"

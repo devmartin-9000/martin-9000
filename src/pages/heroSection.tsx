@@ -1,3 +1,4 @@
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 
 const HeroSection = () => {
 	return (
@@ -20,8 +21,10 @@ const HeroSection = () => {
 							Developer
 						</h1>
 
-						<p className="max-w-md mx-auto py-2 text-sm md:text-md text-muted-foreground">
-							I create straightforward, user-friendly interfaces with focus on good design, usability and efficient. I'm always learning, always refining, and always aiming to build	something genuinely helpul.
+						<p className="max-w-md leading-relaxed mx-auto py-2 text-sm md:text-md text-muted-foreground">
+							I create straightforward, user-friendly interfaces with focus on
+							good design, usability and efficient. I'm always learning, always
+							refining, and always aiming to build something genuinely helpul.
 						</p>
 
 						<div className="w-full flex flex-wrap mx-auto border border-accent p-4 md:p-8 rounded-t-3xl bg-accent/1 gap-2 md:gap-4 text-xs items-center justify-center mt-5">
@@ -47,59 +50,84 @@ const HeroSection = () => {
 								Figma
 							</p>
 						</div>
-
 						<div className="mt-10 grid grid-cols-2 md:flex items-center justify-center gap-8 md:gap-20">
-							<a
-								href="https://github.com/devmartin-9000"
-								target="_blank"
-								className="text-center items-center flex flex-col gap-2 cursor-pointer border-b-4 border-border hover:border-primary duration-200 ease-in-out hover:scale-105 transition-transform"
-							>
-								<img
-									className="h-10 w-auto invert"
-									src="github-icon.svg"
-									alt="Github Icon"
-								/>
-								GitHub
-							</a>
+							<Tooltip>
+								<TooltipTrigger asChild>
+									<a
+										href="https://github.com/devmartin-9000"
+										target="_blank"
+										className="text-center items-center flex flex-col gap-2 cursor-pointer border-b-4 border-border hover:border-primary duration-200 ease-in-out hover:scale-105 transition-transform"
+									>
+										<img
+											className="h-10 w-auto invert"
+											src="./assets/github-icon.svg"
+											alt="Github Icon"
+										/>
+										GitHub
+									</a>
+								</TooltipTrigger>
+								<TooltipContent>
+									<p className="text-sm">Open in a new tab</p>
+								</TooltipContent>
+							</Tooltip>
+							<Tooltip>
+								<TooltipTrigger asChild>
+									<a
+										href="https://linkedin.com/in/devmartin-jack"
+										target="_blank"
+										className="text-center items-center flex flex-col gap-2 cursor-pointer border-b-4 border-border hover:border-primary duration-200 ease-in-out hover:scale-105 transition-transform"
+									>
+										<img
+											className="h-10 w-auto invert"
+											src="./assets/linkedin-icon.svg"
+											alt="LinkedIn Icon"
+										/>
+										LinkedIn
+									</a>
+								</TooltipTrigger>
+								<TooltipContent>
+									<p className="text-sm">Open in a new tab</p>
+								</TooltipContent>
+							</Tooltip>
 
-							<a
-								href="https://linkedin.com/in/devmartin-jack"
-								target="_blank"
-								className="text-center items-center flex flex-col gap-2 cursor-pointer border-b-4 border-border hover:border-primary duration-200 ease-in-out hover:scale-105 transition-transform"
-							>
-								<img
-									className="h-10 w-auto invert"
-									src="linkedin-icon.svg"
-									alt="LinkedIn Icon"
-								/>
-								LinkedIn
-							</a>
-
-							<a
-								href="mailto:dev.martinjack9000@gmail.com"
-								target="_blank"
-								className="text-center items-center flex flex-col gap-2 cursor-pointer border-b-4 border-border hover:border-primary duration-200 ease-in-out hover:scale-105 transition-transform"
-							>
-								<img
-									className="h-10 w-auto invert"
-									src="email-icon.svg"
-									alt="Email Icon"
-								/>
-								E-mail
-							</a>
-
-							<a
-								href="https://x.com/MartinJack9000"
-								target="_blank"
-								className="text-center items-center flex flex-col gap-2 cursor-pointer border-b-4 border-border hover:border-primary duration-200 ease-in-out hover:scale-105 transition-transform"
-							>
-								<img
-									className="p-1 h-10 w-auto invert"
-									src="x-icon.png"
-									alt="X Icon"
-								/>
-								X (Twitter)
-							</a>
+							<Tooltip>
+								<TooltipTrigger asChild>
+									<a
+										href="mailto:dev.martinjack9000@gmail.com"
+										target="_blank"
+										className="text-center items-center flex flex-col gap-2 cursor-pointer border-b-4 border-border hover:border-primary duration-200 ease-in-out hover:scale-105 transition-transform"
+									>
+										<img
+											className="h-10 w-auto invert"
+											src="./assets/email-icon.svg"
+											alt="Email Icon"
+										/>
+										E-mail
+									</a>
+								</TooltipTrigger>
+								<TooltipContent>
+									<p className="text-sm">Open in a new tab</p>
+								</TooltipContent>
+							</Tooltip>
+							<Tooltip>
+								<TooltipTrigger asChild>
+									<a
+										href="https://x.com/MartinJack9000"
+										target="_blank"
+										className="text-center items-center flex flex-col gap-2 cursor-pointer border-b-4 border-border hover:border-primary duration-200 ease-in-out hover:scale-105 transition-transform"
+									>
+										<img
+											className="p-1 h-10 w-auto invert"
+											src="./assets/x-icon.png"
+											alt="X Icon"
+										/>
+										X (Twitter)
+									</a>
+								</TooltipTrigger>
+								<TooltipContent>
+									<p className="text-sm">Open in a new tab</p>
+								</TooltipContent>
+							</Tooltip>
 						</div>
 					</div>
 				</div>

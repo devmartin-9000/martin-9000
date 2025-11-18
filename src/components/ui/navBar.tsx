@@ -11,16 +11,16 @@ const NavBar = () => {
 				{/* Left Side Logo + Title */}
 
 				<Link to="/">
-				<div className="flex items-center p-2 gap-3 cursor-pointer">
-					<img
-						src="logo.svg"
-						alt="Logo"
-						className="h-10 w-10 hover:scale-105 transition-transform duration-200 ease-in-out"
+					<div className="flex items-center p-2 gap-3 cursor-pointer">
+						<img
+							src="./assets/logo.svg"
+							alt="Logo"
+							className="h-10 w-10 hover:scale-105 transition-transform duration-200 ease-in-out"
 						/>
-					<h1 className="font-bold text-2xl md:text-3xl hover:scale-105 transition-transform duration-200 ease-in-out">
-						.martin
-					</h1>
-				</div>
+						<h1 className="font-bold text-2xl md:text-3xl hover:scale-105 transition-transform duration-200 ease-in-out">
+							.martin
+						</h1>
+					</div>
 				</Link>
 
 				{/* Desktop Menu */}

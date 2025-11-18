@@ -19,7 +19,7 @@ export default function Projects() {
 						{/* IMAGE */}
 						<div className="relative rounded-4xl overflow-hidden h-76 w-full group cursor-pointer">
 							<img
-								src="fintriqs-thumbnail.png"
+								src="./assets/fintriqs-thumbnail.png"
 								alt="FINTRIQS Thumbnail"
 								className="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
 							/>
@@ -131,7 +131,7 @@ export default function Projects() {
 						{/* IMAGE */}
 						<div className="relative rounded-4xl overflow-hidden h-76 w-full group cursor-pointer">
 							<img
-								src="hooklab-thumbnail-2.png"
+								src="./assets/hooklab-thumbnail-2.png"
 								alt="Hooklab Thumbnail"
 								className="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
 							/>
@@ -186,11 +186,10 @@ export default function Projects() {
 						<Tooltip>
 							<TooltipTrigger asChild>
 								<div className="flex items-center gap-2 p-2 border rounded-4xl hover:scale-105 animate-bounce hover:animate-none duration-500 transition-all">
-									<a target="_blank" href="https://github.com/devmartin-9000"
-									>
+									<a target="_blank" href="https://github.com/devmartin-9000">
 										<img
 											className="h-8 w-auto"
-											src="github-icon.svg"
+											src="./assets/github-icon.svg"
 											alt="Github Icon"
 										/>
 									</a>
