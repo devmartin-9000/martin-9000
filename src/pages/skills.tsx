@@ -1,5 +1,5 @@
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
-import { CircleCheckIcon, CodeXml, DownloadIcon, Sparkle } from "lucide-react";
+import { CircleCheckIcon, CodeXml, Sparkle } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const SkillSection = () => {
