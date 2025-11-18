@@ -1,58 +1,130 @@
+import { useState } from "react";
 import { Button } from "./button";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
-  return (
-		<div className="flex flex-cols w-full asbolute inset-0 bg-primary/1 items-center px-4 shadow-md backdrop-blur-2xl justify-evenly">
-			{/* Left Side Nav */}
-			<div className="flex flex-cols items-center gap-4">
-				{/* Logo */}
-				<div className="p-2 bg-primary hover:bg-accent transoform transition-colors duration-300 ease-in-out">
-					<img src="logo.svg" alt="Logo" className="h-10 w-10" />
+	const [open, setOpen] = useState(false);
+
+	return (
+		<nav className="fixed top-0 left-0 w-full bg-primary/1 backdrop-blur-2xl shadow-md z-50">
+			<div className="flex items-center justify-between bg-primary/5 backdrop-blur-xl rounded-b-2xl px-4 py-3 md:py-2 md:max-w-6xl xl:max-w-7xl mx-auto">
+				{/* Left Side Logo + Title */}
+
+				<Link to="/">
+				<div className="flex items-center p-2 gap-3 cursor-pointer">
+					<img
+						src="logo.svg"
+						alt="Logo"
+						className="h-10 w-10 hover:scale-105 transition-transform duration-200 ease-in-out"
+						/>
+					<h1 className="font-bold text-2xl md:text-3xl hover:scale-105 transition-transform duration-200 ease-in-out">
+						.martin
+					</h1>
 				</div>
-				{/* Title  */}
-				<h1 className="font-bold text-3xl">.martin</h1>
-			</div>
-			{/* Menus */}
+				</Link>
 
-			<div className="flex flex-cols gap-6 text-center ">
-				<a
-					className="cursor-pointer border-b-4 border-border hover:border-accent transoform transition-colors duration-300 ease-in-out"
-					href="#home"
-				>
-					Home
-				</a>
-				<a
-					className="cursor-pointer border-b-4 border-border hover:border-accent transoform transition-colors duration-300 ease-in-out"
-					href="#about-me"
-				>
-					About Me
-				</a>
-				<a
-					className="cursor-pointer border-b-4 border-border hover:border-accent transoform transition-colors duration-300 ease-in-out"
-					href="#projects"
-				>
-					Projects
-				</a>
-				<a
-					className="cursor-pointer border-b-4 border-border hover:border-accent transoform transition-colors duration-300 ease-in-out"
-					href="#skills"
-				>
-					Skills
-				</a>
-			</div>
-			{/* CTA */}
+				{/* Desktop Menu */}
+				<div className="hidden md:flex gap-8 text-center">
+					<Link
+						className="cursor-pointer border-b-4 border-transparent hover:border-primary transition-colors duration-300"
+						to="/"
+					>
+						Home
+					</Link>
+					<Link
+						className="cursor-pointer border-b-4 border-transparent hover:border-primary transition-colors duration-300"
+						to="/about"
+					>
+						About Me
+					</Link>
+					<Link
+						className="cursor-pointer border-b-4 border-transparent hover:border-primary transition-colors duration-300"
+						to="/projects"
+					>
+						Projects
+					</Link>
+					<Link
+						className="cursor-pointer border-b-4 border-transparent hover:border-primary transition-colors duration-300"
+						to="/skills"
+					>
+						Skills
+					</Link>
+				</div>
 
-			<div>
-				<Button
-					className="flex flex-cols items-center rounded-full"
-					variant="outline"
-					size="lg"
+				{/* CTA Desktop */}
+				<div className="hidden md:block p-2">
+					<Button className="rounded-full" variant="default" size="lg">
+						Let's Chat
+					</Button>
+				</div>
+
+				{/* Mobile Hamburger */}
+				<button
+					className="md:hidden flex flex-col gap-1 p-2 focus:outline-none"
+					onClick={() => setOpen(!open)}
 				>
-					Let's Chat
-				</Button>
+					<span
+						className={`h-1 w-6 bg-primary rounded transition-all ${
+							open ? "rotate-45 translate-y-2" : ""
+						}`}
+					></span>
+					<span
+						className={`h-1 w-6 bg-primary rounded transition-all ${
+							open ? "opacity-0" : ""
+						}`}
+					></span>
+					<span
+						className={`h-1 w-6 bg-primary rounded transition-all ${
+							open ? "-rotate-45 -translate-y-2" : ""
+						}`}
+					></span>
+				</button>
 			</div>
-		</div>
+
+			{/* Mobile Menu Dropdown */}
+			{open && (
+				<div className="md:hidden flex flex-col items-center gap-6 py-8 bg-background/1 shadow-lg backdrop-blur-2xl">
+					<Link
+						className="cursor-pointer border-b-2 border-transparent hover:border-primary transition-colors duration-300"
+						to="/"
+						onClick={() => setOpen(false)}
+					>
+						Home
+					</Link>
+					<Link
+						className="cursor-pointer border-b-2 border-transparent hover:border-primary transition-colors duration-300"
+						to="/about"
+						onClick={() => setOpen(false)}
+					>
+						About Me
+					</Link>
+					<Link
+						className="cursor-pointer border-b-2 border-transparent hover:border-primary transition-colors duration-300"
+						to="/projects"
+						onClick={() => setOpen(false)}
+					>
+						Projects
+					</Link>
+					<Link
+						className="cursor-pointer border-b-2 border-transparent hover:border-primary transition-colors duration-300"
+						to="/skills"
+						onClick={() => setOpen(false)}
+					>
+						Skills
+					</Link>
+
+					<Button
+						className="rounded-full mt-2"
+						variant="default"
+						size="lg"
+						onClick={() => setOpen(false)}
+					>
+						Let's Chat
+					</Button>
+				</div>
+			)}
+		</nav>
 	);
-}
+};
 
 export default NavBar;
