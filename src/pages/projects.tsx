@@ -96,6 +96,9 @@ export default function Projects() {
 								backend and business logic, while I took full ownership of the
 								front-end; landing page, dashboards and layouts.
 							</p>
+							<p className="font-semibold text-sm mt-2">Demo Credentials.</p>
+							<p className="text-xs">Email: <span className="text-primary">demo@fintriqs.com</span></p>
+							<p className="text-xs">Password: <span className="text-primary">Demo1234</span></p>
 						</div>
 					</div>
 					{/* HOOKLAB BLOCK */}
