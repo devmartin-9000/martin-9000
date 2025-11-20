@@ -148,7 +148,7 @@ const SkillSection = () => {
 					</Link>
 				</TooltipTrigger>
 				<TooltipContent>
-					<p className="text-xs">Opens in a new tab</p>
+					<p className="text-xs">Or just click the logo instead</p>
 				</TooltipContent>
 			</Tooltip>
 		</section>

@@ -22,7 +22,7 @@ const AboutMe = () => {
 							<p className="leading-snug text-sm text-muted">
 								My name is <span className="font-bold">Martin Jack</span>, I
 								live in Blantyre, Malawi. It has now been about a year since I
-								began shipping production code, and almost two years of
+								began shipping production code, and almost three years of
 								dedicated coding experience overall. What motivates me is the
 								opportunity to build things that look good, feel smooth, and
 								genuinely useful to people. I’m a very visual thinker, so I
