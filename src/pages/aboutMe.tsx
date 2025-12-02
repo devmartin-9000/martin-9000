@@ -1,14 +1,24 @@
 import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
 import { WorkExperience } from "@/components/work-experience";
+import { motion } from "motion/react";
 
-const AboutMe = () => {
+const AboutMe = () => {	
     return (
 			<section
 				id="about"
 				className="scroll-mt-18 py-0 bg-primary h-full my-auto mx-auto justify-center w-full"
 			>
 				{/* Main Div */}
-				<div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-4 w-full md:max-w-5xl mx-auto p-4 md:p-4">
+				<motion.div
+					initial={{ opacity: 0, y: 40 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true, amount: 0.1 }}
+					transition={{
+						duration: 1,
+						ease: [0.17, 0.55, 0.55, 1],
+					}}
+					className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-4 w-full md:max-w-5xl mx-auto p-4 md:p-4"
+				>
 					{/* Left Column */}
 					<div className="">
 						<div className="text-center lg:text-start">
@@ -57,7 +67,10 @@ const AboutMe = () => {
 					<div className="hidden lg:block">
 						<CardContainer className="my-auto h-full">
 							<CardBody className="bg-transparent relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] border light:border w-auto h-full p-6">
-								<CardItem translateZ="100" className="w-full mt-4 transition-all duration-400">
+								<CardItem
+									translateZ="100"
+									className="w-full mt-4 transition-all duration-400"
+								>
 									<img
 										src="./assets/Thumbnail-2.jpg"
 										className="h-120 cursor-pointer w-auto mx-auto object-fill rounded-xs group-hover/card:shadow-xl brightness-20 hover:brightness-70 duration-800 ease-in-out transition-all"
@@ -68,7 +81,8 @@ const AboutMe = () => {
 							</CardBody>
 						</CardContainer>
 					</div>
-				</div>
+				</motion.div>
+
 				{/* Work Experience */}
 				<div className="rounded-none md:rounded-t-4xl bg-background items-center p-6 md:p-6 max-w-6xl mx-auto md:max-w-5xl">
 					<h1 className="text-center md:text-start text-primary-foreground/80 font-extrabold text-5xl md:text-8xl leading-relaxed">
