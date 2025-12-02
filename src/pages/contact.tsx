@@ -7,7 +7,7 @@ const ContactSection: React.FC = () => {
 			id="contact"
 			className="scroll-mt-18 bg-background w-full flex flex-col items-center justify-center h-135"
 		>
-			<div className="relative w-95 sm:w-230 md:w-190 lg:w-230 py-10 mt-10 lg:mt-12 max-w-5xl h-full overflow-hidden rounded-[40px] bg-primary p-4 md:p-16">
+			<div className="border border-primary relative w-95 sm:w-230 md:w-190 lg:w-230 py-10 mt-10 lg:mt-12 max-w-5xl h-full overflow-hidden rounded-[40px] bg-gradient-to-bl from-white via-white/60 to-white/30 p-4 md:p-16">
 				{/* Background circles */}
 				<div className="absolute inset-0 hidden h-full w-full overflow-hidden md:block">
 					<div className="absolute top-1/2 right-[-45%] aspect-square h-[900px] w-[900px] -translate-y-1/2">
@@ -32,7 +32,7 @@ const ContactSection: React.FC = () => {
 
 					<div className="flex flex-col sm:flex-row gap-4 md:gap-6 md:mt-6">
 						<a target="_blank" href="mailto:dev.martinjack9000@gmail.com">
-							<div className="bg-blue-400/80 backdrop-blur-2xl flex text-primary-foreground gap-3 py-2 md:py-4 px-6 rounded-full hover:translate-y-2 transform transition-all duration-500 items-center text-center">
+							<div className="bg-primary backdrop-blur-2xl flex text-muted gap-3 py-2 md:py-2 px-6 rounded-full hover:translate-y-2 transform transition-all duration-400 items-center text-center">
 								Send Email
 								<SendHorizontal />
 							</div>
@@ -41,7 +41,7 @@ const ContactSection: React.FC = () => {
 							target="_blank"
 							href="https://wa.me/265995571632?text=Hello%20Martin"
 						>
-							<div className="bg-green-500/80 backdrop-blur-2xl flex text-primary-foreground gap-3 py-2 md:py-4 px-6 rounded-full hover:translate-y-2 transform transition-all duration-500 items-center text-center">
+							<div className="bg-primary backdrop-blur-2xl flex text-muted gap-3 py-2 md:py-2 px-6 rounded-full hover:translate-y-2 transform transition-all duration-400 items-center text-center">
 								WhatsApp
 								<MessageSquareText />
 							</div>

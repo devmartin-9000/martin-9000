@@ -8,15 +8,15 @@ export default function Projects() {
 			id="projects"
 			className="scroll-mt-18 w-full bg-background mx-auto py-8 px-4"
 		>
-			<div className="max-w-5xl mx-auto">
+			<div className="max-w-6xl mx-auto">
 				<h1 className="text-center lg:text-end mb-5 text-primary-foreground/80 font-extrabold text-5xl md:text-8xl leading-relaxed">
 					.projects
 				</h1>
 				<div className="flex flex-col gap-4">
 					{/* FINTRIQS BLOCK */}
-					<div className="bg-primary rounded-4xl p-2 md:p-10 flex flex-col lg:flex-row gap-4 shadow-xl">
+					<div className="border rounded-4xl p-2 md:p-10 flex flex-col lg:flex-row gap-4 shadow-xl">
 						{/* LEFT SIDE — IMAGE + TITLE + TAGS */}
-						<div className="bg-primary border border-background rounded-4xl p-3 md:p-5 w-full lg:w-1/2">
+						<div className="border rounded-4xl p-3 md:p-5 w-full lg:w-1/2">
 							{/* IMAGE */}
 							<div className="relative rounded-4xl overflow-hidden h-76 w-full group cursor-pointer">
 								<img
@@ -27,7 +27,7 @@ export default function Projects() {
 								/>
 
 								{/* Overlay */}
-								<div className="absolute inset-0 lg:bg-background/50 bg-opacity-30 opacity-100 lg:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 ease-in-out flex pb-4 lg:pb-0 items-end lg:items-center justify-center">
+								<div className="absolute inset-0 lg:bg-background/30 bg-opacity-30 opacity-100 lg:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 ease-in-out flex pb-4 lg:pb-0 items-end lg:items-center justify-center">
 									<a target="_blank" href="https://tinyurl.com/FINTRIQS">
 										<Tooltip>
 											<TooltipTrigger asChild>
@@ -42,30 +42,30 @@ export default function Projects() {
 							</div>
 
 							{/* TITLE */}
-							<p className="mt-4 text-muted text-center font-semibold text-sm mb-3">
-								<span className="font-bold">FINTRIQS</span> – An Invoice
-								Management System web app
+							<p className="mt-4 text-primary-foreground/80 text-center font-semibold text-sm mb-3">
+								<span className="font-bold">FINTRIQS</span> – Invoice Management
+								System
 							</p>
 							<Separator />
 
 							{/* TAGS */}
-							<div className="flex flex-wrap gap-3 mt-4  justify-evenly  text-muted">
-								<div className="px-4 py-1 rounded-full text-sm font-medium border border-black">
+							<div className="flex text-xs flex-wrap gap-3 mt-4  justify-center text-muted">
+								<div className="px-4 py-1 border border-primary bg-primary rounded-full">
 									React
 								</div>
-								<div className="px-4 py-1 rounded-full text-sm font-medium border border-black">
+								<div className="px-4 py-1 border border-primary bg-primary rounded-full">
 									TypeScript
 								</div>
-								<div className="px-4 py-1 rounded-full text-sm font-medium border border-black">
+								<div className="px-4 py-1 border border-primary bg-primary rounded-full">
 									Tailwind CSS
 								</div>
-								<div className="px-4 py-1 rounded-full text-sm font-medium border border-black">
+								<div className="px-4 py-1 border border-primary bg-primary rounded-full">
 									Zustand
 								</div>
-								<div className="px-4 py-1 rounded-full text-sm font-medium border border-black">
+								<div className="px-4 py-1 border border-primary bg-primary rounded-full">
 									Shadcn UI
 								</div>
-								<div className="px-4 py-1 rounded-full text-sm font-medium border border-black">
+								<div className="px-4 py-1 border border-primary bg-primary rounded-full">
 									Supabase
 								</div>
 							</div>
@@ -97,14 +97,18 @@ export default function Projects() {
 								front-end; landing page, dashboards and layouts.
 							</p>
 							<p className="font-semibold text-sm mt-2">Demo Credentials.</p>
-							<p className="text-xs">Email: <span className="text-primary">demo@fintriqs.com</span></p>
-							<p className="text-xs">Password: <span className="text-primary">Demo1234</span></p>
+							<p className="text-xs">
+								Email: <span className="text-primary">demo@fintriqs.com</span>
+							</p>
+							<p className="text-xs">
+								Password: <span className="text-primary">Demo1234</span>
+							</p>
 						</div>
 					</div>
 					{/* HOOKLAB BLOCK */}
-					<div className="bg-primary rounded-4xl p-2 md:p-10 flex flex-col-reverse lg:flex-row gap-4 shadow-xl">
+					<div className="border rounded-4xl p-2 md:p-10 flex flex-col-reverse lg:flex-row gap-4 shadow-xl">
 						{/* LEFT SIDE — PANEL */}
-						<div className="bg-background text-muted-foreground rounded-4xl p-6 md:p-10 w-full lg:w-1/2">
+						<div className="text-muted-foreground rounded-4xl p-6 md:p-10 w-full lg:w-1/2">
 							<h2 className="text-primary-foreground/80 opacity-90 text-lg md:text-xl font-bold mb-4 text-center">
 								Project Summary
 							</h2>
@@ -133,7 +137,7 @@ export default function Projects() {
 						</div>
 
 						{/* RIGHT SIDE — IMAGE + TITLE + TAGS */}
-						<div className="bg-primary border border-background rounded-4xl p-3 md:p-5 w-full lg:w-1/2">
+						<div className="border rounded-4xl p-3 md:p-5 w-full lg:w-1/2">
 							{/* IMAGE */}
 							<div className="relative rounded-4xl overflow-hidden h-76 w-full group cursor-pointer">
 								<img
@@ -159,27 +163,27 @@ export default function Projects() {
 							</div>
 
 							{/* TITLE */}
-							<p className="mt-4 text-muted text-center font-semibold text-sm mb-3">
-								<span className="font-bold">Hooklab</span> – A platform to
-								preview your ad hooks across multiple platforms
+							<p className="mt-4 text-primary-foreground/80 text-center font-semibold text-sm mb-3">
+								<span className="font-bold">Hooklab</span> – Platform to preview ad hooks
+								across different social media platforms
 							</p>
 							<Separator />
 
 							{/* TAGS */}
-							<div className="flex flex-wrap gap-3 mt-4  justify-evenly  text-muted">
-								<div className="px-4 py-1 rounded-full text-sm font-medium border border-black">
+							<div className="flex text-xs flex-wrap gap-3 mt-4  justify-center text-muted">
+								<div className="px-4 py-1 border border-primary bg-primary rounded-full">
 									React
 								</div>
-								<div className="px-4 py-1 rounded-full text-sm font-medium border border-black">
+								<div className="px-4 py-1 border border-primary bg-primary rounded-full">
 									TypeScript
 								</div>
-								<div className="px-4 py-1 rounded-full text-sm font-medium border border-black">
+								<div className="px-4 py-1 border border-primary bg-primary rounded-full">
 									Zod
 								</div>
-								<div className="px-4 py-1 rounded-full text-sm font-medium border border-black">
+								<div className="px-4 py-1 border border-primary bg-primary rounded-full">
 									Tailwind CSS
 								</div>
-								<div className="px-4 py-1 rounded-full text-sm font-medium border border-black">
+								<div className="px-4 py-1 border border-primary bg-primary rounded-full">
 									Radix UI
 								</div>
 							</div>
@@ -187,28 +191,28 @@ export default function Projects() {
 					</div>
 				</div>
 				<div>
-					<div className="max-w-2xl mx-auto justify-center flex mt-4 rounded-full p-2 bg-background">
-						<h1 className="text-center text-sm md:text-base font-bold flex flex-row px-6 bg-primary  py-2 rounded-full gap-4 items-center text-muted hover:px-20 transition-discrete duration-500 ">
-							More projects? Visit GitHub
+					<a target="_blank" href="https://github.com/devmartin-9000">
+						<div className="max-w-2xl mx-auto justify-center flex mt-4 rounded-full p-2 bg-background">
 							<Tooltip>
 								<TooltipTrigger asChild>
-									<div className="flex items-center gap-2 p-2 border rounded-4xl hover:scale-106 duration-500 transition-all">
-										<a target="_blank" href="https://github.com/devmartin-9000">
+									<h1 className="text-center text-sm md:text-base font-bold flex flex-row px-6 bg-primary  py-2 rounded-full gap-4 items-center text-muted hover:px-20 transition-discrete duration-500 ">
+										More projects? Visit GitHub
+										<div className="flex items-center gap-2 p-2 border rounded-4xl hover:scale-106 duration-500 transition-all">
 											<img
 												className="h-6 w-auto"
 												src="./assets/github-icon.svg"
 												alt="Github Icon"
 												loading="lazy"
 											/>
-										</a>
 									</div>
+									</h1>
 								</TooltipTrigger>
 								<TooltipContent>
 									<p className="text-xs">Opens in a new tab</p>
 								</TooltipContent>
 							</Tooltip>
-						</h1>
-					</div>
+						</div>
+					</a>
 				</div>
 			</div>
 		</section>

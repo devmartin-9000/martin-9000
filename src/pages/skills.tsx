@@ -1,5 +1,6 @@
+import { Separator } from "@/components/ui/separator";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
-import { CircleCheckIcon, CodeXml, Sparkle } from "lucide-react";
+import { ArrowBigUp, ArrowUp, CircleCheckIcon, Sparkle } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const SkillSection = () => {
@@ -44,8 +45,9 @@ const SkillSection = () => {
                 "Next.js",
                 "Express",
                 "Python",
-                "Flask",
-                "C",
+				"C",
+				".NET",
+				"C#",
             ],
         },
         {
@@ -67,36 +69,37 @@ const SkillSection = () => {
   return (
 		<section
 			id="skills"
-			className="scroll-mt-18 p-4 bg-primary h-full  mx-auto justify-center w-full"
+			className="scroll-mt-18 p-4 h-full  mx-auto justify-center w-full"
 		>
-			<div className="max-w-5xl mx-auto">
+			<div className="max-w-6xl mx-auto">
 				{/* Title */}
-				<h1 className="text-center text-muted font-extrabold text-5xl md:text-8xl leading-relaxed border-b-2">
+				<h1 className="text-center md:text-start text-primary-foreground/80 font-extrabold text-5xl md:text-8xl leading-relaxed">
 					.skills
 				</h1>
 				<div className="bg-transparent grid md:grid-cols-2 gap-4 py-8">
 					{/* LEFT SIDE */}
 					<div className="p-4 border flex flex-col items-start justify-start rounded-4xl min-h-80 gap-2">
-						<h2 className="bg-background/60 text-primary-foreground/70 text-sm md:text-base font-semibold text-center leading-relaxed px-4 w-full rounded-full mb-0">
-							Technical Abilities
+						<h2 className="bg-white/10 text-primary-foreground/80 text-sm md:text-base font-semibold text-center leading-relaxed px-4 py-2 w-full rounded-2xl mb-0">
+							TECHNICAL ABILITIES
 						</h2>
-						<p className="text-xs md:text-sm text-muted">
+						<p className="text-xs md:text-sm text-muted-foreground">
 							Here are some of the technologies I work with. Some I use daily,
 							and others I'm still exploring and learning.
 						</p>
+						<Separator />
 
 						{TechnicalAbilities.map((section) => (
 							<div key={section.subCategory} className="w-full">
-								<h3 className="text-start text-muted/90 font-semibold text-sm md:text-base mb-2">
+								<h3 className="text-start text-primary-foreground/70 font-semibold text-sm md:text-base mb-2">
 									{section.subCategory}
 								</h3>
-								<div className="flex flex-wrap gap-3">
+								<div className="flex flex-wrap justify-start gap-3">
 									{section.items.map((item) => (
 										<p
 											key={item}
-											className="flex text-xs md:text-sm text-muted border border-muted gap-2 items-center text-center rounded-full pr-2 pl-1"
+											className="flex text-xs md:text-sm text-muted-foreground border border-primary/80 gap-2 items-center text-center rounded-full pr-2 pl-0.5"
 										>
-											<CodeXml className="text-green-600 h-4 w-auto" />
+											<CircleCheckIcon className="text-primary/80 h-4 w-auto" />
 											{item}
 										</p>
 									))}
@@ -107,23 +110,24 @@ const SkillSection = () => {
 
 					{/* RIGHT SIDE */}
 					<div className="p-4 border flex flex-col items-start justify-start rounded-4xl min-h-80 gap-2">
-						<h2 className="bg-background/60 text-primary-foreground/70 text-sm md:text-base font-semibold text-center leading-relaxed px-4 w-full rounded-full mb-0">
-							Non-Technical / Soft Skills
+						<h2 className="bg-white/10 text-primary-foreground/80 text-sm md:text-base font-semibold text-center leading-relaxed px-4 py-2 w-full rounded-2xl mb-0">
+							NON-TECHNICAL SKILLS
 						</h2>
-						<p className="text-xs md:text-sm text-muted">
+						<p className="text-xs md:text-sm text-muted-foreground">
 							I'm more than just technical skills, I actively practice soft
 							skills that make me stand out and collaborate effectively.
 						</p>
+						<Separator />
 
 						{NonTechnicalSkills.map((section) => (
 							<div className="mt-8 w-full">
-								<div className="flex flex-wrap gap-3">
+								<div className="flex flex-wrap justify-start gap-3">
 									{section.items.map((item) => (
 										<p
 											key={item}
-											className="flex text-xs md:text-sm text-muted border border-muted gap-2 items-center text-center rounded-full pr-2 pl-1"
+											className="flex text-xs md:text-sm text-muted-foreground border border-blue-800 gap-2 items-center text-center rounded-full pr-2 pl-0.5"
 										>
-											<CircleCheckIcon className="text-blue-600 h-4 w-auto" />
+											<CircleCheckIcon className="text-blue-800 h-4 w-auto" />
 											{item}
 										</p>
 									))}
@@ -133,24 +137,15 @@ const SkillSection = () => {
 					</div>
 				</div>
 			</div>
-			<Tooltip>
-				<TooltipTrigger asChild>
-					<Link to="/home">
-						<div className="max-w-2xl mx-auto justify-center flex rounded-full p-2 bg-background">
-							<div className="flex items-center gap-2 p-2 rounded-4xl duration-500 transition-all">
-								<h1 className="text-center text-sm md:text-base font-bold flex flex-row px-6 bg-primary  py-2 rounded-full gap-4 items-center text-muted hover:px-20 transition-discrete duration-500 ">
-								  	Home
-								  	<Sparkle />
-									{/* <DownloadIcon /> */}
-								</h1>
-							</div>
-						</div>
-					</Link>
-				</TooltipTrigger>
-				<TooltipContent>
-					<p className="text-xs">Or just click the logo instead</p>
-				</TooltipContent>
-			</Tooltip>
+			<Link to="/home">
+				<div className="max-w-6xl mx-auto justify-end flex rounded-full bg-background">
+					<div className="items-center gap-2 rounded-4xl duration-500 transition-all">
+						<h1 className="fixed bottom-5 right-5 p-3 text-center text-sm md:text-base font-bold flex flex-row bg-primary rounded-full gap-4 items-center text-muted hover:scale-105 transition-discrete duration-500 animate-pulse">
+							<ArrowUp className="animate-bounce"/>
+						</h1>
+					</div>
+				</div>
+			</Link>
 		</section>
 	);
 }

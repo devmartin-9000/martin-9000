@@ -28,12 +28,6 @@ const NavBar = () => {
 				<div className="hidden md:flex gap-8 text-center">
 					<Link
 						className="cursor-pointer border-b-4 border-transparent hover:border-primary transition-colors duration-300"
-						to="/"
-					>
-						Home
-					</Link>
-					<Link
-						className="cursor-pointer border-b-4 border-transparent hover:border-primary transition-colors duration-300"
 						to="/about"
 					>
 						About Me
