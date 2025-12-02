@@ -1,4 +1,3 @@
-import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
 import { WorkExperience } from "@/components/work-experience";
 
 const AboutMe = () => {	

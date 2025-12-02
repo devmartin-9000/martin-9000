@@ -1,6 +1,5 @@
 import { Separator } from "@/components/ui/separator";
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
-import { ArrowBigUp, ArrowUp, CircleCheckIcon, Sparkle } from "lucide-react";
+import { ArrowUp, CircleCheckIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const SkillSection = () => {
