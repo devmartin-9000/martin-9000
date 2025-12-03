@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Cookies from "js-cookie";
-import { Lightbulb, SunIcon } from "lucide-react"; // Sun icon from Lucide
+import { SunIcon } from "lucide-react"; // Sun icon from Lucide
 
 const ThemeToggle = () => {
 	const [isDarkMode, setIsDarkMode] = useState(false);
