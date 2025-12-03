@@ -8,7 +8,7 @@ const NavBar = () => {
 
 	return (
 		<nav className="fixed top-0 left-0 p-2 w-full dark:bg-background/50 backdrop-blur-2xl shadow-md z-50">
-			<div className="border dark:border-white/10 flex items-center justify-between dark:bg-background/20 bg-black/90 backdrop-blur-xl rounded-2xl px-4 py-3 md:py-2 md:max-w-6xl mx-auto">
+			<div className="border dark:border-white/10 flex items-center justify-between dark:bg-background/20 bg-black/90 backdrop-blur-xl rounded-2xl px-4 py-0 md:max-w-6xl mx-auto">
 				{/* Left Side Logo + Title */}
 
 				<Link to="/">
