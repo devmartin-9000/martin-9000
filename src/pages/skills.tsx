@@ -96,7 +96,7 @@ const SkillSection = () => {
 									{section.items.map((item) => (
 										<p
 											key={item}
-											className="flex text-xs md:text-sm text-muted-foreground border border-primary/80 gap-2 items-center text-center rounded-full pr-2 pl-0.5"
+											className="flex items-center border dark:border-primary text-xs md:text-sm text-white/80 bg-black dark:bg-primary/20 rounded-full gap-3 pr-2 pl-0.5"
 										>
 											<CircleCheckIcon className="text-primary/80 h-4 w-auto" />
 											{item}
@@ -124,7 +124,7 @@ const SkillSection = () => {
 									{section.items.map((item) => (
 										<p
 											key={item}
-											className="flex text-xs md:text-sm text-muted-foreground border border-blue-800 gap-2 items-center text-center rounded-full pr-2 pl-0.5"
+											className="flex items-center border dark:border-blue-700 text-xs md:text-sm text-white/80 bg-black dark:bg-blue-700/20 rounded-full gap-3 pr-2 pl-0.5"
 										>
 											<CircleCheckIcon className="text-blue-800 h-4 w-auto" />
 											{item}

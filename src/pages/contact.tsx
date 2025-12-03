@@ -7,7 +7,7 @@ const ContactSection: React.FC = () => {
 			id="contact"
 			className="scroll-mt-18 bg-background w-full flex flex-col items-center justify-center h-135"
 		>
-			<div className="border border-background relative w-95 sm:w-230 md:w-190 lg:w-230 py-10 mt-10 lg:mt-12 max-w-5xl h-full overflow-hidden rounded-[40px] bg-black dark:bg-white/50 p-4 md:p-16">
+			<div className="border border-background relative w-95 sm:w-230 md:w-190 lg:w-230 py-10 mt-10 lg:mt-12 max-w-5xl h-full overflow-hidden rounded-[40px] bg-black dark:bg-white/50 p-6 md:p-16">
 				{/* Background circles */}
 				<div className="absolute inset-0 hidden h-full w-full overflow-hidden md:block">
 					<div className="absolute top-1/2 right-[-45%] aspect-square h-[900px] w-[900px] -translate-y-1/2">
@@ -30,7 +30,7 @@ const ContactSection: React.FC = () => {
 						just a message away.
 					</p>
 
-					<div className="flex flex-col sm:flex-row gap-4 md:gap-6 md:mt-6">
+					<div className="flex flex-col sm:flex-row gap-2 md:gap-6 md:mt-6">
 						<a target="_blank" href="mailto:dev.martinjack9000@gmail.com">
 							<div className="bg-primary backdrop-blur-2xl flex gap-3 py-2 md:py-2 px-6 rounded-full hover:translate-y-2 transform transition-all duration-400 items-center text-center text-black font-bold">
 								Send Email

@@ -13,6 +13,7 @@ import AboutMe from "./pages/aboutMe";
 import Projects from "./pages/projects";
 import SkillSection from "./pages/skills";
 import ContactSection from "./pages/contact";
+import { TracingBeam } from "./components/ui/tracing-beam";
 
 const ScrollManager = () => {
 	const location = useLocation();
@@ -35,13 +36,13 @@ const App = () => {
 		<Router>
 			<NavBar />
 			<ScrollManager />
-			{/* <TracingBeam className="px-0"> */}
-			{/* </TracingBeam> */}
-			<HeroSection />
-			<AboutMe />
-			<Projects />
-			<SkillSection />
-			<ContactSection />
+			<TracingBeam className="px-0">
+				<HeroSection />
+				<AboutMe />
+				<Projects />
+				<SkillSection />
+				<ContactSection />
+			</TracingBeam>
 			<Routes>
 				<Route path="/about" element={null} />
 				<Route path="/projects" element={null} />

@@ -29,19 +29,19 @@ const NavBar = () => {
 				<div className="hidden md:flex gap-8 items-center text-center text-white/80">
 					<ThemeToggle />
 					<Link
-						className="cursor-pointer border-b-4 border-transparent hover:border-primary transition-colors duration-300"
+						className="cursor-pointer border-b-4 border-white/80 hover:border-primary transition-colors duration-300"
 						to="/about"
 					>
 						About Me
 					</Link>
 					<Link
-						className="cursor-pointer border-b-4 border-transparent hover:border-primary transition-colors duration-300"
+						className="cursor-pointer border-b-4 border-white/80 hover:border-primary transition-colors duration-300"
 						to="/projects"
 					>
 						Projects
 					</Link>
 					<Link
-						className="cursor-pointer border-b-4 border-transparent hover:border-primary transition-colors duration-300"
+						className="cursor-pointer border-b-4 border-white/80 hover:border-primary transition-colors duration-300"
 						to="/skills"
 					>
 						Skills
@@ -58,38 +58,34 @@ const NavBar = () => {
 				</div>
 
 				{/* Mobile Hamburger */}
-				<button
-					className="md:hidden flex flex-col gap-1 p-2 focus:outline-none"
-					onClick={() => setOpen(!open)}
-				>
-					<span
-						className={`h-1 w-6 bg-primary rounded transition-all ${
-							open ? "rotate-45 translate-y-2" : ""
-						}`}
-					></span>
-					<span
-						className={`h-1 w-6 bg-primary rounded transition-all ${
-							open ? "opacity-0" : ""
-						}`}
-					></span>
-					<span
-						className={`h-1 w-6 bg-primary rounded transition-all ${
-							open ? "-rotate-45 -translate-y-2" : ""
-						}`}
-					></span>
-				</button>
+				<div className="flex items-center md:hidden gap-4">
+					<ThemeToggle />
+					<button
+						className="flex flex-col gap-1.5 p-2 focus:outline-none"
+						onClick={() => setOpen(!open)}
+					>
+						<span
+							className={`h-1 w-6 bg-primary rounded transition-all ${
+								open ? "rotate-45 translate-y-2.5" : ""
+							}`}
+						></span>
+						<span
+							className={`h-1 w-6 bg-primary rounded transition-all ${
+								open ? "opacity-0" : ""
+							}`}
+						></span>
+						<span
+							className={`h-1 w-6 bg-primary rounded transition-all ${
+								open ? "-rotate-45 -translate-y-2.5" : ""
+							}`}
+						></span>
+					</button>
+				</div>
 			</div>
 
 			{/* Mobile Menu Dropdown */}
 			{open && (
 				<div className="md:hidden flex flex-col items-center gap-6 py-8 bg-background/1 shadow-lg backdrop-blur-2xl">
-					<Link
-						className="cursor-pointer border-b-2 border-transparent hover:border-primary transition-colors duration-300"
-						to="/"
-						onClick={() => setOpen(false)}
-					>
-						Home
-					</Link>
 					<Link
 						className="cursor-pointer border-b-2 border-transparent hover:border-primary transition-colors duration-300"
 						to="/about"

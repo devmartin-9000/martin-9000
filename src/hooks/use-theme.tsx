@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Cookies from "js-cookie";
-import { SunIcon } from "lucide-react"; // Sun icon from Lucide
+import { Lightbulb, SunIcon } from "lucide-react"; // Sun icon from Lucide
 
 const ThemeToggle = () => {
 	const [isDarkMode, setIsDarkMode] = useState(false);
@@ -36,10 +36,10 @@ const ThemeToggle = () => {
 		<button
 			onClick={toggleDarkMode}
 			aria-label="Toggle dark mode"
-			className="cursor-pointer p-2 border border-white/60 rounded-full transition-all"
+			className="cursor-pointer p-1 border border-white/60 rounded-full transition-all"
 		>
 			<SunIcon
-				className={`h-6 w-6 transition-all hover:text-primary ${
+				className={`h-6 w-auto transition-all hover:text-primary font-bold ${
 					isDarkMode ? "text-white" : "text-white"
 				}`}
 			/>
