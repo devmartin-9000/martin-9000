@@ -3,26 +3,26 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* :root {
+:root {
   --background: #ffffff;
   --foreground: #171c18;
   --card: #effbe5;
   --card-foreground: #171c18;
   --popover: #ffffff;
   --popover-foreground: #171c18;
-  --primary: #68f11e;
+  --primary: #cfe718;
   --primary-foreground: #ffffff;
   --secondary: #effbe5;
   --secondary-foreground: #171c18;
   --muted: #effbe5;
   --muted-foreground: #171c18;
   --accent: #e3ecf6;
-  --accent-foreground: #68f11e;
+  --accent-foreground: #cfe718;
   --destructive: #f4212e;
   --destructive-foreground: #ffffff;
   --border: #e3ecf6;
   --input: #effbe5;
-  --ring: #68f11e;
+  --ring: #cfe718;
   --chart-1: #1e9df1;
   --chart-2: #00b87a;
   --chart-3: #f7b928;
@@ -30,12 +30,12 @@
   --chart-5: #e0245e;
   --sidebar: #effbe5;
   --sidebar-foreground: #171c18;
-  --sidebar-primary: #68f11e;
+  --sidebar-primary: #cfe718;
   --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: #e3ecf6;
   --sidebar-accent-foreground: #3e6044;
   --sidebar-border: #e0f5e4;
-  --sidebar-ring: #68f11e;
+  --sidebar-ring: #cfe718;
   --font-sans: Poppins, ui-sans-serif, sans-serif, system-ui;
   --font-serif: Georgia, serif;
   --font-mono: Menlo, monospace;
@@ -56,9 +56,9 @@
   --shadow-2xl: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00);
   --tracking-normal: 0em;
   --spacing: 0.25rem;
-} */
+}
 
-:root {
+.dark {
   --background: #000000;
   --foreground: #e7e9ea;
   --card: #171c18;

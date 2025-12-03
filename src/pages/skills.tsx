@@ -72,13 +72,13 @@ const SkillSection = () => {
 		>
 			<div className="max-w-6xl mx-auto">
 				{/* Title */}
-				<h1 className="text-center md:text-start text-primary-foreground/80 font-extrabold text-5xl md:text-8xl leading-relaxed">
+				<h1 className="text-center md:text-start text-muted-foreground dark:text-primary-foreground/80 font-extrabold text-5xl md:text-8xl leading-relaxed">
 					.skills
 				</h1>
 				<div className="bg-transparent grid md:grid-cols-2 gap-4 py-8">
 					{/* LEFT SIDE */}
-					<div className="p-4 border flex flex-col items-start justify-start rounded-4xl min-h-80 gap-2">
-						<h2 className="bg-white/10 text-primary-foreground/80 text-sm md:text-base font-semibold text-center leading-relaxed px-4 py-2 w-full rounded-2xl mb-0">
+					<div className="p-4 border border-black/40 dark:border-border flex flex-col items-start justify-start rounded-4xl min-h-80 gap-2">
+						<h2 className="bg-primary dark:bg-white/10 text-black dark:text-primary-foreground/80 text-sm md:text-base font-semibold text-center leading-relaxed px-4 py-2 w-full rounded-2xl mb-0">
 							TECHNICAL ABILITIES
 						</h2>
 						<p className="text-xs md:text-sm text-muted-foreground">
@@ -89,7 +89,7 @@ const SkillSection = () => {
 
 						{TechnicalAbilities.map((section) => (
 							<div key={section.subCategory} className="w-full">
-								<h3 className="text-start text-primary-foreground/70 font-semibold text-sm md:text-base mb-2">
+								<h3 className="text-start text-muted-foreground dark:text-primary-foreground/80 font-semibold text-sm md:text-base mb-2">
 									{section.subCategory}
 								</h3>
 								<div className="flex flex-wrap justify-start gap-3">
@@ -108,8 +108,8 @@ const SkillSection = () => {
 					</div>
 
 					{/* RIGHT SIDE */}
-					<div className="p-4 border flex flex-col items-start justify-start rounded-4xl min-h-80 gap-2">
-						<h2 className="bg-white/10 text-primary-foreground/80 text-sm md:text-base font-semibold text-center leading-relaxed px-4 py-2 w-full rounded-2xl mb-0">
+					<div className="p-4 border border-black/40 dark:border-border flex flex-col items-start justify-start rounded-4xl min-h-80 gap-2">
+						<h2 className="bg-primary dark:bg-white/10 text-black dark:text-primary-foreground/80 text-sm md:text-base font-semibold text-center leading-relaxed px-4 py-2 w-full rounded-2xl mb-0">
 							NON-TECHNICAL SKILLS
 						</h2>
 						<p className="text-xs md:text-sm text-muted-foreground">
@@ -139,8 +139,8 @@ const SkillSection = () => {
 			<Link to="/home">
 				<div className="max-w-6xl mx-auto justify-end flex rounded-full bg-background">
 					<div className="items-center gap-2 rounded-4xl duration-500 transition-all">
-						<h1 className="fixed bottom-5 right-5 p-3 text-center text-sm md:text-base font-bold flex flex-row bg-primary rounded-full gap-4 items-center text-muted hover:scale-105 transition-discrete duration-500 animate-pulse">
-							<ArrowUp className="animate-bounce"/>
+						<h1 className="fixed bottom-5 right-5 p-3 text-center text-sm md:text-base font-bold flex flex-row bg-primary rounded-full gap-4 items-center text-black hover:scale-105 transition-discrete duration-500 animate-pulse">
+							<ArrowUp className="animate-bounce" />
 						</h1>
 					</div>
 				</div>

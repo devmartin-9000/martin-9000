@@ -43,7 +43,6 @@ const App = () => {
 			<SkillSection />
 			<ContactSection />
 			<Routes>
-				<Route path="/home" element={null} />
 				<Route path="/about" element={null} />
 				<Route path="/projects" element={null} />
 				<Route path="/skills" element={null} />

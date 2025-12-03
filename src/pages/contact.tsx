@@ -7,7 +7,7 @@ const ContactSection: React.FC = () => {
 			id="contact"
 			className="scroll-mt-18 bg-background w-full flex flex-col items-center justify-center h-135"
 		>
-			<div className="border border-primary relative w-95 sm:w-230 md:w-190 lg:w-230 py-10 mt-10 lg:mt-12 max-w-5xl h-full overflow-hidden rounded-[40px] bg-gradient-to-bl from-white via-white/60 to-white/30 p-4 md:p-16">
+			<div className="border border-background relative w-95 sm:w-230 md:w-190 lg:w-230 py-10 mt-10 lg:mt-12 max-w-5xl h-full overflow-hidden rounded-[40px] bg-black dark:bg-white/50 p-4 md:p-16">
 				{/* Background circles */}
 				<div className="absolute inset-0 hidden h-full w-full overflow-hidden md:block">
 					<div className="absolute top-1/2 right-[-45%] aspect-square h-[900px] w-[900px] -translate-y-1/2">
@@ -32,7 +32,7 @@ const ContactSection: React.FC = () => {
 
 					<div className="flex flex-col sm:flex-row gap-4 md:gap-6 md:mt-6">
 						<a target="_blank" href="mailto:dev.martinjack9000@gmail.com">
-							<div className="bg-primary backdrop-blur-2xl flex text-muted gap-3 py-2 md:py-2 px-6 rounded-full hover:translate-y-2 transform transition-all duration-400 items-center text-center">
+							<div className="bg-primary backdrop-blur-2xl flex gap-3 py-2 md:py-2 px-6 rounded-full hover:translate-y-2 transform transition-all duration-400 items-center text-center text-black font-bold">
 								Send Email
 								<SendHorizontal />
 							</div>
@@ -41,7 +41,7 @@ const ContactSection: React.FC = () => {
 							target="_blank"
 							href="https://wa.me/265995571632?text=Hello%20Martin"
 						>
-							<div className="bg-primary backdrop-blur-2xl flex text-muted gap-3 py-2 md:py-2 px-6 rounded-full hover:translate-y-2 transform transition-all duration-400 items-center text-center">
+							<div className="bg-primary backdrop-blur-2xl flex gap-3 py-2 md:py-2 px-6 rounded-full hover:translate-y-2 transform transition-all duration-400 items-center text-center text-black font-bold">
 								WhatsApp
 								<MessageSquareText />
 							</div>
@@ -52,20 +52,20 @@ const ContactSection: React.FC = () => {
 			<div className="w-full flex flex-wrap mx-auto p-4 md:p-4 rounded-t-3xl bg-accent/1 gap-2 md:gap-4 text-xs items-center justify-center mt-5">
 				<p className="text-muted-foreground text-sm">Hand-coded with :</p>
 
-				<p className="px-4 py-1 border border-primary bg-accent/20 rounded-full">
+				<p className="px-4 py-1 border dark:border-primary text-white/80 bg-black dark:bg-primary/20 rounded-full">
 					React
 				</p>
-				<p className="px-4 py-1 border border-primary bg-accent/20 rounded-full">
+				<p className="px-4 py-1 border dark:border-primary text-white/80 bg-black dark:bg-primary/20 rounded-full">
 					TypeScript
 				</p>
-				<p className="px-4 py-1 border border-primary bg-accent/20 rounded-full">
+				<p className="px-4 py-1 border dark:border-primary text-white/80 bg-black dark:bg-primary/20 rounded-full">
 					Tailwind CSS
 				</p>
-				<p className="px-4 py-1 border border-primary bg-accent/20 rounded-full">
+				<p className="px-4 py-1 border dark:border-primary text-white/80 bg-black dark:bg-primary/20 rounded-full">
 					Shadcn UI
 				</p>
 			</div>
-			<p className="text-xs text-muted-foreground">
+			<p className="text-xs text-muted-foreground mb-4">
 				2025 © All rights reserved - Martin Jack M
 			</p>
 		</section>

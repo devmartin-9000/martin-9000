@@ -9,16 +9,16 @@ export default function Projects() {
 			className="scroll-mt-18 w-full bg-background mx-auto py-8 px-4"
 		>
 			<div className="max-w-6xl mx-auto">
-				<h1 className="text-center lg:text-end mb-5 text-primary-foreground/80 font-extrabold text-5xl md:text-8xl leading-relaxed">
+				<h1 className="text-center lg:text-end mb-5 text-muted-foreground dark:text-primary-foreground/80 font-extrabold text-5xl md:text-8xl leading-relaxed">
 					.projects
 				</h1>
 				<div className="flex flex-col gap-4">
 					{/* FINTRIQS BLOCK */}
-					<div className="border rounded-4xl p-2 md:p-10 flex flex-col lg:flex-row gap-4 shadow-xl">
+					<div className="border border-black/40 dark:border-border rounded-4xl p-2 md:p-10 flex flex-col lg:flex-row gap-4 shadow-xl">
 						{/* LEFT SIDE — IMAGE + TITLE + TAGS */}
-						<div className="border rounded-4xl p-3 md:p-5 w-full lg:w-1/2">
+						<div className="bg-black/3 border border-black/5 dark:border-border rounded-4xl p-3 md:p-5 w-full lg:w-1/2">
 							{/* IMAGE */}
-							<div className="relative rounded-4xl overflow-hidden h-76 w-full group cursor-pointer">
+							<div className="relative rounded-2xl overflow-hidden h-76 w-full group cursor-pointer">
 								<img
 									src="./assets/fintriqs-thumbnail.png"
 									alt="FINTRIQS Thumbnail"
@@ -42,30 +42,30 @@ export default function Projects() {
 							</div>
 
 							{/* TITLE */}
-							<p className="mt-4 text-primary-foreground/80 text-center font-semibold text-sm mb-3">
+							<p className="mt-4 text-muted-foreground dark:text-primary-foreground/80 text-center font-semibold text-sm mb-3">
 								<span className="font-bold">FINTRIQS</span> – Invoice Management
 								System
 							</p>
 							<Separator />
 
 							{/* TAGS */}
-							<div className="flex text-xs flex-wrap gap-3 mt-4  justify-center text-muted">
-								<div className="px-4 py-1 border border-primary bg-primary rounded-full">
+							<div className="flex text-xs flex-wrap gap-3 mt-4  justify-center text-muted-foreground">
+								<div className="px-4 py-1 border dark:border-primary text-white/80 bg-black dark:bg-primary/20 rounded-full">
 									React
 								</div>
-								<div className="px-4 py-1 border border-primary bg-primary rounded-full">
+								<div className="px-4 py-1 border dark:border-primary text-white/80 bg-black dark:bg-primary/20 rounded-full">
 									TypeScript
 								</div>
-								<div className="px-4 py-1 border border-primary bg-primary rounded-full">
+								<div className="px-4 py-1 border dark:border-primary text-white/80 bg-black dark:bg-primary/20 rounded-full">
 									Tailwind CSS
 								</div>
-								<div className="px-4 py-1 border border-primary bg-primary rounded-full">
+								<div className="px-4 py-1 border dark:border-primary text-white/80 bg-black dark:bg-primary/20 rounded-full">
 									Zustand
 								</div>
-								<div className="px-4 py-1 border border-primary bg-primary rounded-full">
+								<div className="px-4 py-1 border dark:border-primary text-white/80 bg-black dark:bg-primary/20 rounded-full">
 									Shadcn UI
 								</div>
-								<div className="px-4 py-1 border border-primary bg-primary rounded-full">
+								<div className="px-4 py-1 border dark:border-primary text-white/80 bg-black dark:bg-primary/20 rounded-full">
 									Supabase
 								</div>
 							</div>
@@ -73,7 +73,7 @@ export default function Projects() {
 
 						{/* RIGHT SIDE — PANEL */}
 						<div className="bg-background text-muted-foreground rounded-4xl p-6 md:p-10 w-full lg:w-1/2">
-							<h2 className="text-primary-foreground/80 opacity-90 text-lg md:text-xl font-bold mb-4 text-center">
+							<h2 className="text-muted-foreground dark:text-primary-foreground/80 opacity-90 text-lg md:text-xl font-bold mb-4 text-center">
 								Project Summary
 							</h2>
 
@@ -96,20 +96,26 @@ export default function Projects() {
 								backend and business logic, while I took full ownership of the
 								front-end; landing page, dashboards and layouts.
 							</p>
-							<p className="font-semibold text-sm mt-2">Demo Credentials.</p>
-							<p className="text-xs">
-								Email: <span className="text-primary">demo@fintriqs.com</span>
+							<p className="font-semibold text-sm mt-2 text-muted-foreground dark:text-primary-foreground/80">
+								Demo Credentials.
 							</p>
 							<p className="text-xs">
-								Password: <span className="text-primary">Demo1234</span>
+								Email:{" "}
+								<span className="font-bold text-primary">
+									demo@fintriqs.com
+								</span>
+							</p>
+							<p className="text-xs">
+								Password:{" "}
+								<span className="font-bold text-primary">Demo1234</span>
 							</p>
 						</div>
 					</div>
 					{/* HOOKLAB BLOCK */}
-					<div className="border rounded-4xl p-2 md:p-10 flex flex-col-reverse lg:flex-row gap-4 shadow-xl">
+					<div className="border border-black/40 dark:border-border rounded-4xl p-2 md:p-10 flex flex-col-reverse lg:flex-row gap-4 shadow-xl">
 						{/* LEFT SIDE — PANEL */}
 						<div className="text-muted-foreground rounded-4xl p-6 md:p-10 w-full lg:w-1/2">
-							<h2 className="text-primary-foreground/80 opacity-90 text-lg md:text-xl font-bold mb-4 text-center">
+							<h2 className="text-muted-foreground dark:text-primary-foreground/80 opacity-90 text-lg md:text-xl font-bold mb-4 text-center">
 								Project Summary
 							</h2>
 
@@ -137,9 +143,9 @@ export default function Projects() {
 						</div>
 
 						{/* RIGHT SIDE — IMAGE + TITLE + TAGS */}
-						<div className="border rounded-4xl p-3 md:p-5 w-full lg:w-1/2">
+						<div className="bg-black/3 border border-black/5 dark:border-border rounded-4xl p-3 md:p-5 w-full lg:w-1/2">
 							{/* IMAGE */}
-							<div className="relative rounded-4xl overflow-hidden h-76 w-full group cursor-pointer">
+							<div className="relative rounded-2xl overflow-hidden h-76 w-full group cursor-pointer">
 								<img
 									src="./assets/hooklab-thumbnail-2.png"
 									alt="Hooklab Thumbnail"
@@ -163,27 +169,27 @@ export default function Projects() {
 							</div>
 
 							{/* TITLE */}
-							<p className="mt-4 text-primary-foreground/80 text-center font-semibold text-sm mb-3">
-								<span className="font-bold">Hooklab</span> – Platform to preview ad hooks
-								across different social media platforms
+							<p className="mt-4 text-muted-foreground dark:text-primary-foreground/80 text-center font-semibold text-sm mb-3">
+								<span className="font-bold">Hooklab</span> – Platform to preview
+								ad hooks across different social media platforms
 							</p>
 							<Separator />
 
 							{/* TAGS */}
-							<div className="flex text-xs flex-wrap gap-3 mt-4  justify-center text-muted">
-								<div className="px-4 py-1 border border-primary bg-primary rounded-full">
+							<div className="flex text-xs flex-wrap gap-3 mt-4  justify-center text-muted-foreground">
+								<div className="px-4 py-1 border dark:border-primary text-white/80 bg-black dark:bg-primary/20 rounded-full">
 									React
 								</div>
-								<div className="px-4 py-1 border border-primary bg-primary rounded-full">
+								<div className="px-4 py-1 border dark:border-primary text-white/80 bg-black dark:bg-primary/20 rounded-full">
 									TypeScript
 								</div>
-								<div className="px-4 py-1 border border-primary bg-primary rounded-full">
+								<div className="px-4 py-1 border dark:border-primary text-white/80 bg-black dark:bg-primary/20 rounded-full">
 									Zod
 								</div>
-								<div className="px-4 py-1 border border-primary bg-primary rounded-full">
+								<div className="px-4 py-1 border dark:border-primary text-white/80 bg-black dark:bg-primary/20 rounded-full">
 									Tailwind CSS
 								</div>
-								<div className="px-4 py-1 border border-primary bg-primary rounded-full">
+								<div className="px-4 py-1 border dark:border-primary text-white/80 bg-black dark:bg-primary/20 rounded-full">
 									Radix UI
 								</div>
 							</div>
@@ -192,19 +198,19 @@ export default function Projects() {
 				</div>
 				<div>
 					<a target="_blank" href="https://github.com/devmartin-9000">
-						<div className="max-w-2xl mx-auto justify-center flex mt-4 rounded-full p-2 bg-background">
+						<div className="max-w-2xl mx-auto justify-center flex mt-4 rounded-full p-2 bg-primary">
 							<Tooltip>
 								<TooltipTrigger asChild>
-									<h1 className="text-center text-sm md:text-base font-bold flex flex-row px-6 bg-primary  py-2 rounded-full gap-4 items-center text-muted hover:px-20 transition-discrete duration-500 ">
+									<h1 className="text-center text-sm md:text-base font-bold flex flex-row px-6 bg-background  py-2 rounded-full gap-4 items-center text-muted-foreground hover:px-20 transition-discrete duration-500 ">
 										More projects? Visit GitHub
-										<div className="flex items-center gap-2 p-2 border rounded-4xl hover:scale-106 duration-500 transition-all">
+										<div className="flex items-center gap-2 p-2 border border-primary rounded-4xl hover:scale-106 duration-500 transition-all">
 											<img
-												className="h-6 w-auto"
+												className="h-6 w-auto dark:invert"
 												src="./assets/github-icon.svg"
 												alt="Github Icon"
 												loading="lazy"
 											/>
-									</div>
+										</div>
 									</h1>
 								</TooltipTrigger>
 								<TooltipContent>

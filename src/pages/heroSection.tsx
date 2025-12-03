@@ -2,12 +2,9 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip
 
 const HeroSection = () => {
 	return (
-		<section
-			id="home"
-			className="mx-auto flex flex-col justify-center py-4"
-		>
+		<section id="home" className="mx-auto flex flex-col justify-center py-4">
 			<div className="bg-background w-95 md:w-full mt-2 mx-auto justify-center rounded-t-4xl">
-				<div className="h-full max-w-5xl rounded-t-4xl p-4 border-b-transparent border-t-20 border border-l-muted border-r-muted border-primary mt-18 mx-auto flex flex-col">
+				<div className="h-full max-w-5xl rounded-t-4xl p-4 border-b-transparent border-t-20 border dark:border-l-muted dark:border-r-muted border-l-black/30 border-r-black/30 border-primary mt-18 mx-auto flex flex-col">
 					<div className="text-wrap text-center">
 						<h2 className="font-bold text-xl sm:text-3xl md:text-3xl py-4">
 							Hey there, Welcome!
@@ -30,26 +27,26 @@ const HeroSection = () => {
 							refining, and always aiming to build something genuinely helpul.
 						</p>
 
-						<div className="w-full flex flex-wrap mx-auto border border-muted p-4 md:p-8 rounded-t-3xl bg-accent/1 gap-2 md:gap-4 text-xs items-center justify-center mt-5">
+						<div className="w-full flex flex-wrap mx-auto border border-black/30 dark:border-muted p-4 md:p-8 rounded-t-3xl bg-accent/1 gap-2 md:gap-4 text-xs items-center justify-center mt-5">
 							<h2 className="text-primary text-3xl font-bold">TL;DR.</h2>
 							<p className="hidden md:block">-</p>
 							<p className="text-muted-foreground text-sm">
 								My ToolKit Includes :
 							</p>
 
-							<p className="px-4 py-1 border border-primary bg-accent/20 rounded-full">
+							<p className="px-4 py-1 border dark:border-primary text-white/80 bg-black dark:bg-primary/20 rounded-full">
 								React
 							</p>
-							<p className="px-4 py-1 border border-primary bg-accent/20 rounded-full">
+							<p className="px-4 py-1 border dark:border-primary text-white/80 bg-black dark:bg-primary/20 rounded-full">
 								TypeScript
 							</p>
-							<p className="px-4 py-1 border border-primary bg-accent/20 rounded-full">
+							<p className="px-4 py-1 border dark:border-primary text-white/80 bg-black dark:bg-primary/20 rounded-full">
 								JavaScript
 							</p>
-							<p className="px-4 py-1 border border-primary bg-accent/20 rounded-full">
+							<p className="px-4 py-1 border dark:border-primary text-white/80 bg-black dark:bg-primary/20 rounded-full">
 								Tailwind CSS
 							</p>
-							<p className="px-4 py-1 border border-primary bg-accent/20 rounded-full">
+							<p className="px-4 py-1 border dark:border-primary text-white/80 bg-black dark:bg-primary/20 rounded-full">
 								Figma
 							</p>
 						</div>
@@ -62,7 +59,7 @@ const HeroSection = () => {
 										className="text-sm text-muted-foreground text-center items-center flex flex-col gap-2 cursor-pointer border-b-4 border-border hover:border-primary duration-500 ease-in-out hover:scale-105 transition-all"
 									>
 										<img
-											className="h-10 w-auto invert"
+											className="h-10 w-auto dark:invert"
 											src="./assets/github-icon.svg"
 											alt="Github Icon"
 											loading="lazy"
@@ -82,7 +79,7 @@ const HeroSection = () => {
 										className="text-sm text-muted-foreground text-center items-center flex flex-col gap-2 cursor-pointer border-b-4 border-border hover:border-primary duration-500 ease-in-out hover:scale-105 transition-all"
 									>
 										<img
-											className="h-10 w-auto invert"
+											className="h-10 w-auto dark:invert"
 											src="./assets/linkedin-icon.svg"
 											alt="LinkedIn Icon"
 											loading="lazy"
@@ -103,7 +100,7 @@ const HeroSection = () => {
 										className="text-sm text-muted-foreground text-center items-center flex flex-col gap-2 cursor-pointer border-b-4 border-border hover:border-primary duration-500 ease-in-out hover:scale-105 transition-all"
 									>
 										<img
-											className="h-10 w-auto invert"
+											className="h-10 w-auto dark:invert"
 											src="./assets/email-icon.svg"
 											alt="Email Icon"
 											loading="lazy"
@@ -123,7 +120,7 @@ const HeroSection = () => {
 										className="text-sm text-muted-foreground text-center items-center flex flex-col gap-2 cursor-pointer border-b-4 border-border hover:border-primary duration-500 ease-in-out hover:scale-105 transition-all"
 									>
 										<img
-											className="p-1 h-10 w-auto invert"
+											className="p-1 h-10 w-auto dark:invert"
 											src="./assets/x-icon.png"
 											alt="X Icon"
 											loading="lazy"

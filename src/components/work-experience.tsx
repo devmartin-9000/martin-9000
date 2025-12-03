@@ -19,7 +19,7 @@ export function WorkExperience() {
 						<div className="flex flex-col md:flex-row w-full items-start md:items-center justify-between gap-1 md:gap-2 text-left">
 							{/* Role + Company */}
 							<div className="flex flex-col">
-								<h1 className="font-bold text-primary-foreground/70 text-sm md:text-base leading-tight hover:scale-[1.02] transition-all">
+								<h1 className="font-bold text-muted-foreground/80 dark:text-primary-foreground/80 text-sm md:text-base leading-tight hover:scale-[1.02] transition-all">
 									{item.role}
 								</h1>
 
