@@ -50,7 +50,7 @@ const ContactSection: React.FC = () => {
 
 				{/* Content */}
 				<div className="relative z-10 flex flex-col items-center text-center gap-4">
-					<h1 className="text-4xl md:text-6xl font-bold text-muted">
+					<h1 className="text-4xl md:text-6xl font-bold text-primary-foreground/80 dark:text-muted">
 						Let's Get In Touch.
 					</h1>
 					<p className="max-w-2xl text-md sm:text-xl md:text-2xl text-muted">
@@ -66,7 +66,7 @@ const ContactSection: React.FC = () => {
 									href={item.link}
 									target="_blank"
 									rel="noreferrer"
-									className="p-2 flex flex-col items-center text-muted gap-2 "
+									className="cursor-pointer hover:translate-y-3 transform transition-all duration-300 p-2 flex flex-col items-center text-muted gap-2 "
 								>
 									<img
 										src={item.imageUrl}
