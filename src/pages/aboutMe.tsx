@@ -19,7 +19,7 @@ const AboutMe = () => {
 						{/* Main Paragraph */}
 						<div className="text-muted-foreground flex border-black/50 dark:border-border md:border-l border-t opacity-90 flex-col p-4 text- items-center gap-4">
 							<p className="leading-snug text-sm">
-								My name is <span className="font-bold">Martin Jack</span>, I
+								My name is <span className="font-bold">Martin Jack M.</span>, I
 								live in Blantyre, Malawi. It has now been about a year since I
 								began shipping production code, and almost three years of
 								dedicated coding experience overall. What motivates me is the
