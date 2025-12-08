@@ -46,7 +46,7 @@ export const TracingBeam = ({
 			className={cn("relative mx-auto h-full w-full max-w-5xl", className)}
 		>
 			{/* LEFT BEAM */}
-			<div className="hidden md:block absolute top-3 -left-4 md:-left-20">
+			<div className="hidden xl:block absolute top-3 -left-4 md:-left-20">
 				<motion.div
 					transition={{
 						duration: 0.2,
@@ -116,7 +116,7 @@ export const TracingBeam = ({
 			</div>
 
 			{/* RIGHT BEAM (Duped + Mirrored) */}
-			<div className="hidden md:block absolute top-3 -right-4 md:-right-17">
+			<div className="hidden xl:block absolute top-3 -right-4 md:-right-17">
 				<motion.div
 					transition={{
 						duration: 0.2,

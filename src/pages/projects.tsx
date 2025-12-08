@@ -14,9 +14,9 @@ export default function Projects() {
 				</h1>
 				<div className="flex flex-col gap-4">
 					{/* FINTRIQS BLOCK */}
-					<div className="border border-black/40 dark:border-border rounded-4xl p-2 md:p-10 flex flex-col lg:flex-row gap-4 shadow-xl">
+					<div className="border border-black/40 dark:border-border rounded-4xl p-2 md:p-10 flex flex-col md:flex-row gap-4 shadow-xl">
 						{/* LEFT SIDE — IMAGE + TITLE + TAGS */}
-						<div className="bg-black/3 border border-black/5 dark:border-border rounded-4xl p-3 md:p-5 w-full lg:w-1/2">
+						<div className="bg-black/3 border border-black/5 dark:border-border rounded-4xl p-3 md:p-5 w-full md:w-1/2">
 							{/* IMAGE */}
 							<div className="relative rounded-2xl overflow-hidden h-76 w-full group cursor-pointer">
 								<img
@@ -72,7 +72,7 @@ export default function Projects() {
 						</div>
 
 						{/* RIGHT SIDE — PANEL */}
-						<div className="bg-background text-muted-foreground rounded-4xl p-6 md:p-10 w-full lg:w-1/2">
+						<div className="bg-background text-muted-foreground rounded-4xl p-6 md:p-10 w-full md:w-1/2">
 							<h2 className="text-muted-foreground dark:text-primary-foreground/80 opacity-90 text-lg md:text-xl font-bold mb-4 text-center">
 								Project Summary
 							</h2>
@@ -112,9 +112,9 @@ export default function Projects() {
 						</div>
 					</div>
 					{/* HOOKLAB BLOCK */}
-					<div className="border border-black/40 dark:border-border rounded-4xl p-2 md:p-10 flex flex-col-reverse lg:flex-row gap-4 shadow-xl">
+					<div className="border border-black/40 dark:border-border rounded-4xl p-2 md:p-10 flex flex-col-reverse md:flex-row gap-4 shadow-xl">
 						{/* LEFT SIDE — PANEL */}
-						<div className="text-muted-foreground rounded-4xl p-6 md:p-10 w-full lg:w-1/2">
+						<div className="text-muted-foreground rounded-4xl p-6 md:p-10 w-full md:w-1/2">
 							<h2 className="text-muted-foreground dark:text-primary-foreground/80 opacity-90 text-lg md:text-xl font-bold mb-4 text-center">
 								Project Summary
 							</h2>
@@ -143,7 +143,7 @@ export default function Projects() {
 						</div>
 
 						{/* RIGHT SIDE — IMAGE + TITLE + TAGS */}
-						<div className="bg-black/3 border border-black/5 dark:border-border rounded-4xl p-3 md:p-5 w-full lg:w-1/2">
+						<div className="bg-black/3 border border-black/5 dark:border-border rounded-4xl p-3 md:p-5 w-full md:w-1/2">
 							{/* IMAGE */}
 							<div className="relative rounded-2xl overflow-hidden h-76 w-full group cursor-pointer">
 								<img

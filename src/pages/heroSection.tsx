@@ -16,19 +16,19 @@ const HeroSection = () => {
 						<div className="bg-muted p-1 md:p-1 my-2 w-40 md:w-64 rounded-sm mx-auto" />
 
 						<h1 className="font-semibold text-4xl md:text-7xl py-2 leading-tight">
-							I'm a Front-End
+							I'm a Frontend
 							<br />
-							Developer
+							Engineer
 						</h1>
 
 						<p className="max-w-md leading-relaxed mx-auto py-2 text-sm md:text-md text-muted-foreground">
 							I create straightforward, user-friendly interfaces with focus on
-							good design, usability and efficiency. I'm always learning, always
-							refining, and always aiming to build something genuinely helpul.
+							good design, usability and performance. I'm always learning, always
+							refining, and always aiming to build something genuinely useful.
 						</p>
 
 						<div className="w-full flex flex-wrap mx-auto border border-black/30 dark:border-muted p-4 md:p-8 rounded-t-3xl bg-accent/1 gap-2 md:gap-4 text-xs items-center justify-center mt-5">
-							<h2 className="text-primary text-3xl font-bold">TL;DR.</h2>
+							<h2 className="text-primary text-3xl font-bold">TL;DR</h2>
 							<p className="hidden md:block">-</p>
 							<p className="text-muted-foreground text-sm">
 								My ToolKit Includes :

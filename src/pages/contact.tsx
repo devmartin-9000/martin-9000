@@ -9,51 +9,51 @@ const ContactSection: React.FC = () => {
 	};
 
 	const contactItems: ContactOptions[] = [
-			{
-				name: "Email",
-				imageUrl: "./assets/email-icon.svg",
-				link: "mailto:dev.martinjack9000@gmail.com",
-			},
-			{
-				name: "Discord",
-				imageUrl: "./assets/discord-icon.svg",
-				link: "https://discord.com/devmartin-9000",
-			},
-			{
-				name: "LinkedIn",
-				imageUrl: "./assets/linkedin-icon.svg",
-				link: "https://linkedin.com/in/martinjackmagonagona",
-			},
-			{
-				name: "X (Twitter)",
-				imageUrl: "./assets/x-icon.png",
-				link: "https://x.com/devmartin9000",
-			},
-		];
+		{
+			name: "Email",
+			imageUrl: "./assets/email-icon.svg",
+			link: "mailto:dev.martinjack9000@gmail.com",
+		},
+		{
+			name: "Discord",
+			imageUrl: "./assets/discord-icon.svg",
+			link: "https://discord.com/devmartin-9000",
+		},
+		{
+			name: "LinkedIn",
+			imageUrl: "./assets/linkedin-icon.svg",
+			link: "https://linkedin.com/in/martin-jack9000",
+		},
+		{
+			name: "X (Twitter)",
+			imageUrl: "./assets/x-icon.png",
+			link: "https://x.com/devmartin9000",
+		},
+	];
 	return (
 		<section
 			id="contact"
 			className="scroll-mt-18 bg-background w-full flex flex-col items-center justify-center h-135"
 		>
-			<div className="border border-background relative w-95 sm:w-230 md:w-190 lg:w-230 py-10 mt-10 lg:mt-12 max-w-5xl h-full overflow-hidden rounded-[40px] bg-black dark:bg-white/50 p-6 md:p-16">
+			<div className="border border-background relative w-95 sm:w-230 md:w-190 lg:w-230 py-10 mt-10 lg:mt-12 max-w-5xl h-full overflow-hidden rounded-[40px] bg-black dark:bg-black dark:border-primary/10 p-6 md:p-16">
 				{/* Background circles */}
 				<div className="absolute inset-0 h-full w-full overflow-hidden md:block">
 					<div className="absolute top-1/2 right-[-45%] aspect-square h-[900px] w-[900px] -translate-y-1/2">
-						<div className="absolute inset-0 rounded-full bg-primary/30 opacity-30"></div>
-						<div className="absolute inset-0 scale-[0.8] rounded-full bg-accent/40 opacity-30"></div>
-						<div className="absolute inset-0 scale-[1] rounded-full bg-background opacity-10"></div>
-						<div className="absolute inset-0 scale-[0.4] rounded-full bg-accent/30 opacity-30"></div>
-						<div className="absolute inset-0 scale-[0.6] rounded-full bg-accent/30 opacity-30"></div>
-						<div className="absolute inset-0 scale-[0.2] rounded-full bg-black opacity-30"></div>
+						<div className="border-background dark:border absolute inset-0 rounded-full bg-primary/30 opacity-30"></div>
+						<div className="border-background dark:border-50 absolute inset-0 scale-[0.8] rounded-full bg-accent/40 opacity-30"></div>
+						<div className="border-background dark:border-10 absolute inset-0 scale-[1] rounded-full bg-background opacity-10"></div>
+						<div className="border-background dark:border-100 absolute inset-0 scale-[0.4] rounded-full bg-accent/30 opacity-30"></div>
+						<div className="border-background dark:border-100 absolute inset-0 scale-[0.6] rounded-full bg-accent/30 opacity-30"></div>
+						<div className="border-background dark:border-150 absolute inset-0 scale-[0.2] rounded-full bg-black opacity-30"></div>
 					</div>
 				</div>
 
 				{/* Content */}
 				<div className="relative z-10 flex flex-col items-center text-center gap-4">
-					<h1 className="text-4xl md:text-6xl font-bold text-primary-foreground/80 dark:text-muted">
+					<h1 className="text-4xl md:text-6xl font-bold text-primary-foreground/80 dark:text-muted-foreground">
 						Let's Get In Touch.
 					</h1>
-					<p className="max-w-2xl text-md sm:text-xl md:text-2xl text-muted">
+					<p className="max-w-2xl text-md sm:text-xl md:text-2xl text-muted dark:text-muted-foreground">
 						Let's connect and discuss how I can bring value to your team. I'm
 						just a message away.
 					</p>
@@ -73,7 +73,9 @@ const ContactSection: React.FC = () => {
 										alt={`${item.name} icon`}
 										className="w-auto h-12 p-2 rounded-md bg-primary "
 									/>
-									<span className="text-xs">{item.name}</span>
+									<span className="text-x text-muted dark:text-muted-foreground">
+										{item.name}
+									</span>
 								</a>
 							))}
 						</div>

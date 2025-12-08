@@ -4,6 +4,8 @@ import {
 	AccordionItem,
 	AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Briefcase, CalendarIcon, MapPin } from "lucide-react";
+import type { JSX, JSXElementConstructor, Key, ReactElement, ReactNode, ReactPortal } from "react";
 
 export function WorkExperience() {
 	return (
@@ -23,13 +25,17 @@ export function WorkExperience() {
 									{item.role}
 								</h1>
 
-								<span className="text-xs md:text-sm font-normal text-muted-foreground">
+								<span className="mt-1 text-sm md:text-md font-normal">
 									{item.company}
 								</span>
 							</div>
 
 							{/* Dates */}
-							<span className="text-xs md:text-xs text-muted-foreground hover:scale-[1.02] transition-all">
+							<span className="flex md:flex-row-reverse gap-2 justify-apart text-sm md:text-md text-muted-foreground hover:scale-[1.02] transition-all">
+								<CalendarIcon
+									className="text-black/30 dark:text-white/30 items-center fill-purple-800/50"
+									size={18}
+								/>
 								{item.period}
 							</span>
 						</div>
@@ -37,9 +43,37 @@ export function WorkExperience() {
 
 					{/* Content */}
 					<AccordionContent className="flex flex-col p-2 gap-4 text-sm md:text-sm text-muted-foreground">
-						{item.description.map((paragraph, idx) => (
-							<p key={idx}>{paragraph}</p>
-						))}
+						{item.description.map(
+							(
+								paragraph:
+									| string
+									| number
+									| bigint
+									| boolean
+									| ReactElement<unknown, string | JSXElementConstructor<any>>
+									| Iterable<ReactNode>
+									| ReactPortal
+									| Promise<
+											| string
+											| number
+											| bigint
+											| boolean
+											| ReactPortal
+											| ReactElement<
+													unknown,
+													string | JSXElementConstructor<any>
+											  >
+											| Iterable<ReactNode>
+											| null
+											| undefined
+									  >
+									| null
+									| undefined,
+								idx: Key | null | undefined
+							) => (
+								<p key={idx}>{paragraph}</p>
+							)
+						)}
 					</AccordionContent>
 				</AccordionItem>
 			))}
@@ -48,11 +82,33 @@ export function WorkExperience() {
 }
 
 // Work Experience Data
-export const workExperienceData = [
+
+interface DataProps {
+	id: string;
+	role: string;
+	company: JSX.Element;
+	period: string;
+	description: any;
+}
+export const workExperienceData: DataProps[] = [
 	{
 		id: "item-1",
 		role: "Software Developer",
-		company: "VORLTEC Inc. (Remote)",
+		company: (
+			<div className="flex gap-2">
+				<span className="flex gap-2">
+					<Briefcase className="flex items-center text-primary/80" size={18} />
+					<p className="text-muted-foreground">VORLTEC Inc.</p>
+				</span>
+				<span className="flex gap-2 text-sm items-center text-muted-foreground/70">
+					<MapPin
+						className="flex items-center fill-muted-foreground/70 text-muted"
+						size={18}
+					/>
+					Remote
+				</span>
+			</div>
+		),
 		period: "Dec. 2024 - Present",
 		description: [
 			"Developed and maintained responsive web interfaces and internal dashboards.",
@@ -63,7 +119,21 @@ export const workExperienceData = [
 	{
 		id: "item-2",
 		role: "Learner Support Ambassador",
-		company: "Sand Technologies (Remote)",
+		company: (
+			<div className="flex gap-2">
+				<span className="flex gap-2">
+					<Briefcase className="flex items-center text-primary/80" size={18} />
+					<p className="text-muted-foreground">Sand Technologies</p>
+				</span>
+				<span className="flex gap-2 text-sm items-center text-muted-foreground/70">
+					<MapPin
+						className="flex items-center fill-muted-foreground/70 text-muted"
+						size={18}
+					/>
+					Remote
+				</span>
+			</div>
+		),
 		period: "Jul. 2024 - Dec. 2024",
 		description: [
 			"Provided technical support to an E-Learning community spanning 8+ countries, resolving 200+ issues and inquiries with an average response time of under 6 hours.",
@@ -75,7 +145,21 @@ export const workExperienceData = [
 	{
 		id: "item-3",
 		role: "Assistant Accountant",
-		company: "Mapeto Investments Ltd (On-site)",
+		company: (
+			<div className="flex gap-2">
+				<span className="flex gap-2">
+					<Briefcase className="flex items-center text-primary/80" size={18} />
+					<p className="text-muted-foreground">Mapeto Investments</p>
+				</span>
+				<span className="flex gap-2 text-sm items-center text-muted-foreground/70">
+					<MapPin
+						className="flex items-center fill-muted-foreground/70 text-muted"
+						size={18}
+					/>
+					On-site
+				</span>
+			</div>
+		),
 		period: "Jan. 2023 - Mar. 2024",
 		description: [
 			"Managed financial records for 100+ client accounts, ensuring 100% accuracy and timely reporting for audits and management review.",
@@ -86,7 +170,21 @@ export const workExperienceData = [
 	{
 		id: "item-4",
 		role: "Admin & Sales Assistant",
-		company: "I.T Africa (Hybrid)",
+		company: (
+			<div className="flex gap-2">
+				<span className="flex gap-2">
+					<Briefcase className="flex items-center text-primary/80" size={18} />
+					<p className="text-muted-foreground">I.T. Africa</p>
+				</span>
+				<span className="flex gap-2 text-sm items-center text-muted-foreground/70">
+					<MapPin
+						className="flex items-center fill-muted-foreground/70 text-muted"
+						size={18}
+					/>
+					Hybrid
+				</span>
+			</div>
+		),
 		period: "Nov. 2021 - Dec. 2022",
 		description: [
 			"Optimized internal workflows, cutting average task completion time by 50% through standardized procedures and templates.",
@@ -97,7 +195,21 @@ export const workExperienceData = [
 	{
 		id: "item-5",
 		role: "Sales Rep. & Customer Support",
-		company: "I.T Africa (Hybrid)",
+		company: (
+			<div className="flex gap-2">
+				<span className="flex gap-2">
+					<Briefcase className="flex items-center text-primary/80" size={18} />
+					<p className="text-muted-foreground">I.T. Africa</p>
+				</span>
+				<span className="flex gap-2 text-sm items-center text-muted-foreground/70">
+					<MapPin
+						className="flex items-center fill-muted-foreground/70 text-muted"
+						size={18}
+					/>
+					Hybrid
+				</span>
+			</div>
+		),
 		period: "Nov. 2020 - Nov. 2021",
 		description: [
 			"Managed over 300+ client accounts, generating new leads and driving a 20% increase in repeat business through proactive engagement.",

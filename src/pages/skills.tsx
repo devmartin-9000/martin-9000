@@ -15,15 +15,15 @@ const SkillSection = () => {
     const NonTechnicalSkills: SoftAbility[] = [
         {
             items: [
-                "Communication & Collaboration",
+				"Communication & Collaboration",
                 "Problem-Solving",
+                "Attention to Detail",
                 "Time Management",
                 "Critical Thinking",
                 "Empathy",
                 "Adaptability",
                 "Teamwork",
                 "Leadership",
-                "Attention to Detail",
                 "Creativity",
                 "Organization",
                 "Coacheable",
@@ -53,15 +53,15 @@ const SkillSection = () => {
             subCategory: "Libraries & Tools",
             items: [
                 "Vite",
+                "Git & GitHub (CI/CD)",
                 "Tailwind CSS",
                 "Radix UI",
                 "Shadcn UI",
-                "Framer",
                 "Gsap",
-                "Git & GitHub",
                 "Figma",
                 "WordPress",
                 "Webflow",
+                "Framer",
             ],
         },
     ];
@@ -96,9 +96,9 @@ const SkillSection = () => {
 									{section.items.map((item) => (
 										<p
 											key={item}
-											className="flex items-center border dark:border-primary text-xs md:text-sm text-white/80 bg-black dark:bg-primary/20 rounded-full gap-3 pr-2 pl-0.5"
+											className="py-2 px-4 flex items-center border border-black/20 dark:border-white/20 text-xs md:text-sm text-muted-foreground rounded gap-2 pr-2 pl-2.5 hover:translate-y-1 tranform transition-all duration-200 cursor-pointer hover:text-primary/70"
 										>
-											<CircleCheckIcon className="text-primary/80 h-4 w-auto" />
+											<CircleCheckIcon className="text-primary dark:text-primary/80 h-4 w-auto" />
 											{item}
 										</p>
 									))}
@@ -124,7 +124,7 @@ const SkillSection = () => {
 									{section.items.map((item) => (
 										<p
 											key={item}
-											className="flex items-center border dark:border-blue-700 text-xs md:text-sm text-white/80 bg-black dark:bg-blue-700/20 rounded-full gap-3 pr-2 pl-0.5"
+											className="py-2 px-4 flex items-center border border-black/20 dark:border-white/20 text-xs md:text-sm text-muted-foreground rounded gap-2 pr-2 pl-2.5 hover:translate-y-1 tranform transition-all duration-200 cursor-pointer hover:text-blue-800"
 										>
 											<CircleCheckIcon className="text-blue-800 h-4 w-auto" />
 											{item}

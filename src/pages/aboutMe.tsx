@@ -7,12 +7,12 @@ const AboutMe = () => {
 				className="scroll-mt-18 py-0 bg-background h-full my-auto mx-auto justify-center w-full"
 			>
 				{/* Main Div */}
-				<div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-4 w-full md:max-w-5xl mx-auto p-4 md:p-4">
+				<div className="grid grid-cols-1 md:grid-cols-[2fr_2fr] lg:grid-cols-[3fr_2fr] gap-4 w-full md:max-w-5xl mx-auto p-4 md:p-4">
 					{/* Left Column */}
 					<div className="">
 						<div className="text-center lg:text-start">
 							{/* Title */}
-							<h1 className="text-muted-foreground dark:text-primary-foreground/80 font-extrabold text-5xl sm:text-6xl md:text-8xl leading-relaxed">
+							<h1 className="text-muted-foreground dark:text-primary-foreground/80 font-extrabold text-4xl sm:text-6xl md:text-4xl lg:text-8xl leading-relaxed">
 								.about me
 							</h1>
 						</div>
@@ -57,7 +57,7 @@ const AboutMe = () => {
 
 				{/* Work Experience */}
 				<div className="rounded-none md:rounded-t-4xl bg-background items-center p-6 md:p-6 max-w-6xl mx-auto md:max-w-5xl">
-					<h1 className="text-center md:text-start text-muted-foreground dark:text-primary-foreground/80 font-extrabold text-5xl md:text-8xl leading-relaxed">
+					<h1 className="text-center md:text-start text-muted-foreground dark:text-primary-foreground/80 font-extrabold text-4xl md:text-8xl leading-relaxed">
 						.work history
 					</h1>
 					<div className="mx-auto md:max-w-2xl">
