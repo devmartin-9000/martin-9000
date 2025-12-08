@@ -74,7 +74,7 @@ const HeroSection = () => {
 							<Tooltip>
 								<TooltipTrigger asChild>
 									<a
-										href="https://linkedin.com/in/martinjackmagonagona"
+										href="https://linkedin.com/in/martin-jack9000"
 										target="_blank"
 										className="text-sm text-muted-foreground text-center items-center flex flex-col gap-2 cursor-pointer border-b-4 border-border hover:border-primary duration-500 ease-in-out hover:scale-105 transition-all"
 									>
