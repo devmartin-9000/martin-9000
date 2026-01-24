@@ -99,7 +99,7 @@ const ContactSection: React.FC = () => {
 				</p>
 			</div>
 			<p className="text-xs text-muted-foreground mb-4">
-				2025 © All rights reserved - Martin Jack M
+				2026 © All rights reserved - Martin Jack M
 			</p>
 		</section>
 	);
