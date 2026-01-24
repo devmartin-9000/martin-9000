@@ -14,21 +14,21 @@ const ContactSection: React.FC = () => {
 			imageUrl: "./assets/email-icon.svg",
 			link: "mailto:dev.martinjack9000@gmail.com",
 		},
-		{
-			name: "Discord",
-			imageUrl: "./assets/discord-icon.svg",
-			link: "https://discord.com/devmartin-9000",
-		},
+		// {
+		// 	name: "Discord",
+		// 	imageUrl: "./assets/discord-icon.svg",
+		// 	link: "https://discord.com/devmartin-9000",
+		// },
 		{
 			name: "LinkedIn",
 			imageUrl: "./assets/linkedin-icon.svg",
 			link: "https://linkedin.com/in/martin-jack9000",
 		},
-		{
-			name: "X (Twitter)",
-			imageUrl: "./assets/x-icon.png",
-			link: "https://x.com/devmartin9000",
-		},
+		// {
+		// 	name: "X (Twitter)",
+		// 	imageUrl: "./assets/x-icon.png",
+		// 	link: "https://x.com/devmartin9000",
+		// },
 	];
 	return (
 		<section

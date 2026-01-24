@@ -112,7 +112,7 @@ const HeroSection = () => {
 									<p className="text-sm">Open in a new tab</p>
 								</TooltipContent>
 							</Tooltip>
-							<Tooltip>
+							{/* <Tooltip>
 								<TooltipTrigger asChild>
 									<a
 										href="https://x.com/devmartin9000"
@@ -131,7 +131,7 @@ const HeroSection = () => {
 								<TooltipContent>
 									<p className="text-sm">Open in a new tab</p>
 								</TooltipContent>
-							</Tooltip>
+							</Tooltip> */}
 						</div>
 					</div>
 				</div>
