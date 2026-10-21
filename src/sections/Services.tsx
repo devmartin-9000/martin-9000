@@ -1,22 +1,22 @@
 import {
-	Briefcase,
-	CalendarDays,
-	Coffee,
-	IdCard,
-	Mail,
-	MessagesSquare,
-	Monitor,
-	Phone,
-	Printer,
-	type LucideIcon,
-} from "lucide-react";
+	type BrandIcon,
+	siDotnet,
+	siGnubash,
+	siGooglebigquery,
+	siPython,
+	siReact,
+	siTailwindcss,
+	siTypescript,
+} from "@/lib/brand-icons";
+import { Coffee, Drama } from "lucide-react";
+import type { ReactNode } from "react";
 import { Frame, Reveal } from "@/components/ui";
 
 const services = [
 	{
 		n: "01",
-		title: ["Front-end", "Engineering"],
-		body: "Responsive React, TypeScript and Tailwind interfaces, plus reusable component libraries that keep teams consistent and delivery fast.",
+		title: ["Full-stack", "Engineering"],
+		body: "React and TypeScript interfaces, backed by Node, Express, Java and Python services and the APIs that connect them.",
 		arc: "conic-gradient(from 120deg,#facc15,#fb923c,#ec4899,#facc15)",
 		dark: true,
 	},
@@ -34,16 +34,24 @@ const services = [
 	},
 ];
 
-const tools: { name: string; items: string; bar: string; icon: LucideIcon }[] = [
-	{ name: "JAVA", items: "Enterprise automation", bar: "linear-gradient(90deg,#ffb020,#ffd54a)", icon: MessagesSquare },
-	{ name: "PYTHON", items: "Scripting & data", bar: "linear-gradient(90deg,#8590ad,#a3acc4)", icon: Monitor },
-	{ name: "TYPESCRIPT", items: "JavaScript · Node · Express", bar: "linear-gradient(90deg,#5dbb5a,#8ed58a)", icon: Coffee },
-	{ name: "REACT", items: "Next.js · HTML · CSS", bar: "linear-gradient(90deg,#1faa59,#46c97c)", icon: Mail },
-	{ name: "TAILWIND", items: "Design systems · Figma", bar: "linear-gradient(90deg,#27b7c9,#6fd8e3)", icon: IdCard },
-	{ name: "PLAYWRIGHT", items: "Test automation", bar: "linear-gradient(90deg,#2f6fb5,#5f9bd6)", icon: Phone },
-	{ name: "SQL", items: "BigQuery · Reporting", bar: "linear-gradient(90deg,#8b7566,#b09c8d)", icon: CalendarDays },
-	{ name: "BASH & BAT", items: "Workflow scripting", bar: "linear-gradient(90deg,#e0361b,#ff6a3d)", icon: Briefcase },
-	{ name: "C# / .NET", items: "Still exploring", bar: "linear-gradient(90deg,#ec4b9c,#f48dc3)", icon: Printer },
+/** Real brand mark, in the brand's own colour */
+const brand = (i: BrandIcon): ReactNode => (
+	<svg viewBox="0 0 24 24" className="h-8 w-8" aria-hidden>
+		<path d={i.path} fill={`#${i.hex}`} />
+	</svg>
+);
+
+const tools: { name: string; items: string; bar: string; icon: ReactNode }[] = [
+	{ name: "JAVA", items: "Enterprise automation", bar: "linear-gradient(90deg,#ffb020,#ffd54a)", icon: <Coffee className="h-8 w-8 text-[#e76f00]" strokeWidth={1.5} /> },
+	{ name: "PYTHON", items: "Scripting & data", bar: "linear-gradient(90deg,#8590ad,#a3acc4)", icon: brand(siPython) },
+	{ name: "TYPESCRIPT", items: "JavaScript · Node · Express", bar: "linear-gradient(90deg,#5dbb5a,#8ed58a)", icon: brand(siTypescript) },
+	{ name: "REACT", items: "Next.js · HTML · CSS", bar: "linear-gradient(90deg,#1faa59,#46c97c)", icon: brand(siReact) },
+	{ name: "TAILWIND", items: "Design systems · Figma", bar: "linear-gradient(90deg,#27b7c9,#6fd8e3)", icon: brand(siTailwindcss) },
+	// Java and Playwright have no mark in the icon set: a coffee cup and theatre masks stand in
+	{ name: "PLAYWRIGHT", items: "Test automation", bar: "linear-gradient(90deg,#2f6fb5,#5f9bd6)", icon: <Drama className="h-8 w-8 text-[#2ead33]" strokeWidth={1.5} /> },
+	{ name: "SQL", items: "BigQuery · Reporting", bar: "linear-gradient(90deg,#8b7566,#b09c8d)", icon: brand(siGooglebigquery) },
+	{ name: "BASH & BAT", items: "Workflow scripting", bar: "linear-gradient(90deg,#e0361b,#ff6a3d)", icon: brand(siGnubash) },
+	{ name: "C# / .NET", items: "Still exploring", bar: "linear-gradient(90deg,#ec4b9c,#f48dc3)", icon: brand(siDotnet) },
 ];
 
 /** Numbered services cards (01 active/black), then the stack as typography + step-style tool cards */
@@ -80,15 +88,13 @@ export default function Services() {
 			</div>
 
 			<div className="mt-14">
-				<div className="flex items-end justify-between gap-4">
-					<p className="text-[11px] text-slate">Skills system · some I use daily, others I'm still exploring</p>
-				</div>
+				<p className="text-[11px] text-slate">Skills system · some I use daily, others I'm still exploring</p>
 				<p className="select-none text-center text-[clamp(6rem,22vw,16rem)] font-medium leading-[0.9] tracking-tight">Stack</p>
 				<div className="mx-auto mt-6 grid max-w-3xl grid-cols-2 gap-4 sm:grid-cols-3">
 					{tools.map((t, i) => (
 						<Reveal key={t.name} delay={(i % 3) * 0.05}>
 							<div className="h-full rounded-[20px] bg-white p-4 shadow-[0_14px_28px_-14px_rgba(40,60,90,0.35)] ring-1 ring-white">
-								<t.icon size={28} strokeWidth={1.1} className="mx-auto mb-2 text-ink/70" />
+								<div className="mx-auto mb-2 grid h-9 w-9 place-items-center">{t.icon}</div>
 								<div className="rounded-sm py-1 text-center text-[10px] font-extrabold tracking-wider text-white" style={{ background: t.bar }}>
 									{t.name}
 								</div>

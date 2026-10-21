@@ -2,7 +2,7 @@ import { BarChart3, FlaskConical, LayoutTemplate, type LucideIcon } from "lucide
 import { Frame, Reveal } from "@/components/ui";
 
 const items: { title: string; body: string; icon: LucideIcon; tone: string }[] = [
-	{ title: "Front-end engineering", body: "React, TypeScript and reusable component libraries", icon: LayoutTemplate, tone: "#c026d3" },
+	{ title: "Full-stack engineering", body: "React and TypeScript front-ends, Node, Java and Python back-ends", icon: LayoutTemplate, tone: "#c026d3" },
 	{ title: "Test automation", body: "Playwright, Java and Salesforce-based enterprise apps", icon: FlaskConical, tone: "#ff6122" },
 	{ title: "Data & analytics", body: "BigQuery workflows, SQL and A/B test reporting", icon: BarChart3, tone: "#0891b2" },
 ];

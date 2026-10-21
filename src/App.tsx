@@ -2,7 +2,7 @@ import Nav from "@/components/Nav";
 import Hero from "@/sections/Hero";
 import Strip from "@/sections/Strip";
 import Projects from "@/sections/Projects";
-import SelfHosted from "@/sections/SelfHosted";
+import Custom from "@/sections/Custom";
 import Guide from "@/sections/Guide";
 import About from "@/sections/About";
 import Stats from "@/sections/Stats";
@@ -18,7 +18,7 @@ export default function App() {
 				<Hero />
 				<Strip />
 				<Projects />
-				<SelfHosted />
+				<Custom />
 				<Guide />
 				<About />
 				<Stats />
