@@ -16,13 +16,14 @@ export default function Strip() {
 					<Reveal key={it.title} delay={i * 0.06}>
 						<div className="flex items-center gap-4">
 							<span
+								data-egg="drip"
 								className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-white shadow-md"
 								style={{ color: it.tone }}
 							>
 								<it.icon size={20} />
 							</span>
 							<p>
-								<span className="block text-sm font-bold">{it.title}</span>
+								<span data-egg="melt" className="block w-fit text-sm font-bold">{it.title}</span>
 								<span className="block text-[11px] leading-snug text-ink/55">{it.body}</span>
 							</p>
 						</div>

@@ -15,11 +15,11 @@ export default function Hero() {
 		<Frame id="top" className="bg-white pt-24 md:pt-28">
 			<div className="grid items-center gap-8 px-6 pb-10 md:grid-cols-[1fr_1.15fr] md:px-12">
 				<Reveal>
-					<p className="mb-4 text-xs font-medium text-ink/60">Welcome to the portfolio of {profile.short}</p>
-					<h1 className="display text-[clamp(3.4rem,9vw,7rem)] font-extrabold">
+					<p data-egg="melt" className="mb-4 w-fit text-xs font-medium text-ink/60">Welcome to the portfolio of {profile.short}</p>
+					<h1 data-egg="melt" className="display text-[clamp(3.4rem,9vw,7rem)] font-extrabold">
 						Software
 						<br />
-						Engineer<span className="text-kinetic">.</span>
+						Engineer<span data-egg="drip" className="inline-block text-kinetic">.</span>
 					</h1>
 					<p className="mt-6 max-w-sm text-sm leading-relaxed text-ink/70">
 						A perfect guide from idea to shipped product: React interfaces,
@@ -29,16 +29,16 @@ export default function Hero() {
 					<div className="mt-8 flex flex-wrap items-center gap-3">
 						<a
 							href="#contact"
-							className="group flex items-center gap-4 rounded-2xl bg-gradient-to-br from-kinetic to-[#ff8a4c] py-3 pl-7 pr-3 text-sm font-semibold uppercase tracking-wide text-white shadow-[0_18px_30px_-12px_rgba(255,97,34,0.7)] transition-transform hover:-translate-y-0.5"
+							data-egg="ink" data-egg-color="#141414" className="group flex items-center gap-4 rounded-2xl bg-gradient-to-br from-kinetic to-[#ff8a4c] py-3 pl-7 pr-3 text-sm font-semibold uppercase tracking-wide text-white shadow-[0_18px_30px_-12px_rgba(255,97,34,0.7)] transition-transform hover:-translate-y-0.5"
 						>
 							Get in touch
-							<span className="grid h-8 w-8 place-items-center rounded-full bg-white text-kinetic transition-transform group-hover:translate-x-1">
+							<span data-egg="magnet" className="grid h-8 w-8 place-items-center rounded-full bg-white text-kinetic">
 								<ArrowRight size={16} />
 							</span>
 						</a>
 						<a
 							href="#projects"
-							className="rounded-2xl px-5 py-3 text-sm font-semibold text-ink/70 transition-colors hover:text-kinetic"
+							data-egg="melt" className="rounded-2xl px-5 py-3 text-sm font-semibold text-ink/70 transition-colors hover:text-kinetic"
 						>
 							See the work →
 						</a>
@@ -95,12 +95,12 @@ export default function Hero() {
 						</svg>
 						{/* notches, like the reference's cut-out corners */}
 						<div className="absolute left-0 top-0 h-[22%] w-[24%] rounded-br-[36px] bg-white" />
-						<div className="absolute left-3 top-3 flex items-center gap-2 rounded-full bg-ink/85 py-1.5 pl-1.5 pr-3 text-[11px] text-white sm:left-4 sm:top-4">
-							<span className="grid h-6 w-6 place-items-center rounded-full bg-kinetic text-[10px] font-bold">MJ</span>
+						<div data-egg="ink" className="absolute left-3 top-3 flex items-center gap-2 rounded-full bg-ink/85 py-1.5 pl-1.5 pr-3 text-[11px] text-white sm:left-4 sm:top-4">
+							<span data-egg="drip" className="grid h-6 w-6 place-items-center rounded-full bg-kinetic text-[10px] font-bold">MJ</span>
 							My path · 6 yrs
 						</div>
 					</div>
-					<div className="absolute bottom-3 right-3 w-[44%] rounded-2xl bg-white/70 p-3 ring-1 ring-white/60 backdrop-blur-md sm:right-4">
+					<div data-egg="blob" className="absolute bottom-3 right-3 w-[44%] cursor-pointer rounded-2xl bg-white/70 p-3 ring-1 ring-white/60 backdrop-blur-md sm:right-4">
 						<p className="text-3xl font-light leading-none tracking-tight">10+</p>
 						<p className="mt-1 text-[10px] leading-snug text-ink/70">production projects shipped</p>
 					</div>

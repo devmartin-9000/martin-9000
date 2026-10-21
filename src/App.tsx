@@ -1,5 +1,6 @@
 import { MotionConfig } from "motion/react";
 import Nav from "@/components/Nav";
+import { Eggs } from "@/components/eggs";
 import Hero from "@/sections/Hero";
 import Strip from "@/sections/Strip";
 import Projects from "@/sections/Projects";
@@ -14,6 +15,7 @@ import Contact from "@/sections/Contact";
 export default function App() {
 	return (
 		<MotionConfig reducedMotion="user">
+			<Eggs />
 			<Nav />
 			<main className="flex flex-col gap-6 px-3 py-3 md:gap-8 md:px-6 md:pt-6">
 				<Hero />

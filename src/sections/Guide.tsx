@@ -13,8 +13,8 @@ export default function Guide() {
 		<Frame className="bg-gradient-to-b from-[#e6e6e6] to-[#c9c9c9]">
 			<div className="grid items-center gap-10 px-6 py-12 md:grid-cols-[0.8fr_1.4fr] md:px-14">
 				<Reveal className="relative">
-					<span className="pointer-events-none absolute -left-2 -top-10 text-[9rem] font-black leading-none text-ink/10">“</span>
-					<h2 className="relative text-[clamp(2.4rem,5vw,3.6rem)] font-medium leading-[1.05] tracking-tight">
+					<span data-egg="melt" className="absolute -left-2 -top-10 cursor-pointer text-[9rem] font-black leading-none text-ink/10">“</span>
+					<h2 data-egg="melt" className="relative text-[clamp(2.4rem,5vw,3.6rem)] font-medium leading-[1.05] tracking-tight">
 						How I work
 						<br />
 						with you
@@ -29,6 +29,8 @@ export default function Guide() {
 						<Reveal key={s.title} delay={i * 0.06}>
 							<div className="group relative flex cursor-default items-center">
 								<div
+									data-egg="spin"
+									data-egg-color={s.color}
 									className="relative z-10 grid h-[72px] w-[66px] shrink-0 place-items-center text-xs font-bold text-white transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:rotate-[60deg] group-hover:scale-110 sm:h-[84px] sm:w-[76px]"
 									style={{
 										clipPath: "polygon(25% 4%,75% 4%,100% 50%,75% 96%,25% 96%,0 50%)",
@@ -42,7 +44,7 @@ export default function Guide() {
 									style={{ clipPath: "polygon(5% 0,100% 0,100% 100%,0 100%)" }}
 								>
 									<span className="absolute bottom-0 left-[9px] top-0 w-2.5 -skew-x-[18deg] transition-all duration-500 group-hover:w-5" style={{ background: s.color }} />
-									<h3 className="text-sm font-semibold" style={{ color: s.color }}>
+									<h3 data-egg="melt" className="w-fit text-sm font-semibold" style={{ color: s.color }}>
 										Step {i + 1} · {s.title}
 									</h3>
 									<p className="mt-0.5 text-[10px] leading-relaxed text-ink/55">{s.body}</p>
