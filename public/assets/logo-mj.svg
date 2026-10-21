@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Martin Jack">
+  <title>Martin Jack</title>
+  <!-- M whose right stem drops and hooks into a J -->
+  <path d="M12 52V14l16 22 16-22v28c0 9-7 12-14 9"
+        fill="none" stroke="#141414" stroke-width="6"
+        stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- the period from "Martin Jack." -->
+  <circle cx="54" cy="51" r="4" fill="#ff6122"/>
+</svg>
