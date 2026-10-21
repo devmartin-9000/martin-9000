@@ -18,7 +18,14 @@ export default function About() {
 			<div className="mt-10 grid items-center gap-8 md:grid-cols-[1fr_1fr]">
 				<Reveal className="relative mx-auto h-[360px] w-full max-w-[460px] md:h-[400px]">
 					<div className="absolute left-0 top-0 h-[58%] w-[62%] overflow-hidden rounded-[28px] shadow-lg" style={{ background: `linear-gradient(150deg, ${art[0]}, ${art[1]})` }}>
-						<span className="absolute bottom-3 left-4 font-script text-4xl text-white/90">poetry</span>
+						{/* Drop your own photo at public/assets/about-secondary.jpg */}
+						<img
+							src="./assets/about-secondary.jpg"
+							alt=""
+							loading="lazy"
+							className="h-full w-full object-cover"
+							onError={(e) => (e.currentTarget.style.display = "none")}
+						/>
 					</div>
 					<div className="absolute bottom-0 right-0 h-[82%] w-[70%] overflow-hidden rounded-[36px] bg-[#fdb139] shadow-xl">
 						<div className="absolute inset-x-0 bottom-0 top-[7%] mx-auto w-[86%] overflow-hidden rounded-t-[26px]">

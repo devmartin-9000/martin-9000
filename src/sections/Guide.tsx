@@ -27,21 +27,21 @@ export default function Guide() {
 				<div className="flex flex-col gap-5 border-l-[3px] border-ink pl-5 md:pl-8">
 					{steps.map((s, i) => (
 						<Reveal key={s.title} delay={i * 0.06}>
-							<div className="relative flex items-center">
+							<div className="group relative flex cursor-default items-center">
 								<div
-									className="relative z-10 grid h-[72px] w-[66px] shrink-0 place-items-center text-xs font-bold text-white sm:h-[84px] sm:w-[76px]"
+									className="relative z-10 grid h-[72px] w-[66px] shrink-0 place-items-center text-xs font-bold text-white transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:rotate-[60deg] group-hover:scale-110 sm:h-[84px] sm:w-[76px]"
 									style={{
 										clipPath: "polygon(25% 4%,75% 4%,100% 50%,75% 96%,25% 96%,0 50%)",
 										background: `linear-gradient(90deg, ${s.dark} 50%, ${s.color} 50%)`,
 									}}
 								>
-									<span className="translate-x-1 text-base">0{i + 1}</span>
+									<span className="translate-x-1 text-base transition-transform duration-500 group-hover:-rotate-[60deg]">0{i + 1}</span>
 								</div>
 								<div
-									className="relative -ml-2 flex-1 bg-white py-3 pl-9 pr-5 shadow-[0_12px_12px_-10px_rgba(0,0,0,0.45)]"
+									className="relative -ml-2 flex-1 bg-white py-3 pl-9 pr-5 shadow-[0_12px_12px_-10px_rgba(0,0,0,0.45)] transition-all duration-500 ease-out group-hover:translate-x-2 group-hover:shadow-[0_18px_18px_-10px_rgba(0,0,0,0.5)]"
 									style={{ clipPath: "polygon(5% 0,100% 0,100% 100%,0 100%)" }}
 								>
-									<span className="absolute bottom-0 left-[9px] top-0 w-2.5 -skew-x-[18deg]" style={{ background: s.color }} />
+									<span className="absolute bottom-0 left-[9px] top-0 w-2.5 -skew-x-[18deg] transition-all duration-500 group-hover:w-5" style={{ background: s.color }} />
 									<h3 className="text-sm font-semibold" style={{ color: s.color }}>
 										Step {i + 1} · {s.title}
 									</h3>

@@ -50,7 +50,7 @@ export default function Nav() {
 			</AnimatePresence>
 
 			<header className="fixed inset-x-0 top-3 z-50 px-3">
-				<nav className="relative mx-auto flex max-w-[1180px] items-center justify-between rounded-xl bg-white/90 px-4 py-2.5 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.25)] ring-1 ring-black/5 backdrop-blur">
+				<nav className="relative mx-auto flex max-w-none items-center justify-between rounded-xl bg-white/90 px-4 py-2.5 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.25)] ring-1 ring-black/5 backdrop-blur">
 					<a href="#top" className="flex items-center gap-2 text-sm font-semibold" onClick={() => setOpen(false)}>
 						<img src="./assets/logo-mj.svg" alt="" className="h-7 w-7" />
 						Martin Jack
@@ -58,9 +58,19 @@ export default function Nav() {
 					<ul className="hidden items-center gap-8 text-xs font-medium md:flex">
 						{links.map(([label, href]) => (
 							<li key={href}>
-								<a href={href} className="transition-colors hover:text-kinetic">
-									{label}
-								</a>
+								{label === "Contact" ? (
+									<a
+										href={href}
+										className="group flex items-center gap-2 rounded-lg bg-gradient-to-br from-kinetic to-[#ff8a4c] py-1.5 pl-4 pr-1.5 font-semibold text-white shadow-[0_8px_16px_-8px_rgba(255,97,34,0.8)] transition-transform hover:-translate-y-0.5"
+									>
+										Contact
+										<span className="grid h-5 w-5 place-items-center rounded-md bg-white/25 transition-transform group-hover:translate-x-0.5">→</span>
+									</a>
+								) : (
+									<a href={href} className="transition-colors hover:text-kinetic">
+										{label}
+									</a>
+								)}
 							</li>
 						))}
 					</ul>
@@ -81,7 +91,7 @@ export default function Nav() {
 						<motion.div
 							key="panel"
 							id="mobile-menu"
-							className="mx-auto mt-2 max-w-[1180px] overflow-hidden rounded-xl bg-white shadow-xl ring-1 ring-black/5 md:hidden"
+							className="mx-auto mt-2 max-w-none overflow-hidden rounded-xl bg-white shadow-xl ring-1 ring-black/5 md:hidden"
 							initial={{ height: 0 }}
 							animate={{ height: "calc(100dvh - 5.75rem)" }}
 							exit={{ height: 0 }}
@@ -99,7 +109,7 @@ export default function Nav() {
 										<a
 											href={href}
 											onClick={() => setOpen(false)}
-											className="flex items-baseline justify-between border-b border-ink/10 py-4 text-3xl font-semibold tracking-tight transition-colors hover:text-kinetic"
+											className={`flex items-baseline justify-between border-b border-ink/10 py-4 text-3xl font-semibold tracking-tight transition-colors hover:text-kinetic ${label === "Contact" ? "text-kinetic" : ""}`}
 										>
 											{label}
 											<span className="text-xs font-medium text-ink/40">0{i + 1}</span>

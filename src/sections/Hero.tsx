@@ -31,7 +31,7 @@ export default function Hero() {
 							href="#contact"
 							className="group flex items-center gap-4 rounded-2xl bg-gradient-to-br from-kinetic to-[#ff8a4c] py-3 pl-7 pr-3 text-sm font-semibold uppercase tracking-wide text-white shadow-[0_18px_30px_-12px_rgba(255,97,34,0.7)] transition-transform hover:-translate-y-0.5"
 						>
-							Hire me
+							Get in touch
 							<span className="grid h-8 w-8 place-items-center rounded-full bg-white text-kinetic transition-transform group-hover:translate-x-1">
 								<ArrowRight size={16} />
 							</span>
@@ -101,8 +101,8 @@ export default function Hero() {
 						</div>
 					</div>
 					<div className="absolute bottom-3 right-3 w-[44%] rounded-2xl bg-white/70 p-3 ring-1 ring-white/60 backdrop-blur-md sm:right-4">
-						<p className="text-3xl font-light leading-none tracking-tight">800+</p>
-						<p className="mt-1 text-[10px] leading-snug text-ink/70">legacy tests stabilised on Playwright</p>
+						<p className="text-3xl font-light leading-none tracking-tight">10+</p>
+						<p className="mt-1 text-[10px] leading-snug text-ink/70">production projects shipped</p>
 					</div>
 				</Reveal>
 			</div>

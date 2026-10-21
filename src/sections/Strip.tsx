@@ -2,9 +2,9 @@ import { BarChart3, FlaskConical, LayoutTemplate, type LucideIcon } from "lucide
 import { Frame, Reveal } from "@/components/ui";
 
 const items: { title: string; body: string; icon: LucideIcon; tone: string }[] = [
-	{ title: "Full-stack engineering", body: "React and TypeScript front-ends, Node, Java and Python back-ends", icon: LayoutTemplate, tone: "#c026d3" },
+	{ title: "Full-stack engineering", body: "React and TypeScript front-ends, Node, Java and Python back-ends", icon: LayoutTemplate, tone: "#ff6122" },
 	{ title: "Test automation", body: "Playwright, Java and Salesforce-based enterprise apps", icon: FlaskConical, tone: "#ff6122" },
-	{ title: "Data & analytics", body: "BigQuery workflows, SQL and A/B test reporting", icon: BarChart3, tone: "#0891b2" },
+	{ title: "Data & analytics", body: "BigQuery workflows, SQL and A/B test reporting", icon: BarChart3, tone: "#ff6122" },
 ];
 
 /** Three-up feature strip: icon circle + title + subtitle, on a soft rounded bar */

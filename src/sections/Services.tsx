@@ -1,6 +1,9 @@
 import {
 	type BrandIcon,
 	siDotnet,
+	siJavascript,
+	siNextdotjs,
+	siNodedotjs,
 	siGnubash,
 	siGooglebigquery,
 	siPython,
@@ -28,8 +31,8 @@ const services = [
 	},
 	{
 		n: "03",
-		title: ["Data &", "Documentation"],
-		body: "BigQuery workflows, validation checks and A/B reporting, backed by clear guides and reproducible code that outlive the project.",
+		title: ["Data Analytics", "& Documentation"],
+		body: "Data analytics with BigQuery workflows, validation checks and A/B reporting, backed by clear guides and reproducible code that outlive the project.",
 		arc: "conic-gradient(from 100deg,#bef264,#22c55e,#0d9488,#bef264)",
 	},
 ];
@@ -44,8 +47,11 @@ const brand = (i: BrandIcon): ReactNode => (
 const tools: { name: string; items: string; bar: string; icon: ReactNode }[] = [
 	{ name: "JAVA", items: "Enterprise automation", bar: "linear-gradient(90deg,#ffb020,#ffd54a)", icon: <Coffee className="h-8 w-8 text-[#e76f00]" strokeWidth={1.5} /> },
 	{ name: "PYTHON", items: "Scripting & data", bar: "linear-gradient(90deg,#8590ad,#a3acc4)", icon: brand(siPython) },
-	{ name: "TYPESCRIPT", items: "JavaScript · Node · Express", bar: "linear-gradient(90deg,#5dbb5a,#8ed58a)", icon: brand(siTypescript) },
-	{ name: "REACT", items: "Next.js · HTML · CSS", bar: "linear-gradient(90deg,#1faa59,#46c97c)", icon: brand(siReact) },
+	{ name: "TYPESCRIPT", items: "Type-safe front and back end", bar: "linear-gradient(90deg,#5dbb5a,#8ed58a)", icon: brand(siTypescript) },
+	{ name: "REACT", items: "HTML · CSS · component libraries", bar: "linear-gradient(90deg,#1faa59,#46c97c)", icon: brand(siReact) },
+	{ name: "NODE.JS", items: "APIs · Express", bar: "linear-gradient(90deg,#3f8a3a,#6bbd5b)", icon: brand(siNodedotjs) },
+	{ name: "JAVASCRIPT", items: "The everyday language", bar: "linear-gradient(90deg,#e6c200,#f7df1e)", icon: brand(siJavascript) },
+	{ name: "NEXT.JS", items: "React framework", bar: "linear-gradient(90deg,#2b2b2b,#5a5a5a)", icon: brand(siNextdotjs) },
 	{ name: "TAILWIND", items: "Design systems · Figma", bar: "linear-gradient(90deg,#27b7c9,#6fd8e3)", icon: brand(siTailwindcss) },
 	// Java and Playwright have no mark in the icon set: a coffee cup and theatre masks stand in
 	{ name: "PLAYWRIGHT", items: "Test automation", bar: "linear-gradient(90deg,#2f6fb5,#5f9bd6)", icon: <Drama className="h-8 w-8 text-[#2ead33]" strokeWidth={1.5} /> },
@@ -90,7 +96,7 @@ export default function Services() {
 			<div className="mt-14">
 				<p className="text-[11px] text-slate">Skills system · some I use daily, others I'm still exploring</p>
 				<p className="select-none text-center text-[clamp(6rem,22vw,16rem)] font-medium leading-[0.9] tracking-tight">Stack</p>
-				<div className="mx-auto mt-6 grid max-w-3xl grid-cols-2 gap-4 sm:grid-cols-3">
+				<div className="mx-auto mt-6 grid max-w-4xl grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
 					{tools.map((t, i) => (
 						<Reveal key={t.name} delay={(i % 3) * 0.05}>
 							<div className="h-full rounded-[20px] bg-white p-4 shadow-[0_14px_28px_-14px_rgba(40,60,90,0.35)] ring-1 ring-white">

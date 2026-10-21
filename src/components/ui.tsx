@@ -35,15 +35,19 @@ export function Frame({
 	className?: string;
 }) {
 	return (
-		<section
+		<motion.section
 			id={id}
+			initial={{ opacity: 0, y: 36 }}
+			whileInView={{ opacity: 1, y: 0 }}
+			viewport={{ once: true, margin: "-80px" }}
+			transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
 			className={cn(
-				"relative mx-auto w-full max-w-[1240px] scroll-mt-24 overflow-hidden rounded-[28px] shadow-[0_30px_60px_-30px_rgba(0,0,0,0.35)]",
+				"relative w-full scroll-mt-24 overflow-hidden rounded-[28px] shadow-[0_30px_60px_-30px_rgba(0,0,0,0.35)]",
 				className
 			)}
 		>
 			{children}
-		</section>
+		</motion.section>
 	);
 }
 

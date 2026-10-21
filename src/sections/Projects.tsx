@@ -7,7 +7,7 @@ const tabs: ("All" | Category)[] = ["All", "Business", "Fintech", "Self-hosted",
 
 export default function Projects() {
 	return (
-		<div id="projects" className="mx-auto flex w-full max-w-[1240px] scroll-mt-24 flex-col gap-6">
+		<div id="projects" className="flex w-full scroll-mt-24 flex-col gap-6">
 			<Lab />
 			<Listings />
 		</div>
@@ -34,8 +34,8 @@ function Lab() {
 				</div>
 
 				<Reveal className="absolute left-6 top-[30%] md:left-10">
-					<h2 className="text-[clamp(5rem,16vw,12rem)] font-bold leading-none tracking-tighter">
-						lab<span className="text-ink">.</span>
+					<h2 className="text-[clamp(4rem,13vw,10rem)] font-bold leading-none tracking-tighter">
+						builds<span className="text-ink">.</span>
 					</h2>
 				</Reveal>
 				<p className="absolute left-6 top-[8%] max-w-[210px] text-[9px] font-semibold uppercase leading-relaxed text-ink/60 md:left-[30%]">
@@ -55,10 +55,10 @@ function Lab() {
 					className="absolute right-4 top-[14%] text-5xl font-black tracking-tighter md:right-8 md:text-7xl"
 					style={{ writingMode: "vertical-rl" }}
 				>
-					001
+					LIVE
 				</span>
 				<div className="absolute bottom-3 left-6 right-6 flex justify-between text-[9px] font-semibold uppercase text-ink/70 md:left-10 md:right-10">
-					<span>Lab works · curated builds</span>
+					<span>Selected work · {projects.length} live products</span>
 					<span className="grid h-6 w-6 place-items-center bg-kinetic text-white">↓</span>
 				</div>
 			</div>
@@ -163,7 +163,7 @@ function Listings() {
 
 			<div className="mt-4 flex justify-center gap-1.5">
 				{Array.from({ length: pages }).map((_, i) => (
-					<span key={i} className={`h-1.5 rounded-full transition-all ${i === page ? "w-5 bg-royal" : "w-1.5 bg-ink/25"}`} />
+					<span key={i} className={`h-1.5 rounded-full transition-all ${i === page ? "w-5 bg-kinetic" : "w-1.5 bg-ink/25"}`} />
 				))}
 			</div>
 		</Frame>

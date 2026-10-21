@@ -92,7 +92,7 @@ export default function Contact() {
 					</Reveal>
 
 					<Reveal delay={0.1} className="relative min-h-[360px]">
-						<div className="absolute -right-[18%] bottom-[-6%] top-[-6%] aspect-square rounded-full bg-gradient-to-br from-[#0b7a54] via-[#17a37a] to-[#9be3c6]" />
+						<div className="absolute -right-[18%] bottom-[-6%] top-[-6%] aspect-square rounded-full bg-gradient-to-br from-[#ff6122] via-[#ff8a4c] to-[#ffc9a8]" />
 						<div className="absolute -left-[4%] bottom-[-14%] right-[24%] top-[40%] rounded-full border border-ink/40" />
 						<div className="absolute bottom-0 left-[14%] right-[14%] top-[6%] overflow-hidden rounded-t-[999px] bg-gradient-to-b from-[#0e5a43]/0 to-transparent">
 							<Photo />
@@ -101,7 +101,7 @@ export default function Contact() {
 				</div>
 			</Frame>
 
-			<footer className="mx-auto w-full max-w-[1240px] rounded-t-[28px] bg-[#7d7d7d] px-6 py-8 text-xs text-white/85 md:px-12">
+			<footer className="w-full rounded-t-[28px] bg-black px-6 py-8 text-xs text-white/85 md:px-12">
 				<div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
 					<p className="text-sm font-bold text-white">Martin Jack<span className="text-kinetic">.</span></p>
 					<p className="flex gap-6">
