@@ -1,55 +1,31 @@
-import {
-	BrowserRouter as Router,
-	Routes,
-	Route,
-	useLocation,
-} from "react-router-dom";
-import { useEffect } from "react";
+import Nav from "@/components/Nav";
+import Hero from "@/sections/Hero";
+import Strip from "@/sections/Strip";
+import Projects from "@/sections/Projects";
+import SelfHosted from "@/sections/SelfHosted";
+import Guide from "@/sections/Guide";
+import About from "@/sections/About";
+import Stats from "@/sections/Stats";
+import Experience from "@/sections/Experience";
+import Services from "@/sections/Services";
+import Contact from "@/sections/Contact";
 
-import NavBar from "./components/ui/navBar";
-import HeroSection from "./pages/heroSection";
-import AboutMe from "./pages/aboutMe";
-import Projects from "./pages/projects";
-import SkillSection from "./pages/skills";
-import ContactSection from "./pages/contact";
-import { TracingBeam } from "./components/ui/tracing-beam";
-
-const ScrollManager = () => {
-	const location = useLocation();
-
-	useEffect(() => {
-		const path = location.pathname.replace("/", "");
-		const section = path === "" ? "home" : path;
-
-		const el = document.getElementById(section);
-		if (el) {
-			el.scrollIntoView({ behavior: "smooth" });
-		}
-	}, [location]);
-
-	return null;
-};
-
-const App = () => {
+export default function App() {
 	return (
-		<Router>
-			<NavBar />
-			<ScrollManager />
-			<TracingBeam className="px-0">
-				<HeroSection />
-				<AboutMe />
+		<>
+			<Nav />
+			<main className="flex flex-col gap-6 px-3 py-3 md:gap-8 md:px-6 md:pt-6">
+				<Hero />
+				<Strip />
 				<Projects />
-				<SkillSection />
-				<ContactSection />
-			</TracingBeam>
-			<Routes>
-				<Route path="/about" element={null} />
-				<Route path="/projects" element={null} />
-				<Route path="/skills" element={null} />
-				<Route path="/contact" element={null} />
-			</Routes>
-		</Router>
+				<SelfHosted />
+				<Guide />
+				<About />
+				<Stats />
+				<Experience />
+				<Services />
+				<Contact />
+			</main>
+		</>
 	);
-};
-
-export default App;
+}
