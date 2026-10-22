@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { motion } from "motion/react";
-import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, Zap } from "lucide-react";
 import { ArrowUpRight, Frame, Reveal } from "@/components/ui";
 import { byId, profile } from "@/lib/data";
 import { viscous } from "@/lib/motion";
@@ -102,6 +102,16 @@ export default function Custom() {
 						platform fees and no lock-in. Here are two I've already built,
 						or tell me what your business needs.
 					</p>
+					<div data-egg="drip" data-egg-color="#ff6122" className="mt-5 flex w-fit cursor-pointer items-center gap-2 rounded-full bg-kinetic/10 py-1.5 pl-2 pr-4 font-mono text-[10px] font-medium uppercase tracking-wider text-kinetic">
+						<span className="grid h-6 w-6 place-items-center rounded-full bg-kinetic text-white">
+							<Zap size={12} fill="currentColor" />
+						</span>
+						Deployable in 1 day
+					</div>
+					<p className="mt-2 max-w-[250px] text-[11px] leading-snug text-ink/50">
+						Hand over the keys on Monday, it's live on your own site by
+						Tuesday. It works the moment it's up.
+					</p>
 					<div className="mt-auto flex items-center gap-2 pt-8">
 						<span data-egg="spin" className="mr-3 grid cursor-pointer place-items-center"><ArrowUpRight className="h-7 w-7" /></span>
 						<button data-egg="ink" data-egg-color="#141414" onClick={() => scroll(-1)} aria-label="Scroll left" className="grid h-8 w-8 place-items-center rounded-full border border-ink/20 transition-colors hover:text-white">
@@ -147,6 +157,11 @@ export default function Custom() {
 								</a>
 							)}
 							<div className="absolute inset-x-0 bottom-0 p-5">
+								{!c.custom && (
+									<span data-egg="drip" data-egg-color="#ff6122" className="mb-3 inline-flex cursor-pointer items-center gap-1.5 rounded-full bg-white/15 px-2.5 py-1 font-mono text-[9px] font-medium uppercase tracking-wider backdrop-blur">
+										<Zap size={10} fill="currentColor" className="text-[#ffb08a]" /> Live in 1 day
+									</span>
+								)}
 								<h3 data-egg="melt" className="w-fit text-base font-bold leading-tight">{c.title}</h3>
 								<p className="mt-2 text-[12px] leading-relaxed text-white/80">{c.body}</p>
 								<a
