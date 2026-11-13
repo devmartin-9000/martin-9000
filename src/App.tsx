@@ -1,15 +1,15 @@
 import Hero from "@/portfolio/Hero";
-import About from "@/portfolio/About";
-import Work from "@/portfolio/Work";
+import Approach from "@/portfolio/Approach";
+import Projects from "@/portfolio/Projects";
 import Contact from "@/portfolio/Contact";
 
 export default function App() {
 	return (
-		<main className="mx-auto flex max-w-[1400px] flex-col gap-6 p-3 md:gap-8 md:p-6">
+		<div className="bg-white">
 			<Hero />
-			<About />
-			<Work />
+			<Approach />
+			<Projects />
 			<Contact />
-		</main>
+		</div>
 	);
 }
