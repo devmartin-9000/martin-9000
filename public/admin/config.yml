@@ -54,6 +54,15 @@ collections:
         widget: image
         required: false
         default: ""
+        hint: Shown at the top of the rant in the reader.
+      - name: thumbnail
+        label: Share image (link preview)
+        widget: image
+        required: false
+        default: ""
+        hint: >-
+          Shown when the rant's link is shared on WhatsApp, X, LinkedIn and so on.
+          Best at 1200×630. Leave empty for an automatic card with the rant's title.
       - name: body
         label: Body
         widget: markdown
@@ -91,7 +100,9 @@ collections:
         widget: image
         required: false
         default: ""
-        hint: Landscape works best (about 1.9:1), e.g. a screenshot of the landing page.
+        hint: >-
+          Landscape works best (about 1.9:1), e.g. a screenshot of the landing page.
+          Also used as the project's link preview; empty gets an automatic card.
       - name: featured
         label: Featured
         widget: boolean
