@@ -78,7 +78,8 @@ export default function Sheet({
 						animate={{ x: 0, transition: { duration: 0.6, ease, delay: 0.14 } }}
 						exit={{ x: off, transition: { duration: 0.4, ease } }}
 					>
-						<div className="flex items-center justify-between">
+						{/* stays pinned while the sheet's content scrolls underneath */}
+						<div className="sticky -top-6 z-10 -mx-7 -mt-6 flex items-center justify-between border-b border-white/[0.06] bg-[#121212]/90 px-7 pb-4 pt-6 backdrop-blur-md">
 							<span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-white/40">{title}</span>
 							<button
 								onClick={onClose}
