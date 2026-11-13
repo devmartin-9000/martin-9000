@@ -61,14 +61,14 @@ export default function Hero() {
 	return (
 		<section id="top" className="relative overflow-hidden">
 			<div className="relative mx-auto max-w-[1240px] px-5 md:min-h-[600px] md:px-10">
-				<div className="relative z-10 max-w-[360px] pt-6 md:pt-12">
+				<div className="relative z-10 max-w-[460px] pt-6 md:pt-12">
 					<p className="mb-4 text-[10px] tracking-[0.5em] text-ink/30">• • • • • • • •</p>
-					<h1 className="text-[clamp(2.5rem,5vw,3.6rem)] font-medium leading-[1.04] tracking-[-0.035em]">
-						Reliable Apps
+					<h1 className="text-[clamp(2.1rem,3.7vw,2.75rem)] font-medium leading-[1.08] tracking-[-0.035em]">
+						Hi, I'm {profile.short.split(" ")[0]},
 						<br />
-						Start With
+						a {profile.role}
 						<br />
-						<span className="text-ink/40">Clean Code</span>
+						<span className="text-ink/40">from {profile.location}.</span>
 					</h1>
 					<p className="mt-5 max-w-[260px] text-[13px] leading-relaxed text-ink/60">
 						React interfaces, test automation and data workflows for products that ship fast
