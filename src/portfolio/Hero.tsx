@@ -1,20 +1,18 @@
-import { byId, profile } from "@/lib/data";
-import { ArrowDot, PillButton } from "./shared";
+import { featured, profile, rants, site } from "@/lib/data";
+import { ArrowDot, PillButton, Thumb } from "./shared";
 
 /**
- * Your portrait. A cut-out on a transparent or white background works best,
- * e.g. "./assets/me.png". Leave empty to show the placeholder silhouette.
+ * Your portrait, set in /admin → Site settings. A cut-out on a transparent or
+ * white background works best. Empty shows the placeholder silhouette.
  */
-const PORTRAIT = "";
+const PORTRAIT = site.portrait;
 
-const latest = byId("vetta");
+/** First featured project (lowest order) gets the dark floating card. */
+const latest = featured[0] as (typeof featured)[number] | undefined;
 
-const links = [
-	{ label: "Home", href: "#top" },
-	{ label: "Approach", href: "#approach" },
-	{ label: "Projects", href: "#projects" },
-	{ label: "Contact", href: "#contact" },
-];
+/** Newest rant gets the light floating card. */
+const latestYap = rants[0] as (typeof rants)[number] | undefined;
+
 
 function Silhouette({ className }: { className?: string }) {
 	return (
@@ -62,28 +60,6 @@ function Portrait() {
 export default function Hero() {
 	return (
 		<section id="top" className="relative overflow-hidden">
-			<nav className="relative z-20 mx-auto flex max-w-[1240px] items-center justify-between px-5 py-6 md:px-10">
-				<a href="#top" className="flex items-center gap-2.5">
-					<img src="./assets/logo-mj.svg" alt="" className="h-8 w-8" />
-					<span className="leading-none">
-						<span className="block text-[15px] font-semibold tracking-tight">{profile.short}</span>
-						<span className="text-[8px] font-medium uppercase tracking-[0.25em] text-ink/45">
-							{profile.role}
-						</span>
-					</span>
-				</a>
-				<div className="hidden items-center gap-8 text-[12px] text-ink/60 md:flex">
-					{links.map((l, i) => (
-						<a key={l.href} href={l.href} className={i === 0 ? "font-medium text-ink" : "hover:text-ink"}>
-							{l.label}
-						</a>
-					))}
-				</div>
-				<PillButton href="#contact" light>
-					Get in touch
-				</PillButton>
-			</nav>
-
 			<div className="relative mx-auto max-w-[1240px] px-5 md:min-h-[600px] md:px-10">
 				<div className="relative z-10 max-w-[360px] pt-6 md:pt-12">
 					<p className="mb-4 text-[10px] tracking-[0.5em] text-ink/30">• • • • • • • •</p>
@@ -109,23 +85,50 @@ export default function Hero() {
 				</div>
 
 				{/* floating latest-project card */}
-				<a
-					href={latest.url}
-					target="_blank"
-					rel="noreferrer"
-					className="group absolute right-5 top-[46%] z-20 w-[150px] rounded-[22px] bg-[#141414] p-2 text-white shadow-[0_30px_50px_-20px_rgba(0,0,0,0.6)] md:right-10 md:top-4 md:w-[180px]"
-				>
-					<div className="aspect-[1.25] overflow-hidden rounded-[16px] bg-white">
-						<img src={latest.thumbnail} alt="" className="h-full w-full object-cover object-left-top" />
-					</div>
-					<div className="flex items-end justify-between gap-2 px-2 pb-2 pt-3">
-						<span>
-							<span className="block text-[9px] uppercase tracking-[0.2em] text-white/45">Latest project</span>
-							<span className="mt-1 block text-[13px] font-medium leading-tight">{latest.name}</span>
+				{latest && (
+					<a
+						href={latest.url}
+						target="_blank"
+						rel="noreferrer"
+						className="group absolute right-5 top-[46%] z-20 w-[160px] rounded-[22px] bg-[#141414] p-2 text-white shadow-[0_30px_50px_-20px_rgba(0,0,0,0.6)] md:right-10 md:top-4 md:w-[230px]"
+					>
+						<div className="aspect-[1.9] overflow-hidden rounded-[14px] bg-white">
+							<Thumb project={latest} className="object-top transition-transform duration-500 group-hover:scale-105" />
+						</div>
+						<div className="flex items-end justify-between gap-2 px-2 pb-2 pt-3">
+							<span>
+								<span className="block text-[9px] uppercase tracking-[0.2em] text-white/45">Latest project</span>
+								<span className="mt-1 block text-[13px] font-medium leading-tight">{latest.name}</span>
+							</span>
+							<ArrowDot />
+						</div>
+					</a>
+				)}
+
+				{/* floating latest-yap card */}
+				{latestYap && (
+					<a
+						href={`#yap=${encodeURIComponent(latestYap.id)}`}
+						className="group absolute bottom-[10%] left-5 z-20 flex w-[170px] flex-col rounded-[22px] bg-gradient-to-b from-[#f6f3ee] to-[#e9e3da] p-4 text-ink shadow-[0_30px_50px_-24px_rgba(0,0,0,0.45)] ring-1 ring-white/70 md:bottom-auto md:left-auto md:right-10 md:top-[290px] md:w-[230px]"
+					>
+						<span className="flex items-center justify-between gap-2">
+							<span className="text-[9px] uppercase tracking-[0.2em] text-ink/45">Latest yap</span>
+							<span className="flex items-center gap-1 text-[9px] text-kinetic">
+								<span className="h-1.5 w-1.5 animate-pulse rounded-full bg-kinetic" />
+								New
+							</span>
 						</span>
-						<ArrowDot />
-					</div>
-				</a>
+						<span className="mt-3 line-clamp-3 text-[13px] font-medium leading-snug tracking-tight">{latestYap.title}</span>
+						<span className="mt-4 flex items-end justify-between gap-2">
+							<span className="text-[10px] leading-tight text-ink/45">
+								Mood: <span className="text-kinetic">{latestYap.mood}</span>
+								<br />
+								{latestYap.minutes} min yap
+							</span>
+							<ArrowDot dark />
+						</span>
+					</a>
+				)}
 			</div>
 
 			{/* giant word */}

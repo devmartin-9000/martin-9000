@@ -1,0 +1,15 @@
+{
+  "name": "VettaShop",
+  "tagline": "Run your whole shop from one screen",
+  "category": "Business",
+  "description": "Shop management for small businesses and solo traders in Malawi: point of sale, stock control, cash, Airtel Money, TNM and bank balances, rentals and real profit, in one simple system.",
+  "url": "https://vettashop.vercel.app",
+  "tags": [
+    "POS",
+    "Inventory",
+    "Malawi"
+  ],
+  "thumbnail": "/assets/projects/vettashop.png",
+  "featured": true,
+  "order": 1
+}

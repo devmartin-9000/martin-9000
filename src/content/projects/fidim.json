@@ -1,0 +1,15 @@
+{
+  "name": "Fidim Legal",
+  "tagline": "A deterministic legal OS for Malawian companies",
+  "category": "Business",
+  "description": "One place for companies to manage legal compliance paperwork, track licences, and follow guided, educational workflows for setting up new companies. A commercial lawyer in software form.",
+  "url": "https://fidim-legal.vercel.app",
+  "tags": [
+    "Legal-tech",
+    "Compliance",
+    "Workflows"
+  ],
+  "thumbnail": "",
+  "featured": false,
+  "order": 16
+}

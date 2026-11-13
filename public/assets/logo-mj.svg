@@ -1,9 +1,36 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Martin Jack">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" role="img" aria-label="Martin Jack">
   <title>Martin Jack</title>
-  <!-- M whose right stem drops and hooks into a J -->
-  <path d="M12 52V14l16 22 16-22v28c0 9-7 12-14 9"
-        fill="none" stroke="#141414" stroke-width="6"
-        stroke-linecap="round" stroke-linejoin="round"/>
-  <!-- the period from "Martin Jack." -->
-  <circle cx="54" cy="51" r="4" fill="#ff6122"/>
+  <defs>
+    <!-- M whose right stem drops and hooks into a J, scaled in to leave room for the orbit -->
+    <path id="mj" d="M12 52V14l16 22 16-22v28c0 9-7 12-14 9"
+          transform="translate(32 33) scale(0.8) translate(-28 -33)"
+          fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- tapered orbit: the gap between two offset ellipses, thick in front, thin behind -->
+    <path id="ring" fill-rule="evenodd"
+          d="M1.5 34a30.5 12 0 1 0 61 0a30.5 12 0 1 0 -61 0z
+             M4.2 33.4a28.4 9.4 0 1 0 56.8 0a28.4 9.4 0 1 0 -56.8 0z"/>
+    <!-- the half of the ring that passes in front of the letter (in the ring's tilted frame) -->
+    <clipPath id="front"><rect x="-8" y="34" width="80" height="20"/></clipPath>
+
+    <!-- ring disappears where it goes behind the letter -->
+    <mask id="behind" maskUnits="userSpaceOnUse" x="-8" y="-8" width="80" height="80">
+      <rect x="-8" y="-8" width="80" height="80" fill="#fff"/>
+      <use xlink:href="#mj" href="#mj" stroke="#000" stroke-width="13"/>
+    </mask>
+    <!-- letter is cut where the front of the ring crosses it -->
+    <mask id="crossing" maskUnits="userSpaceOnUse" x="-8" y="-8" width="80" height="80">
+      <rect x="-8" y="-8" width="80" height="80" fill="#fff"/>
+      <g transform="rotate(-28 32 34)">
+        <ellipse cx="32" cy="33.8" rx="29.5" ry="10.7" fill="none" stroke="#000" stroke-width="6.5" clip-path="url(#front)"/>
+      </g>
+    </mask>
+  </defs>
+
+  <g mask="url(#behind)">
+    <g transform="rotate(-28 32 34)"><use xlink:href="#ring" href="#ring" fill="#ff6122"/></g>
+  </g>
+  <use xlink:href="#mj" href="#mj" stroke="#141414" stroke-width="7.5" mask="url(#crossing)"/>
+  <g transform="rotate(-28 32 34)">
+    <use xlink:href="#ring" href="#ring" fill="#ff6122" clip-path="url(#front)"/>
+  </g>
 </svg>

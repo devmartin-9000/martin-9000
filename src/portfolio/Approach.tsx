@@ -79,7 +79,7 @@ const steps: Step[] = [
 
 export default function Approach() {
 	return (
-		<section id="approach" className="mx-auto max-w-[1240px] scroll-mt-6 px-5 py-20 md:px-10 md:py-28">
+		<section id="approach" className="mx-auto max-w-[1240px] scroll-mt-20 px-5 py-20 md:px-10 md:py-28">
 			<div className="grid gap-8 md:grid-cols-[1.3fr_1fr] md:items-end">
 				<div>
 					<Eyebrow>My approach</Eyebrow>
@@ -103,31 +103,31 @@ export default function Approach() {
 				</div>
 			</div>
 
-			<div className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+			<div className="mt-10 grid grid-cols-2 gap-2.5 sm:gap-4 md:mt-14 lg:grid-cols-4">
 				{steps.map((s) => (
 					<article
 						key={s.n}
 						className={cn(
-							"group relative flex min-h-[360px] flex-col overflow-hidden rounded-[22px] p-5",
+							"group relative flex min-h-[270px] flex-col overflow-hidden rounded-[18px] p-3.5 sm:min-h-[360px] sm:rounded-[22px] sm:p-5",
 							s.light ? "bg-gradient-to-b from-[#f3efe9] to-[#e4ddd3] text-ink" : "bg-[#121212] text-white",
-							s.offset && "lg:translate-y-8"
+							s.offset && "translate-y-5 lg:translate-y-8"
 						)}
 					>
 						{s.art}
 						<span
 							className={cn(
-								"relative w-fit rounded-full px-2.5 py-1 text-[9px] font-medium",
+								"relative w-fit rounded-full px-2 py-1 text-[8px] font-medium sm:px-2.5 sm:text-[9px]",
 								s.light ? "bg-white/70 text-ink/60" : "bg-white/10 text-white/70 ring-1 ring-white/10"
 							)}
 						>
 							{s.n} / {s.label}
 						</span>
-						<div className="relative mt-auto pt-40">
-							<h3 className="max-w-[200px] text-[19px] font-medium leading-[1.2] tracking-tight">{s.title}</h3>
+						<div className="relative mt-auto pt-24 sm:pt-40">
+							<h3 className="max-w-[200px] text-[15px] sm:text-[19px] font-medium leading-[1.2] tracking-tight">{s.title}</h3>
 							<p className={cn("mt-3 max-w-[210px] text-[11px] leading-relaxed", s.light ? "text-ink/50" : "text-white/50")}>
 								{s.body}
 							</p>
-							<ArrowDot dark={s.light} className="mt-5" />
+							<ArrowDot dark={s.light} className="mt-4 h-7 w-7 sm:mt-5 sm:h-8 sm:w-8" />
 						</div>
 					</article>
 				))}

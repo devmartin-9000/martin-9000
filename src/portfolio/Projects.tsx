@@ -1,11 +1,9 @@
-import { byId, profile } from "@/lib/data";
-import { ArrowDot, Eyebrow, PillButton } from "./shared";
-
-const featured = ["vetta", "kashcraze", "fintriqs", "raveona"].map(byId);
+import { featured, profile } from "@/lib/data";
+import { ArrowDot, Eyebrow, PillButton, Thumb } from "./shared";
 
 export default function Projects() {
 	return (
-		<section id="projects" className="mx-auto max-w-[1240px] scroll-mt-6 px-5 pb-20 pt-8 md:px-10 md:pb-28">
+		<section id="projects" className="mx-auto max-w-[1240px] scroll-mt-20 px-5 pb-20 pt-8 md:px-10 md:pb-28">
 			<div className="flex flex-wrap items-end justify-between gap-6">
 				<div>
 					<Eyebrow>Selected work</Eyebrow>
@@ -30,12 +28,7 @@ export default function Projects() {
 						className="group flex flex-col overflow-hidden rounded-[22px] bg-[#121212] p-2 text-white"
 					>
 						<div className="relative aspect-[1.9] overflow-hidden rounded-[16px] bg-white">
-							<img
-								src={p.thumbnail}
-								alt={`${p.name} preview`}
-								loading="lazy"
-								className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.04]"
-							/>
+							<Thumb project={p} className="object-top transition-transform duration-700 group-hover:scale-[1.04]" />
 							<span className="absolute left-3 top-3 rounded-full bg-black/70 px-2.5 py-1 text-[9px] font-medium text-white/80 backdrop-blur">
 								{String(i + 1).padStart(2, "0")} / {p.category}
 							</span>
