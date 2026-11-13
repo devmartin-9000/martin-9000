@@ -36,13 +36,6 @@ export default function Nav() {
 							<span className="text-[8px] font-medium uppercase tracking-[0.25em] text-ink/45">{profile.role}</span>
 						</span>
 					</a>
-					<div className="hidden items-center gap-6 text-[12px] text-ink/60 xl:flex">
-						{navLinks.map((l) => (
-							<a key={l.href} href={l.href} className="hover:text-ink">
-								{l.label}
-							</a>
-						))}
-					</div>
 					<div className="flex items-center gap-2">
 						<span className="hidden sm:block">
 							<PillButton href="#contact" light>
