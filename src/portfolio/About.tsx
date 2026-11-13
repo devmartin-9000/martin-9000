@@ -21,7 +21,7 @@ const journey = [...jobs].reverse().map((j) => ({
 
 const facts = [
 	{ value: "6 yrs", label: "Professional experience" },
-	{ value: "10+", label: "Projects shipped" },
+	{ value: "20+", label: "Projects shipped" },
 	{ value: "6+", label: "Countries supported" },
 ];
 
