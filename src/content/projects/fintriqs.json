@@ -11,5 +11,19 @@
   ],
   "thumbnail": "/assets/projects/fintriqs.png",
   "featured": true,
-  "order": 3
+  "order": 3,
+  "stack": [
+    "React",
+    "TypeScript",
+    "Tailwind CSS"
+  ],
+  "brief": "",
+  "features": [
+    "Polished, styled invoices",
+    "Reusable product catalogs",
+    "Stored payment details",
+    "Built for businesses, freelancers, agencies and creators"
+  ],
+  "demo": [],
+  "demoNote": ""
 }

@@ -37,9 +37,9 @@ export default function ProjectsPage() {
 			</PageIntro>
 
 			<main className="mx-auto max-w-[1240px] px-5 py-12 md:px-10 md:py-16">
-				<div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-					{shown.map((p) => (
-						<ProjectCard key={p.id} project={p} onOpen={() => open(p.id)} />
+				<div className="grid grid-cols-2 gap-2.5 sm:gap-4">
+					{shown.map((p, i) => (
+						<ProjectCard key={p.id} project={p} onOpen={() => open(p.id)} reveal={(i % 2) + 1} />
 					))}
 				</div>
 				<div className="mt-12 flex justify-center">

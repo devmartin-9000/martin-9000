@@ -29,7 +29,7 @@ export default function About() {
 	return (
 		<section id="about" className="scroll-mt-20 bg-[#f6f5f3]">
 			<div className="mx-auto grid max-w-[1240px] gap-12 px-5 py-20 md:px-10 md:py-28 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
-				<div className="lg:sticky lg:top-28 lg:self-start">
+				<div data-reveal className="lg:sticky lg:top-28 lg:self-start">
 					<Eyebrow>About me</Eyebrow>
 					<h2 className="mt-4 text-[clamp(1.9rem,3.6vw,2.8rem)] font-medium leading-[1.1] tracking-[-0.03em]">
 						From the Sales Floor
@@ -63,7 +63,7 @@ export default function About() {
 					{journey.map((j, i) => {
 						const now = i === journey.length - 1;
 						return (
-							<li key={j.id} className="relative flex gap-5 pb-4 last:pb-0">
+							<li key={j.id} data-reveal={i + 1} className="relative flex gap-5 pb-4 last:pb-0">
 								<span
 									className={cn(
 										"relative z-10 mt-5 grid h-10 w-10 shrink-0 place-items-center rounded-full text-[10px] font-semibold",

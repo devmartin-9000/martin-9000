@@ -10,7 +10,7 @@ export default function YapZone() {
 	return (
 		<section id="yap" className="scroll-mt-20 bg-[#f6f5f3]">
 			<div className="mx-auto max-w-[1240px] px-5 py-20 md:px-10 md:py-28">
-				<div className="grid gap-8 md:grid-cols-[1.3fr_1fr] md:items-end">
+				<div data-reveal className="grid gap-8 md:grid-cols-[1.3fr_1fr] md:items-end">
 					<div>
 						<Eyebrow>The Yap Zone</Eyebrow>
 						<h2 className="mt-4 text-[clamp(1.9rem,3.6vw,2.8rem)] font-medium leading-[1.1] tracking-[-0.03em]">
@@ -31,10 +31,10 @@ export default function YapZone() {
 				</div>
 
 				<div className="mt-12 grid gap-2.5 sm:gap-4 lg:grid-cols-[1fr_1.15fr]">
-					<YapCard rant={first} featured />
-					<div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 sm:gap-4">
-						{rest.map((r) => (
-							<YapCard key={r.id} rant={r} />
+					<YapCard rant={first} featured reveal={1} />
+					<div className="grid grid-cols-2 gap-2.5 sm:gap-4">
+						{rest.map((r, i) => (
+							<YapCard key={r.id} rant={r} reveal={i + 2} />
 						))}
 					</div>
 				</div>

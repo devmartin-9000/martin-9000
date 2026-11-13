@@ -1,6 +1,7 @@
 import { useEffect, type ReactNode } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { X } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -14,6 +15,7 @@ export default function Sheet({
 	label,
 	title,
 	width = 440,
+	side = "right",
 	children,
 }: {
 	open: boolean;
@@ -23,8 +25,11 @@ export default function Sheet({
 	/** small caps heading next to the close button */
 	title: ReactNode;
 	width?: number;
+	/** which edge it slides in from; the menu uses the right, project details the left */
+	side?: "left" | "right";
 	children: ReactNode;
 }) {
+	const off = side === "left" ? "-100%" : "100%";
 	useEffect(() => {
 		if (!open) return;
 		const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
@@ -52,20 +57,26 @@ export default function Sheet({
 					{/* ghost */}
 					<motion.div
 						aria-hidden
-						className="absolute inset-y-0 right-0 max-w-full border-l border-white/40 bg-white/35 backdrop-blur-xl"
+						className={cn(
+							"absolute inset-y-0 max-w-full border-white/40 bg-white/35 backdrop-blur-xl",
+							side === "left" ? "left-0 border-r" : "right-0 border-l"
+						)}
 						style={{ width: width + 36 }}
-						initial={{ x: "100%" }}
+						initial={{ x: off }}
 						animate={{ x: 0, transition: { duration: 0.55, ease } }}
-						exit={{ x: "100%", transition: { duration: 0.45, ease, delay: 0.12 } }}
+						exit={{ x: off, transition: { duration: 0.45, ease, delay: 0.12 } }}
 					/>
 
 					{/* sheet */}
 					<motion.div
-						className="absolute inset-y-0 right-0 flex max-w-full flex-col overflow-y-auto bg-[#121212] px-7 pb-8 pt-6 text-white sm:rounded-l-[28px]"
+						className={cn(
+							"absolute inset-y-0 flex max-w-full flex-col overflow-y-auto bg-[#121212] px-7 pb-8 pt-6 text-white",
+							side === "left" ? "left-0 sm:rounded-r-[28px]" : "right-0 sm:rounded-l-[28px]"
+						)}
 						style={{ width }}
-						initial={{ x: "100%" }}
+						initial={{ x: off }}
 						animate={{ x: 0, transition: { duration: 0.6, ease, delay: 0.14 } }}
-						exit={{ x: "100%", transition: { duration: 0.4, ease } }}
+						exit={{ x: off, transition: { duration: 0.4, ease } }}
 					>
 						<div className="flex items-center justify-between">
 							<span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-white/40">{title}</span>

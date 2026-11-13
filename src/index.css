@@ -18,6 +18,43 @@ html {
 	scroll-behavior: smooth;
 }
 
+/* Scroll-triggered entrances (see src/lib/reveal.ts). Only applied once JS has opted in,
+   so the page is fully visible without JS or with reduced motion. Compositor-only:
+   opacity + transform. `translate` (hover lifts) keeps its own short transition. */
+.reveal-ready [data-reveal] {
+	opacity: 0;
+	transform: translate3d(0, 28px, 0);
+	transition:
+		opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms),
+		transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms),
+		translate 0.3s ease,
+		background-color 0.2s ease,
+		color 0.2s ease;
+}
+.reveal-ready [data-reveal].is-revealed {
+	opacity: 1;
+	transform: none;
+}
+
+/* ------------------------------------------------------------------------------------
+   Chrome 101 baseline.
+   Tailwind v4 moves elements with the standalone `translate` / `scale` properties,
+   which Chrome only supports from 104. Older browsers get the same values rebuilt
+   as a classic `transform` from Tailwind's --tw-* variables. Newer browsers skip this
+   block entirely. (Colours and masks already ship with fallbacks from Tailwind.)
+   ------------------------------------------------------------------------------------ */
+@supports not (translate: 0) {
+	[class*="translate-"],
+	[class*="scale-x-"] {
+		transform: translate(var(--tw-translate-x, 0), var(--tw-translate-y, 0))
+			scale(var(--tw-scale-x, 1), var(--tw-scale-y, 1));
+	}
+	/* scroll entrances use `transform` too: once revealed, hand it back to the offset */
+	.reveal-ready [data-reveal].is-revealed[class*="translate-"] {
+		transform: translate(var(--tw-translate-x, 0), var(--tw-translate-y, 0));
+	}
+}
+
 /* Invisible scrollbars everywhere: scrolling still works by wheel, touch and keyboard */
 * {
 	scrollbar-width: none;

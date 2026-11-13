@@ -101,6 +101,39 @@ collections:
         widget: number
         value_type: int
         default: 50
+      # ---- "Read more" details sheet (all optional; empty parts are hidden) ----
+      - name: stack
+        label: Tech stack
+        widget: list
+        required: false
+        default: []
+        hint: One technology per item, e.g. React, TypeScript, Supabase.
+      - name: brief
+        label: Detailed brief
+        widget: markdown
+        required: false
+        default: ""
+        hint: The longer story. What problem it solves, who it's for, your role.
+      - name: features
+        label: Features
+        widget: list
+        required: false
+        default: []
+      - name: demo
+        label: Demo login
+        widget: list
+        required: false
+        default: []
+        hint: Public demo credentials only. Never a real account's password.
+        fields:
+          - { name: label, label: Label, widget: string, hint: "e.g. Email, Password, PIN" }
+          - { name: value, label: Value, widget: string }
+      - name: demoNote
+        label: Demo note
+        widget: string
+        required: false
+        default: ""
+        hint: e.g. "Data resets every night".
 
   # ---------------------------------------------------------------- Site images
   - name: settings

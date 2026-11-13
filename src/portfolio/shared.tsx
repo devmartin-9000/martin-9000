@@ -51,7 +51,7 @@ export function PageIntro({
 }) {
 	return (
 		<header id="top" className="bg-[#f6f5f3]">
-			<div className="mx-auto max-w-[1240px] px-5 pb-12 pt-10 md:px-10 md:pb-16 md:pt-14">
+			<div data-reveal className="mx-auto max-w-[1240px] px-5 pb-12 pt-10 md:px-10 md:pb-16 md:pt-14">
 				<a href="/" className="text-[12px] text-ink/50 transition-colors hover:text-kinetic">
 					← Back to portfolio
 				</a>

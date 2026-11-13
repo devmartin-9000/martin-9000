@@ -80,7 +80,7 @@ const steps: Step[] = [
 export default function Approach() {
 	return (
 		<section id="approach" className="mx-auto max-w-[1240px] scroll-mt-20 px-5 py-20 md:px-10 md:py-28">
-			<div className="grid gap-8 md:grid-cols-[1.3fr_1fr] md:items-end">
+			<div data-reveal className="grid gap-8 md:grid-cols-[1.3fr_1fr] md:items-end">
 				<div>
 					<Eyebrow>My approach</Eyebrow>
 					<h2 className="mt-4 text-[clamp(1.9rem,3.6vw,2.8rem)] font-medium leading-[1.1] tracking-[-0.03em]">
@@ -104,9 +104,10 @@ export default function Approach() {
 			</div>
 
 			<div className="mt-10 grid grid-cols-2 gap-2.5 sm:gap-4 md:mt-14 lg:grid-cols-4">
-				{steps.map((s) => (
+				{steps.map((s, i) => (
 					<article
 						key={s.n}
+						data-reveal={i + 1}
 						className={cn(
 							"group relative flex min-h-[270px] flex-col overflow-hidden rounded-[18px] p-3.5 sm:min-h-[360px] sm:rounded-[22px] sm:p-5",
 							s.light ? "bg-gradient-to-b from-[#f3efe9] to-[#e4ddd3] text-ink" : "bg-[#121212] text-white",

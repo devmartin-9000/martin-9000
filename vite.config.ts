@@ -11,4 +11,9 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  // Supported baseline: Chrome 101. Newer JS/CSS syntax is lowered to run there.
+  build: {
+    target: "chrome101",
+    cssTarget: "chrome101",
+  },
 });

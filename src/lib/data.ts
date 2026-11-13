@@ -13,7 +13,7 @@ export const navLinks = [
 	{ label: "About", href: "/#about" },
 	{ label: "Approach", href: "/#approach" },
 	{ label: "Skills", href: "/#skills" },
-	{ label: "Projects", href: "/#projects" },
+	{ label: "Projects", href: "/projects" },
 	{ label: "Yap Zone", href: "/yap" },
 	{ label: "Contact", href: "/#contact" },
 ];
@@ -47,15 +47,36 @@ export type Project = {
 	featured: boolean;
 	/** lower comes first */
 	order: number;
+	/* ---- "Read more" details sheet; every part is optional ---- */
+	/** e.g. React, TypeScript, Supabase */
+	stack: string[];
+	/** longer write-up, Markdown from the admin editor */
+	brief: string;
+	features: string[];
+	/** public demo login, e.g. { label: "Email", value: "demo@app.com" } */
+	demo: { label: string; value: string }[];
+	/** shown under the demo login, e.g. "Data resets every night" */
+	demoNote: string;
 };
 
-const projectFiles = import.meta.glob<Omit<Project, "id">>("/src/content/projects/*.json", {
+type ProjectFile = Omit<Project, "id" | "stack" | "brief" | "features" | "demo" | "demoNote"> &
+	Partial<Pick<Project, "stack" | "brief" | "features" | "demo" | "demoNote">>;
+
+const projectFiles = import.meta.glob<ProjectFile>("/src/content/projects/*.json", {
 	eager: true,
 	import: "default",
 });
 
 export const projects: Project[] = Object.entries(projectFiles)
-	.map(([path, p]) => ({ ...p, id: fileId(path) }))
+	.map(([path, p]) => ({
+		...p,
+		id: fileId(path),
+		stack: p.stack ?? [],
+		brief: p.brief ?? "",
+		features: p.features ?? [],
+		demo: p.demo ?? [],
+		demoNote: p.demoNote ?? "",
+	}))
 	.sort((a, b) => a.order - b.order);
 
 export const featured = projects.filter((p) => p.featured);

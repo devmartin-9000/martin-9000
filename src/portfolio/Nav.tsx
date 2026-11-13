@@ -30,7 +30,9 @@ export default function Nav() {
 			>
 				<nav className="mx-auto flex max-w-[1240px] items-center justify-between gap-4 px-5 py-4 md:px-10">
 					<a href="/#top" className="flex items-center gap-2.5">
-						<img src="/assets/logo-mj.svg" alt="" className="h-8 w-8" />
+						<span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-white ring-1 ring-ink/10">
+							<img src="/assets/logo-mj.svg" alt="" className="h-7 w-7" />
+						</span>
 						<span className="leading-none">
 							<span className="block text-[15px] font-semibold tracking-tight">{profile.short}</span>
 							<span className="text-[8px] font-medium uppercase tracking-[0.25em] text-ink/45">{profile.role}</span>

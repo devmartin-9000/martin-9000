@@ -82,14 +82,16 @@ function TechIcon({ tech }: { tech: Tech }) {
 export default function Skills() {
 	return (
 		<section id="skills" className="mx-auto max-w-[1240px] scroll-mt-20 px-5 py-20 md:px-10 md:py-28">
+			<div data-reveal>
 			<Eyebrow>Skills</Eyebrow>
 			<h2 className="mt-4 text-[clamp(1.9rem,3.6vw,2.8rem)] font-medium leading-[1.1] tracking-[-0.03em]">
 				The Tools I <span className="text-kinetic">Build</span> With.
 			</h2>
+			</div>
 
 			<div className="mt-12 grid gap-4 lg:grid-cols-[1fr_1.15fr]">
 				{/* tech stack */}
-				<div className="relative overflow-hidden rounded-[22px] bg-[#121212] p-5 text-white sm:p-7">
+				<div data-reveal="1" className="relative overflow-hidden rounded-[22px] bg-[#121212] p-5 text-white sm:p-7">
 					<div className="absolute -bottom-24 -left-16 h-64 w-64 rounded-full bg-kinetic/25 blur-3xl" aria-hidden />
 					<div className="relative flex items-center justify-between">
 						<span className="rounded-full bg-white/10 px-2.5 py-1 text-[9px] font-medium text-white/70 ring-1 ring-white/10">
@@ -113,7 +115,7 @@ export default function Skills() {
 				{/* abilities */}
 				<ul className="grid grid-cols-2 gap-2.5 sm:gap-4">
 					{abilities.map((a, i) => (
-						<li key={a.title} className="flex flex-col rounded-[18px] bg-[#f4f3f1] p-4 sm:rounded-[22px] sm:p-5">
+						<li key={a.title} data-reveal={i + 2} className="flex flex-col rounded-[18px] bg-[#f4f3f1] p-4 sm:rounded-[22px] sm:p-5">
 							<div className="flex items-center justify-between">
 								<span className="grid h-9 w-9 place-items-center rounded-full bg-white text-ink">
 									<a.icon size={16} />

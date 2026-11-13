@@ -11,5 +11,14 @@
   ],
   "thumbnail": "/assets/projects/raveona.png",
   "featured": true,
-  "order": 4
+  "order": 4,
+  "stack": [],
+  "brief": "",
+  "features": [
+    "Every profile reviewed by a person",
+    "Intentional introductions",
+    "A curated community in Malawi"
+  ],
+  "demo": [],
+  "demoNote": ""
 }

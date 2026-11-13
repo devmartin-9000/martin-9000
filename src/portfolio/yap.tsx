@@ -9,14 +9,26 @@ import Sheet from "./Sheet";
 const rantLabel = (rant: Rant) => `Rant #${String(rant.no).padStart(2, "0")}`;
 
 /** A rant card. A real link to /yap/<id>; pass onOpen to open it in place instead. */
-export function YapCard({ rant, featured, onOpen }: { rant: Rant; featured?: boolean; onOpen?: () => void }) {
+export function YapCard({
+	rant,
+	featured,
+	onOpen,
+	reveal,
+}: {
+	rant: Rant;
+	featured?: boolean;
+	onOpen?: () => void;
+	/** stagger step for the scroll entrance */
+	reveal?: number;
+}) {
 	return (
 		<a
 			href={`/yap/${encodeURIComponent(rant.id)}`}
 			onClick={onOpen ? clickHandler(onOpen) : undefined}
+			data-reveal={reveal}
 			className={cn(
-				"group relative flex h-full w-full flex-col overflow-hidden rounded-[22px] p-5 text-left transition-transform hover:-translate-y-1",
-				featured ? "min-h-[340px] bg-[#121212] text-white sm:p-7" : "min-h-[220px] bg-[#f4f3f1]"
+				"group relative flex h-full w-full flex-col overflow-hidden rounded-[18px] p-3.5 text-left sm:rounded-[22px] sm:p-5 transition-transform hover:-translate-y-1",
+				featured ? "min-h-[230px] bg-[#121212] text-white sm:min-h-[340px] sm:p-7" : "min-h-[230px] bg-[#f4f3f1]"
 			)}
 		>
 			{featured && (
@@ -30,29 +42,29 @@ export function YapCard({ rant, featured, onOpen }: { rant: Rant; featured?: boo
 					</span>
 				</>
 			)}
-			<div className="relative flex items-center justify-between gap-3">
+			<div className="relative flex flex-wrap items-center justify-between gap-x-3 gap-y-1.5">
 				<span
 					className={cn(
-						"rounded-full px-2.5 py-1 text-[9px] font-medium",
+						"rounded-full px-2 py-0.5 text-[8px] font-medium sm:px-2.5 sm:py-1 sm:text-[9px]",
 						featured ? "bg-white/10 text-white/70 ring-1 ring-white/10" : "bg-white text-ink/60"
 					)}
 				>
 					{rantLabel(rant)}
 				</span>
-				<span className={cn("text-[10px]", featured ? "text-white/40" : "text-ink/40")}>
+				<span className={cn("text-[9px] sm:text-[10px]", featured ? "text-white/40" : "text-ink/40")}>
 					Mood: <span className="text-kinetic">{rant.mood}</span>
 				</span>
 			</div>
-			<div className="relative mt-auto pt-10">
-				<h3 className={cn("font-medium leading-[1.15] tracking-tight", featured ? "max-w-[380px] text-[clamp(1.5rem,3vw,2rem)]" : "text-[16px]")}>
+			<div className="relative mt-auto pt-6 sm:pt-10">
+				<h3 className={cn("font-medium leading-[1.15] tracking-tight", featured ? "max-w-[380px] text-[15px] sm:text-[clamp(1.5rem,3vw,2rem)]" : "text-[14px] sm:text-[16px]")}>
 					{rant.title}
 				</h3>
-				<p className={cn("mt-2 max-w-[400px] text-[12px] leading-relaxed", featured ? "text-white/55" : "text-ink/55")}>
+				<p className={cn("mt-2 line-clamp-3 max-w-[400px] text-[11px] leading-relaxed sm:text-[12px]", featured ? "text-white/55" : "text-ink/55")}>
 					{rant.excerpt}
 				</p>
-				<div className="mt-5 flex items-center justify-between">
-					<span className={cn("text-[11px]", featured ? "text-white/40" : "text-ink/40")}>{rant.minutes} min yap</span>
-					<ArrowDot dark={!featured} />
+				<div className="mt-4 flex items-center justify-between gap-2 sm:mt-5">
+					<span className={cn("text-[10px] sm:text-[11px]", featured ? "text-white/40" : "text-ink/40")}>{rant.minutes} min yap</span>
+					<ArrowDot dark={!featured} className="h-7 w-7 sm:h-8 sm:w-8" />
 				</div>
 			</div>
 		</a>

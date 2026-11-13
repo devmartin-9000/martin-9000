@@ -11,5 +11,17 @@
   ],
   "thumbnail": "/assets/projects/vettashop.png",
   "featured": true,
-  "order": 1
+  "order": 1,
+  "stack": [],
+  "brief": "",
+  "features": [
+    "Fast point of sale",
+    "Stock and inventory tracking",
+    "Cash, Airtel Money, TNM and bank balances",
+    "Equipment rentals",
+    "Real profit reports",
+    "7-day free trial"
+  ],
+  "demo": [],
+  "demoNote": ""
 }

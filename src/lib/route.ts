@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState, type MouseEvent } from "react";
+import { useCallback, useEffect, useRef, useState, type MouseEvent } from "react";
 
 /** Which page the current address belongs to. Pages are plain links, so this is read once per load. */
 export function currentPage(): "home" | "yap" | "projects" {
@@ -19,23 +19,38 @@ const itemFromPath = (base: string) => {
  */
 export function useRouteItem(base: string) {
 	const [id, setId] = useState(() => itemFromPath(base));
+	// true when this page pushed the item's address, so closing can simply step back
+	const pushed = useRef(false);
 
 	useEffect(() => {
-		const onPop = () => setId(itemFromPath(base));
+		const onPop = () => {
+			pushed.current = false;
+			setId(itemFromPath(base));
+		};
 		window.addEventListener("popstate", onPop);
 		return () => window.removeEventListener("popstate", onPop);
 	}, [base]);
 
 	const open = useCallback(
 		(next: string) => {
-			history.pushState(null, "", `${base}/${encodeURIComponent(next)}`);
+			const url = `${base}/${encodeURIComponent(next)}`;
+			if (pushed.current) history.replaceState(null, "", url);
+			else history.pushState(null, "", url);
+			pushed.current = true;
 			setId(next);
 		},
 		[base]
 	);
 	const close = useCallback(() => {
-		history.pushState(null, "", base);
 		setId(null);
+		if (pushed.current) {
+			// back to wherever the reader was opened from (the landing page or the list)
+			pushed.current = false;
+			history.back();
+		} else {
+			// opened from a shared link: land on the list instead
+			history.replaceState(null, "", base);
+		}
 	}, [base]);
 
 	return { id, open, close };

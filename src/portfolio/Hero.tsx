@@ -71,7 +71,7 @@ export default function Hero() {
 	return (
 		<section id="top" className="relative overflow-hidden">
 			<div className="relative mx-auto max-w-[1240px] px-5 md:min-h-[680px] md:px-10">
-				<div className="relative z-10 max-w-[460px] pt-6 md:pt-12">
+				<div data-reveal className="relative z-10 max-w-[460px] pt-6 md:pt-12">
 					<p className="mb-4 text-[10px] tracking-[0.5em] text-ink/30">• • • • • • • •</p>
 					<h1 className="text-[clamp(2.1rem,3.7vw,2.75rem)] font-medium leading-[1.08] tracking-[-0.035em]">
 						Hi, I'm {profile.short.split(" ")[0]},
@@ -105,7 +105,7 @@ export default function Hero() {
 				</div>
 
 				{/* portrait sits behind the copy on desktop, below it on mobile */}
-				<div className="relative mt-10 md:absolute md:inset-x-0 md:top-0 md:mt-0">
+				<div data-reveal="1" className="relative mt-10 md:absolute md:inset-x-0 md:top-0 md:mt-0">
 					<Portrait />
 				</div>
 
@@ -113,10 +113,11 @@ export default function Hero() {
 				{latest && (
 					<a
 						href={`/projects/${encodeURIComponent(latest.id)}`}
+						data-reveal="3"
 						className="group absolute bottom-[30%] right-5 z-20 w-[160px] md:bottom-auto rounded-[22px] bg-[#141414] p-2 text-white shadow-[0_30px_50px_-20px_rgba(0,0,0,0.6)] md:right-10 md:top-4 md:w-[230px]"
 					>
 						<div className="aspect-[1.9] overflow-hidden rounded-[14px] bg-white">
-							<Thumb project={latest} className="object-top transition-transform duration-500 group-hover:scale-105" />
+							<Thumb project={latest} className="object-top transition-transform duration-500 group-hover:scale-[1.05]" />
 						</div>
 						<div className="flex items-end justify-between gap-2 px-2 pb-2 pt-3">
 							<span>
@@ -132,6 +133,7 @@ export default function Hero() {
 				{latestYap && (
 					<a
 						href={`/yap/${encodeURIComponent(latestYap.id)}`}
+						data-reveal="5"
 						className="group absolute bottom-[8%] left-5 z-20 flex w-[170px] flex-col rounded-[22px] bg-gradient-to-b from-[#f6f3ee] to-[#e9e3da] p-4 text-ink shadow-[0_30px_50px_-24px_rgba(0,0,0,0.45)] ring-1 ring-white/70 md:bottom-auto md:left-auto md:right-10 md:top-[290px] md:w-[230px]"
 					>
 						<span className="flex items-center justify-between gap-2">

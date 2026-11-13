@@ -34,7 +34,7 @@ const isExternal = (href: string) => href.startsWith("http");
 
 export default function Contact() {
 	return (
-		<section id="contact" className="mx-auto max-w-[1240px] scroll-mt-20 px-3 pb-3 md:px-6 md:pb-6">
+		<section id="contact" className="mx-auto max-w-[1240px] scroll-mt-20 px-2 pb-2 md:px-6 md:pb-6">
 			<div className="relative overflow-hidden rounded-[28px] bg-[#121212] text-white">
 				{/* soft rings, like the reference's background */}
 				<div
@@ -44,7 +44,7 @@ export default function Contact() {
 				<div aria-hidden className="absolute -right-32 top-1/3 h-80 w-80 rounded-full bg-kinetic/15 blur-3xl" />
 
 				{/* CTA, in place of the reference's newsletter */}
-				<div className="relative px-6 pb-14 pt-16 text-center md:pt-20">
+				<div data-reveal className="relative px-6 pb-14 pt-16 text-center md:pt-20">
 					<h2 className="text-[clamp(1.9rem,3.6vw,2.6rem)] font-semibold leading-[1.1] tracking-[-0.03em]">
 						Let's Build Something <span className="text-kinetic">Great</span> Together
 					</h2>
@@ -69,16 +69,16 @@ export default function Contact() {
 				</div>
 
 				{/* footer */}
-				<footer className="relative border-t border-white/[0.07] px-6 pt-12 md:px-12">
-					<div className="grid gap-10 lg:grid-cols-[1.3fr_2.7fr]">
+				<footer className="relative border-t border-white/[0.07] px-3 pt-12 md:px-4">
+					<div data-reveal className="grid gap-10 lg:grid-cols-[1.3fr_2.7fr]">
 						<div>
-							<a href="/#top" className="flex items-center gap-3">
-								<span className="grid h-10 w-10 place-items-center rounded-xl bg-white">
-									<img src="/assets/logo-mj.svg" alt="" className="h-8 w-8" />
+							<a href="/#top" className="flex items-center gap-2.5">
+								<span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-white ring-1 ring-ink/10">
+									<img src="/assets/logo-mj.svg" alt="" className="h-7 w-7" />
 								</span>
 								<span className="leading-tight">
 									<span className="block text-[15px] font-semibold">{profile.short}</span>
-									<span className="text-[10px] text-white/40">{profile.role}</span>
+									<span className="text-[8px] font-medium uppercase tracking-[0.25em] text-white/40">{profile.role}</span>
 								</span>
 							</a>
 							<p className="mt-5 max-w-[280px] text-[12px] leading-relaxed text-white/50">
@@ -151,7 +151,7 @@ export default function Contact() {
 						</div>
 					</div>
 
-					<div className="mt-12 flex flex-col gap-3 border-t border-white/[0.07] py-6 text-[11px] text-white/35 sm:flex-row sm:items-center sm:justify-between">
+					<div className="mt-12 flex flex-col items-center gap-3 border-t border-white/[0.07] py-6 text-center text-[11px] text-white/35 sm:flex-row sm:justify-between sm:text-left">
 						<p>
 							© {new Date().getFullYear()} {profile.name}
 						</p>

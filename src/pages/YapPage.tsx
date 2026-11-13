@@ -40,12 +40,10 @@ export default function YapPage() {
 
 			<main className="mx-auto max-w-[1240px] px-5 py-12 md:px-10 md:py-16">
 				{first ? (
-					<div className="grid gap-2.5 sm:gap-4 lg:grid-cols-3">
-						<div className="lg:col-span-2">
-							<YapCard rant={first} featured onOpen={() => open(first.id)} />
-						</div>
-						{rest.map((r) => (
-							<YapCard key={r.id} rant={r} onOpen={() => open(r.id)} />
+					<div className="grid grid-cols-2 gap-2.5 sm:gap-4">
+						<YapCard rant={first} featured onOpen={() => open(first.id)} reveal={1} />
+						{rest.map((r, i) => (
+							<YapCard key={r.id} rant={r} onOpen={() => open(r.id)} reveal={((i + 1) % 2) + 1} />
 						))}
 					</div>
 				) : (
