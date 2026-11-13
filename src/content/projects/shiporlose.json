@@ -1,4 +1,15 @@
 {
+  "stack": [
+    "Next.js",
+    "Tailwind CSS",
+    "TypeScript",
+    "Supabase",
+    "PayChangu"
+  ],
+  "brief": "",
+  "features": [],
+  "demo": [],
+  "demoNote": "",
   "name": "ShipOrLose",
   "tagline": "Stake money. Ship code. Win it back.",
   "category": "Developer",

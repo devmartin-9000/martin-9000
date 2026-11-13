@@ -110,7 +110,9 @@ export function ProjectReader({ project, onClose }: { project: Project | undefin
 								dangerouslySetInnerHTML={{ __html: marked.parse(project.brief, { async: false }) }}
 							/>
 						) : (
-							<p className="text-[15px] leading-relaxed text-white/70">{project.description}</p>
+							<p className="text-[15px] leading-relaxed text-white/70">
+								{project.description || "The full write-up is on its way. Check back soon."}
+							</p>
 						)}
 					</Section>
 
@@ -163,6 +165,7 @@ export function ProjectReader({ project, onClose }: { project: Project | undefin
 						</ul>
 					)}
 
+					{project.url && (
 					<a
 						href={project.url}
 						target="_blank"
@@ -171,6 +174,7 @@ export function ProjectReader({ project, onClose }: { project: Project | undefin
 					>
 						Visit live site <ArrowUpRight size={16} />
 					</a>
+					)}
 				</motion.article>
 			)}
 		</Sheet>

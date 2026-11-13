@@ -1,4 +1,21 @@
 {
+  "stack": [
+    "React",
+    "Vite",
+    "Tailwind CSS",
+    "TypeScript",
+    "Supabase",
+    "PayChangu"
+  ],
+  "brief": "",
+  "features": [
+    "Polished, styled invoices",
+    "Reusable product catalogs",
+    "Stored payment details",
+    "Built for businesses, freelancers, agencies and creators"
+  ],
+  "demo": [],
+  "demoNote": "",
   "name": "Fintriqs",
   "tagline": "Smart invoicing for businesses, freelancers & creators",
   "category": "Fintech",
@@ -11,19 +28,5 @@
   ],
   "thumbnail": "/assets/projects/fintriqs.png",
   "featured": true,
-  "order": 3,
-  "stack": [
-    "React",
-    "TypeScript",
-    "Tailwind CSS"
-  ],
-  "brief": "",
-  "features": [
-    "Polished, styled invoices",
-    "Reusable product catalogs",
-    "Stored payment details",
-    "Built for businesses, freelancers, agencies and creators"
-  ],
-  "demo": [],
-  "demoNote": ""
+  "order": 3
 }

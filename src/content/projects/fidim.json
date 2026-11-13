@@ -1,4 +1,16 @@
 {
+  "stack": [
+    "Next.js",
+    "Tailwind CSS",
+    "TypeScript",
+    "Python",
+    "Supabase",
+    "PayChangu"
+  ],
+  "brief": "",
+  "features": [],
+  "demo": [],
+  "demoNote": "",
   "name": "Fidim Legal",
   "tagline": "A deterministic legal OS for Malawian companies",
   "category": "Business",

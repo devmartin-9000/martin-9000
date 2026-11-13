@@ -1,0 +1,22 @@
+{
+  "stack": [
+    "Next.js",
+    "Tailwind CSS",
+    "TypeScript",
+    "Supabase",
+    "PayChangu"
+  ],
+  "brief": "",
+  "features": [],
+  "demo": [],
+  "demoNote": "",
+  "name": "Roomio360",
+  "tagline": "",
+  "category": "Business",
+  "description": "",
+  "url": "",
+  "tags": [],
+  "thumbnail": "",
+  "featured": false,
+  "order": 20
+}

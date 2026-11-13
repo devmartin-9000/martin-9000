@@ -1,4 +1,20 @@
 {
+  "stack": [
+    "Next.js",
+    "Tailwind CSS",
+    "TypeScript",
+    "Supabase",
+    "PayChangu",
+    "Resend"
+  ],
+  "brief": "",
+  "features": [
+    "Every profile reviewed by a person",
+    "Intentional introductions",
+    "A curated community in Malawi"
+  ],
+  "demo": [],
+  "demoNote": "",
   "name": "Raveona",
   "tagline": "A niche dating community in Malawi",
   "category": "Community",
@@ -11,14 +27,5 @@
   ],
   "thumbnail": "/assets/projects/raveona.png",
   "featured": true,
-  "order": 4,
-  "stack": [],
-  "brief": "",
-  "features": [
-    "Every profile reviewed by a person",
-    "Intentional introductions",
-    "A curated community in Malawi"
-  ],
-  "demo": [],
-  "demoNote": ""
+  "order": 4
 }

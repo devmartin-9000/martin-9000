@@ -1,4 +1,21 @@
 {
+  "stack": [
+    "Next.js",
+    "Tailwind CSS",
+    "TypeScript",
+    "Supabase",
+    "PayChangu",
+    "html2canvas"
+  ],
+  "brief": "",
+  "features": [
+    "1v1 matches with real stakes",
+    "Skill decides the winner",
+    "Fair play enforced",
+    "Instant payouts to your wallet"
+  ],
+  "demo": [],
+  "demoNote": "",
   "name": "KashCraze",
   "tagline": "1v1 skill games with real stakes",
   "category": "Gaming",
@@ -11,15 +28,5 @@
   ],
   "thumbnail": "/assets/projects/kashcraze.png",
   "featured": true,
-  "order": 2,
-  "stack": [],
-  "brief": "",
-  "features": [
-    "1v1 matches with real stakes",
-    "Skill decides the winner",
-    "Fair play enforced",
-    "Instant payouts to your wallet"
-  ],
-  "demo": [],
-  "demoNote": ""
+  "order": 2
 }

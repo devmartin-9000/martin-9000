@@ -1,4 +1,23 @@
 {
+  "stack": [
+    "Next.js",
+    "Tailwind CSS",
+    "TypeScript",
+    "Supabase",
+    "PayChangu",
+    "Resend"
+  ],
+  "brief": "",
+  "features": [
+    "Fast point of sale",
+    "Stock and inventory tracking",
+    "Cash, Airtel Money, TNM and bank balances",
+    "Equipment rentals",
+    "Real profit reports",
+    "7-day free trial"
+  ],
+  "demo": [],
+  "demoNote": "",
   "name": "VettaShop",
   "tagline": "Run your whole shop from one screen",
   "category": "Business",
@@ -11,17 +30,5 @@
   ],
   "thumbnail": "/assets/projects/vettashop.png",
   "featured": true,
-  "order": 1,
-  "stack": [],
-  "brief": "",
-  "features": [
-    "Fast point of sale",
-    "Stock and inventory tracking",
-    "Cash, Airtel Money, TNM and bank balances",
-    "Equipment rentals",
-    "Real profit reports",
-    "7-day free trial"
-  ],
-  "demo": [],
-  "demoNote": ""
+  "order": 1
 }

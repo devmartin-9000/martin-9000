@@ -1,4 +1,15 @@
 {
+  "stack": [
+    "Next.js",
+    "Tailwind CSS",
+    "TypeScript",
+    "GSAP",
+    "Three.js"
+  ],
+  "brief": "",
+  "features": [],
+  "demo": [],
+  "demoNote": "",
   "name": "React-ddicted",
   "tagline": "A React component library",
   "category": "Developer",

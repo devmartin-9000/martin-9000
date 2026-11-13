@@ -1,4 +1,14 @@
 {
+  "stack": [
+    "Next.js",
+    "Tailwind CSS",
+    "TypeScript",
+    "Python"
+  ],
+  "brief": "",
+  "features": [],
+  "demo": [],
+  "demoNote": "",
   "name": "QuestionDraft",
   "tagline": "Turn past exams into brand-new ones",
   "category": "Self-hosted",
