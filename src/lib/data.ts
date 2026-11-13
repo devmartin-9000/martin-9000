@@ -6,17 +6,16 @@ export const profile = {
 	email: "martinmagonagona@gmail.com",
 	github: "https://github.com/devmartin-9000",
 	linkedin: "https://linkedin.com/in/martin-jack9000",
-	photo: "./assets/Thumbnail-3.jpg",
 };
 
 export const navLinks = [
-	{ label: "Home", href: "#top" },
-	{ label: "About", href: "#about" },
-	{ label: "Approach", href: "#approach" },
-	{ label: "Skills", href: "#skills" },
-	{ label: "Projects", href: "#projects" },
-	{ label: "Yap Zone", href: "#yap" },
-	{ label: "Contact", href: "#contact" },
+	{ label: "Home", href: "/#top" },
+	{ label: "About", href: "/#about" },
+	{ label: "Approach", href: "/#approach" },
+	{ label: "Skills", href: "/#skills" },
+	{ label: "Projects", href: "/#projects" },
+	{ label: "Yap Zone", href: "/yap" },
+	{ label: "Contact", href: "/#contact" },
 ];
 
 export const socials = [
@@ -63,6 +62,8 @@ export const featured = projects.filter((p) => p.featured);
 
 export type Rant = {
 	id: string;
+	/** stable rant number, oldest is 1 */
+	no: number;
 	title: string;
 	/** how I felt writing it */
 	mood: string;
@@ -76,14 +77,15 @@ export type Rant = {
 	body: string;
 };
 
-const yapFiles = import.meta.glob<Omit<Rant, "id">>("/src/content/yaps/*.json", {
+const yapFiles = import.meta.glob<Omit<Rant, "id" | "no">>("/src/content/yaps/*.json", {
 	eager: true,
 	import: "default",
 });
 
 export const rants: Rant[] = Object.entries(yapFiles)
 	.map(([path, r]) => ({ ...r, id: fileId(path) }))
-	.sort((a, b) => b.date.localeCompare(a.date));
+	.sort((a, b) => b.date.localeCompare(a.date))
+	.map((r, i, all) => ({ ...r, no: all.length - i }));
 
 type Site = { portrait: string };
 

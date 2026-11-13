@@ -34,6 +34,72 @@ export function Eyebrow({ children, className }: { children: ReactNode; classNam
 	);
 }
 
+/** Top of a dedicated page (/yap, /projects): back link, eyebrow, big title, intro and stats. */
+export function PageIntro({
+	eyebrow,
+	title,
+	intro,
+	stats,
+	children,
+}: {
+	eyebrow: string;
+	title: ReactNode;
+	intro: string;
+	stats: string;
+	/** filter chips */
+	children?: ReactNode;
+}) {
+	return (
+		<header id="top" className="bg-[#f6f5f3]">
+			<div className="mx-auto max-w-[1240px] px-5 pb-12 pt-10 md:px-10 md:pb-16 md:pt-14">
+				<a href="/" className="text-[12px] text-ink/50 transition-colors hover:text-kinetic">
+					← Back to portfolio
+				</a>
+				<Eyebrow className="mt-10">{eyebrow}</Eyebrow>
+				<h1 className="mt-4 max-w-[760px] text-[clamp(2.4rem,6vw,4.4rem)] font-medium leading-[1.02] tracking-[-0.04em]">
+					{title}
+				</h1>
+				<div className="mt-6 flex flex-wrap items-end justify-between gap-6">
+					<p className="max-w-[440px] text-[14px] leading-relaxed text-ink/55">{intro}</p>
+					<p className="text-[12px] font-medium uppercase tracking-[0.2em] text-ink/40">{stats}</p>
+				</div>
+				{children && <div className="mt-10">{children}</div>}
+			</div>
+		</header>
+	);
+}
+
+/** Pill filter row; "All" plus one chip per option. */
+export function Chips({
+	options,
+	value,
+	onChange,
+	label,
+}: {
+	options: string[];
+	value: string | null;
+	onChange: (value: string | null) => void;
+	label: string;
+}) {
+	const chip = (active: boolean) =>
+		cn(
+			"rounded-full px-4 py-2 text-[12px] font-medium transition-colors",
+			active ? "bg-ink text-white" : "bg-white text-ink/60 ring-1 ring-ink/10 hover:text-ink"
+		);
+	return (
+		<div role="group" aria-label={label} className="flex flex-wrap gap-2">
+			<button type="button" aria-pressed={value === null} onClick={() => onChange(null)} className={chip(value === null)}>
+				All
+			</button>
+			{options.map((o) => (
+				<button key={o} type="button" aria-pressed={value === o} onClick={() => onChange(o)} className={chip(value === o)}>
+					{o}
+				</button>
+			))}
+		</div>
+	);
+}
+
 /** Small round arrow button used on every card. */
 export function ArrowDot({ dark, className }: { dark?: boolean; className?: string }) {
 	return (

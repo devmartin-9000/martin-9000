@@ -5,11 +5,11 @@ import { PillButton } from "./shared";
 const columns = [
 	{
 		title: "Explore",
-		links: navLinks.filter((l) => l.href !== "#top" && l.href !== "#contact"),
+		links: navLinks.filter((l) => l.href !== "/#top" && l.href !== "/#contact"),
 	},
 	{
 		title: "Projects",
-		links: featured.map((p) => ({ label: p.name, href: p.url })),
+		links: [...featured.map((p) => ({ label: p.name, href: `/projects/${p.id}` })), { label: "All projects →", href: "/projects" }],
 	},
 	// rendered as the big Yap Zone button instead of a link list
 	{ title: "Yap Zone", links: [] },
@@ -19,7 +19,7 @@ const columns = [
 			{ label: "Email", href: `mailto:${profile.email}` },
 			{ label: "GitHub", href: profile.github },
 			{ label: "LinkedIn", href: profile.linkedin },
-			{ label: profile.location, href: "#about" },
+			{ label: profile.location, href: "/#about" },
 		],
 	},
 ];
@@ -72,9 +72,9 @@ export default function Contact() {
 				<footer className="relative border-t border-white/[0.07] px-6 pt-12 md:px-12">
 					<div className="grid gap-10 lg:grid-cols-[1.3fr_2.7fr]">
 						<div>
-							<a href="#top" className="flex items-center gap-3">
+							<a href="/#top" className="flex items-center gap-3">
 								<span className="grid h-10 w-10 place-items-center rounded-xl bg-white">
-									<img src="./assets/logo-mj.svg" alt="" className="h-8 w-8" />
+									<img src="/assets/logo-mj.svg" alt="" className="h-8 w-8" />
 								</span>
 								<span className="leading-tight">
 									<span className="block text-[15px] font-semibold">{profile.short}</span>
@@ -106,7 +106,7 @@ export default function Contact() {
 								c.title === "Yap Zone" ? (
 									<a
 										key={c.title}
-										href="#yap"
+										href="/yap"
 										className="group relative flex aspect-square w-full flex-col justify-between self-start overflow-hidden rounded-[20px] bg-gradient-to-br from-kinetic to-[#c2410c] p-4 text-white shadow-[0_18px_36px_-16px_rgba(255,97,34,0.8)] transition-transform hover:-translate-y-1"
 									>
 										<span

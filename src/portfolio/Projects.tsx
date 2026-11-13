@@ -1,6 +1,8 @@
-import { featured, profile } from "@/lib/data";
-import { ArrowDot, Eyebrow, PillButton, Thumb } from "./shared";
+import { featured, projects } from "@/lib/data";
+import { Eyebrow, PillButton } from "./shared";
+import { ProjectCard } from "./project";
 
+/** Landing-page teaser: the featured projects, with a way into the full Projects page. */
 export default function Projects() {
 	return (
 		<section id="projects" className="mx-auto max-w-[1240px] scroll-mt-20 px-5 pb-20 pt-8 md:px-10 md:pb-28">
@@ -13,34 +15,12 @@ export default function Projects() {
 						and Shipped.
 					</h2>
 				</div>
-				<PillButton href={profile.github} light external>
-					All projects on GitHub
-				</PillButton>
+				<PillButton href="/projects">See all {projects.length} projects</PillButton>
 			</div>
 
 			<div className="mt-12 grid gap-4 md:grid-cols-2">
-				{featured.map((p, i) => (
-					<a
-						key={p.id}
-						href={p.url}
-						target="_blank"
-						rel="noreferrer"
-						className="group flex flex-col overflow-hidden rounded-[22px] bg-[#121212] p-2 text-white"
-					>
-						<div className="relative aspect-[1.9] overflow-hidden rounded-[16px] bg-white">
-							<Thumb project={p} className="object-top transition-transform duration-700 group-hover:scale-[1.04]" />
-							<span className="absolute left-3 top-3 rounded-full bg-black/70 px-2.5 py-1 text-[9px] font-medium text-white/80 backdrop-blur">
-								{String(i + 1).padStart(2, "0")} / {p.category}
-							</span>
-						</div>
-						<div className="flex items-end justify-between gap-6 px-3 pb-3 pt-5">
-							<div>
-								<h3 className="text-[19px] font-medium tracking-tight">{p.name}</h3>
-								<p className="mt-1 text-[12px] text-white/50">{p.tagline}</p>
-							</div>
-							<ArrowDot />
-						</div>
-					</a>
+				{featured.map((p) => (
+					<ProjectCard key={p.id} project={p} />
 				))}
 			</div>
 		</section>

@@ -10,6 +10,16 @@ const PORTRAIT = site.portrait;
 /** First featured project (lowest order) gets the dark floating card. */
 const latest = featured[0] as (typeof featured)[number] | undefined;
 
+/** The range at a glance, for anyone deciding whether to hire me. */
+const whatIDo = [
+	"Front-end engineering",
+	"Test automation",
+	"Data & analytics",
+	"Component libraries",
+	"Tooling & scripting",
+	"Docs & client support",
+];
+
 /** Newest rant gets the light floating card. */
 const latestYap = rants[0] as (typeof rants)[number] | undefined;
 
@@ -60,7 +70,7 @@ function Portrait() {
 export default function Hero() {
 	return (
 		<section id="top" className="relative overflow-hidden">
-			<div className="relative mx-auto max-w-[1240px] px-5 md:min-h-[600px] md:px-10">
+			<div className="relative mx-auto max-w-[1240px] px-5 md:min-h-[680px] md:px-10">
 				<div className="relative z-10 max-w-[460px] pt-6 md:pt-12">
 					<p className="mb-4 text-[10px] tracking-[0.5em] text-ink/30">• • • • • • • •</p>
 					<h1 className="text-[clamp(2.1rem,3.7vw,2.75rem)] font-medium leading-[1.08] tracking-[-0.035em]">
@@ -70,11 +80,26 @@ export default function Hero() {
 						<br />
 						<span className="text-ink/40">from {profile.location}.</span>
 					</h1>
-					<p className="mt-5 max-w-[260px] text-[13px] leading-relaxed text-ink/60">
-						React interfaces, test automation and data workflows for products that ship fast
-						and keep working.
+					<p className="mt-5 max-w-[380px] text-[14px] leading-relaxed text-ink/60">
+						I design and build fast, accessible web apps end to end, then make sure they keep
+						working: automated tests that catch bugs before users do, and data you can
+						actually trust.
 					</p>
-					<div className="mt-6">
+
+					<p className="mt-6 text-[10px] font-semibold uppercase tracking-[0.25em] text-ink/40">What I do</p>
+					<ul className="mt-3 flex max-w-[420px] flex-wrap gap-1.5">
+						{whatIDo.map((item) => (
+							<li
+								key={item}
+								className="flex items-center gap-1.5 rounded-full bg-white/80 px-3 py-1.5 text-[12px] text-ink/75 ring-1 ring-ink/10 backdrop-blur"
+							>
+								<span className="h-1.5 w-1.5 rounded-full bg-kinetic" />
+								{item}
+							</li>
+						))}
+					</ul>
+
+					<div className="mt-7">
 						<PillButton href="#projects">See my work</PillButton>
 					</div>
 				</div>
@@ -87,10 +112,8 @@ export default function Hero() {
 				{/* floating latest-project card */}
 				{latest && (
 					<a
-						href={latest.url}
-						target="_blank"
-						rel="noreferrer"
-						className="group absolute right-5 top-[46%] z-20 w-[160px] rounded-[22px] bg-[#141414] p-2 text-white shadow-[0_30px_50px_-20px_rgba(0,0,0,0.6)] md:right-10 md:top-4 md:w-[230px]"
+						href={`/projects/${encodeURIComponent(latest.id)}`}
+						className="group absolute bottom-[30%] right-5 z-20 w-[160px] md:bottom-auto rounded-[22px] bg-[#141414] p-2 text-white shadow-[0_30px_50px_-20px_rgba(0,0,0,0.6)] md:right-10 md:top-4 md:w-[230px]"
 					>
 						<div className="aspect-[1.9] overflow-hidden rounded-[14px] bg-white">
 							<Thumb project={latest} className="object-top transition-transform duration-500 group-hover:scale-105" />
@@ -108,8 +131,8 @@ export default function Hero() {
 				{/* floating latest-yap card */}
 				{latestYap && (
 					<a
-						href={`#yap=${encodeURIComponent(latestYap.id)}`}
-						className="group absolute bottom-[10%] left-5 z-20 flex w-[170px] flex-col rounded-[22px] bg-gradient-to-b from-[#f6f3ee] to-[#e9e3da] p-4 text-ink shadow-[0_30px_50px_-24px_rgba(0,0,0,0.45)] ring-1 ring-white/70 md:bottom-auto md:left-auto md:right-10 md:top-[290px] md:w-[230px]"
+						href={`/yap/${encodeURIComponent(latestYap.id)}`}
+						className="group absolute bottom-[8%] left-5 z-20 flex w-[170px] flex-col rounded-[22px] bg-gradient-to-b from-[#f6f3ee] to-[#e9e3da] p-4 text-ink shadow-[0_30px_50px_-24px_rgba(0,0,0,0.45)] ring-1 ring-white/70 md:bottom-auto md:left-auto md:right-10 md:top-[290px] md:w-[230px]"
 					>
 						<span className="flex items-center justify-between gap-2">
 							<span className="text-[9px] uppercase tracking-[0.2em] text-ink/45">Latest yap</span>
