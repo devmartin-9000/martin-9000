@@ -1,0 +1,15 @@
+{
+  "name": "Raveona",
+  "tagline": "A niche dating community in Malawi",
+  "category": "Community",
+  "description": "A dating community for individuals in Malawi's top tax bracket. Every profile is reviewed by a person, so every introduction is intentional.",
+  "url": "https://raveona.vercel.app",
+  "tags": [
+    "Dating",
+    "Curated",
+    "Malawi"
+  ],
+  "thumbnail": "/assets/projects/raveona.png",
+  "featured": true,
+  "order": 4
+}

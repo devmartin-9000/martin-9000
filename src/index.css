@@ -94,3 +94,72 @@ body {
 .portrait-main {
 	mask-image: linear-gradient(90deg, #000 55%, transparent 95%), linear-gradient(180deg, #000 70%, transparent);
 }
+
+/* Yap Zone reader: styles for the Markdown written in the admin editor */
+.yap-body > * + * {
+	margin-top: 1.1em;
+}
+.yap-body h2,
+.yap-body h3 {
+	margin-top: 1.8em;
+	color: white;
+	font-weight: 500;
+	letter-spacing: -0.02em;
+}
+.yap-body h2 {
+	font-size: 1.45em;
+}
+.yap-body h3 {
+	font-size: 1.2em;
+}
+.yap-body a {
+	color: white;
+	text-decoration: underline;
+	text-underline-offset: 4px;
+}
+.yap-body a:hover {
+	color: var(--color-kinetic);
+}
+.yap-body strong {
+	color: white;
+}
+.yap-body ul,
+.yap-body ol {
+	padding-left: 1.3em;
+}
+.yap-body ul {
+	list-style: disc;
+}
+.yap-body ol {
+	list-style: decimal;
+}
+.yap-body li + li {
+	margin-top: 0.4em;
+}
+.yap-body blockquote {
+	border-left: 2px solid var(--color-kinetic);
+	padding-left: 1em;
+	color: rgba(255, 255, 255, 0.85);
+	font-style: italic;
+}
+.yap-body img {
+	width: 100%;
+	border-radius: 18px;
+}
+.yap-body code {
+	border-radius: 6px;
+	background: rgba(255, 255, 255, 0.08);
+	padding: 0.1em 0.35em;
+	font-family: var(--font-mono);
+	font-size: 0.88em;
+}
+.yap-body pre {
+	overflow-x: auto;
+	border-radius: 14px;
+	background: rgba(255, 255, 255, 0.06);
+	padding: 1em 1.2em;
+}
+.yap-body pre code {
+	background: none;
+	padding: 0;
+}

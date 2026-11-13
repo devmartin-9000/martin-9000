@@ -1,0 +1,15 @@
+{
+  "name": "I Need Saving",
+  "tagline": "Make your money actually last",
+  "category": "Fintech",
+  "description": "Deposit a lump sum, set a fixed rule, and the app releases it in smaller, consistent chunks over a period you choose. Built to end impulse spending.",
+  "url": "https://ineedsaving.vercel.app",
+  "tags": [
+    "Budgeting",
+    "Savings",
+    "Money management"
+  ],
+  "thumbnail": "",
+  "featured": false,
+  "order": 18
+}

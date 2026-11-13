@@ -1,0 +1,15 @@
+{
+  "name": "KashCraze",
+  "tagline": "1v1 skill games with real stakes",
+  "category": "Gaming",
+  "description": "Players face off 1v1 with real stakes. Skill decides the winner, fair play is enforced, and payouts land instantly in the winner's wallet.",
+  "url": "https://kashcraze.me",
+  "tags": [
+    "1v1",
+    "Real stakes",
+    "Instant payouts"
+  ],
+  "thumbnail": "/assets/projects/kashcraze.png",
+  "featured": true,
+  "order": 2
+}

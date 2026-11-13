@@ -1,0 +1,15 @@
+{
+  "name": "ShipOrLose",
+  "tagline": "Stake money. Ship code. Win it back.",
+  "category": "Developer",
+  "description": "An accountability tool for developers who struggle to ship. Stake an amount against your goals, connect GitHub, GitLab, Bitbucket or any source control, and real code changes (not just commit counts) decide whether you win it back.",
+  "url": "https://shiporlose.vercel.app",
+  "tags": [
+    "Accountability",
+    "Git integration",
+    "Staking"
+  ],
+  "thumbnail": "",
+  "featured": false,
+  "order": 21
+}
