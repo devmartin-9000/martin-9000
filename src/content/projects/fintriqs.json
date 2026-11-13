@@ -1,0 +1,15 @@
+{
+  "name": "Fintriqs",
+  "tagline": "Smart invoicing for businesses, freelancers & creators",
+  "category": "Fintech",
+  "description": "Create polished invoices, save product catalogs and store payment details, so billing clients takes no repetitive admin. I owned the front-end: landing page, dashboards and layouts.",
+  "url": "https://fintriqs.vercel.app",
+  "tags": [
+    "Invoicing",
+    "Dashboard",
+    "Freelancers"
+  ],
+  "thumbnail": "/assets/projects/fintriqs.png",
+  "featured": true,
+  "order": 3
+}

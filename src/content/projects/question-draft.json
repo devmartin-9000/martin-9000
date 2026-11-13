@@ -1,0 +1,15 @@
+{
+  "name": "QuestionDraft",
+  "tagline": "Turn past exams into brand-new ones",
+  "category": "Self-hosted",
+  "description": "Ingests past exam papers, captures their questions, then generates new exams from them. A configurator lets users decide the generation criteria. Built to be self-hosted.",
+  "url": "https://question-draft.vercel.app",
+  "tags": [
+    "Exam generation",
+    "Configurator",
+    "Education"
+  ],
+  "thumbnail": "",
+  "featured": false,
+  "order": 14
+}

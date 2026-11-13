@@ -1,0 +1,9 @@
+{
+  "title": "My Spreadsheet Era Was My Origin Story",
+  "mood": "Nostalgic",
+  "date": "2026-11-12T09:00:00.000Z",
+  "minutes": 2,
+  "excerpt": "Before React, there was a very tired accountant and one very long worksheet.",
+  "cover": "",
+  "body": "As an assistant accountant I reconciled records from several branches by hand. Same columns, same mistakes, every week.\n\nSo I wrote a script that pulled everything into one synchronised worksheet. It wasn't pretty. It saved hours.\n\nThat was the moment I realised I liked building the tool more than doing the task. Everything since has been that feeling, scaled up."
+}

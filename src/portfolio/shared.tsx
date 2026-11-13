@@ -2,6 +2,27 @@ import { ArrowRight } from "lucide-react";
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
+/** Project preview image, or a name placeholder when no thumbnail is set yet. */
+export function Thumb({ project, className }: { project: { name: string; thumbnail: string }; className?: string }) {
+	if (project.thumbnail) {
+		return (
+			<img
+				src={project.thumbnail}
+				alt={`${project.name} preview`}
+				loading="lazy"
+				className={cn("h-full w-full object-cover", className)}
+			/>
+		);
+	}
+	return (
+		<div className="grid h-full w-full place-items-center bg-[radial-gradient(circle_at_30%_20%,#3a3a3a,#141414_70%)] p-4">
+			<span className="text-center text-[clamp(1rem,3vw,1.8rem)] font-semibold tracking-tight text-white/80">
+				{project.name}
+			</span>
+		</div>
+	);
+}
+
 /** Orange dot + dashed rule + caps label, the reference's section eyebrow. */
 export function Eyebrow({ children, className }: { children: ReactNode; className?: string }) {
 	return (

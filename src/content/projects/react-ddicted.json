@@ -1,0 +1,15 @@
+{
+  "name": "React-ddicted",
+  "tagline": "A React component library",
+  "category": "Developer",
+  "description": "A library of ready-made React components and UI elements that drop into any React-based project.",
+  "url": "https://react-ddicted.vercel.app",
+  "tags": [
+    "React",
+    "Components",
+    "UI kit"
+  ],
+  "thumbnail": "",
+  "featured": false,
+  "order": 17
+}

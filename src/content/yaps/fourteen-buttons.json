@@ -1,0 +1,9 @@
+{
+  "title": "Please Stop Putting 14 Buttons on One Card",
+  "mood": "Annoyed",
+  "date": "2026-11-10T09:00:00.000Z",
+  "minutes": 1,
+  "excerpt": "A card is not a cockpit. Pick the one thing it's for.",
+  "cover": "",
+  "body": "Building a shared component library forces a question most screens never ask: what is this component actually for?\n\nIf the answer needs a list, it's two components. If every action is primary, none of them are.\n\nConstraints in the library are a feature. They make the next hundred screens consistent without a single design review."
+}

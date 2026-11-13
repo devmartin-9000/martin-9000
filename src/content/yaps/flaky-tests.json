@@ -1,0 +1,9 @@
+{
+  "title": "800 Flaky Tests Walk Into a Bar",
+  "mood": "Traumatised",
+  "date": "2026-11-13T09:00:00.000Z",
+  "minutes": 2,
+  "excerpt": "Flaky tests aren't flaky. They're the only honest people in the building.",
+  "cover": "",
+  "body": "When I migrated a legacy suite to Playwright, everyone called the failures 'flaky'. Flaky sounds random. It almost never is.\n\nMost of them were the app telling the truth: a race between a spinner and a button, a network call nobody awaited, a selector that matched two things on a slow day.\n\nFixing the waits, not adding retries, is what stabilised 800+ tests. Retries just teach a suite to lie politely."
+}

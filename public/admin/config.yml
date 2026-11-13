@@ -1,0 +1,119 @@
+# Sveltia CMS: the admin portal at /admin
+# Every save is a commit to the branch below. Vercel redeploys on each commit.
+backend:
+  name: github
+  repo: devmartin-9000/martin-9000
+  branch: production
+  # "Sign In with GitHub" goes through the login helper in /api (api/auth.js, api/callback.js)
+  base_url: https://martin-jack.vercel.app
+  auth_endpoint: api/auth
+
+# Uploaded images are committed here and served from /assets/uploads/...
+media_folder: public/assets/uploads
+public_folder: /assets/uploads
+
+site_url: https://martin-jack.vercel.app
+display_url: https://martin-jack.vercel.app
+logo_url: /assets/logo-mj.svg
+
+collections:
+  # ---------------------------------------------------------------- Yap Zone
+  - name: yaps
+    label: Yap Zone
+    label_singular: Yap
+    description: Rants, opinions and mildly spicy takes. Newest shows first.
+    folder: src/content/yaps
+    extension: json
+    format: json
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    identifier_field: title
+    summary: "{{title}} · {{mood}}"
+    sortable_fields: [date, title]
+    fields:
+      - { name: title, label: Title, widget: string }
+      - name: mood
+        label: Mood
+        widget: string
+        hint: One or two words, e.g. Annoyed, Smug, Wholesome.
+        default: Spicy
+      - { name: date, label: Date, widget: datetime }
+      - name: minutes
+        label: Read time (minutes)
+        widget: number
+        value_type: int
+        min: 1
+        default: 2
+      - name: excerpt
+        label: Teaser
+        widget: text
+        hint: One line shown on the card.
+      - name: cover
+        label: Cover image
+        widget: image
+        required: false
+        default: ""
+      - name: body
+        label: Body
+        widget: markdown
+        hint: Use the toolbar for headings, links, lists, quotes, code and images.
+
+  # ---------------------------------------------------------------- Projects
+  - name: projects
+    label: Projects
+    label_singular: Project
+    description: Tick "Featured" to show a project in the Projects section. Lower order comes first.
+    folder: src/content/projects
+    extension: json
+    format: json
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    identifier_field: name
+    summary: "{{name}} · {{category}}"
+    sortable_fields: [order, name]
+    fields:
+      - { name: name, label: Name, widget: string }
+      - { name: tagline, label: Tagline, widget: string }
+      - name: category
+        label: Category
+        widget: select
+        options: [Business, Fintech, Self-hosted, Developer, Community, Gaming]
+      - { name: description, label: Description, widget: text }
+      - { name: url, label: Live URL, widget: string }
+      - name: tags
+        label: Tags
+        widget: list
+        default: []
+      - name: thumbnail
+        label: Thumbnail
+        widget: image
+        required: false
+        default: ""
+        hint: Landscape works best (about 1.9:1), e.g. a screenshot of the landing page.
+      - name: featured
+        label: Featured
+        widget: boolean
+        default: false
+      - name: order
+        label: Order
+        widget: number
+        value_type: int
+        default: 50
+
+  # ---------------------------------------------------------------- Site images
+  - name: settings
+    label: Site settings
+    files:
+      - name: site
+        label: Site images
+        file: src/content/site.json
+        format: json
+        fields:
+          - name: portrait
+            label: Hero portrait
+            widget: image
+            required: false
+            default: ""
+            hint: A cut-out on a transparent or white background works best. Leave empty for the placeholder.
