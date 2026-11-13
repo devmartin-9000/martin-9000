@@ -27,19 +27,22 @@ export type Project = {
 	/** two-stop gradient used as the project's artwork */
 	accent: [string, string];
 	tags: string[];
+	/** preview image taken from the live site's og:image */
+	thumbnail?: string;
 };
 
 export const projects: Project[] = [
 	{
 		id: "vetta",
-		name: "Vetta Shop",
-		tagline: "A point-of-sale for small businesses in Malawi",
+		name: "VettaShop",
+		tagline: "Run your whole shop from one screen",
 		category: "Business",
 		description:
-			"A point-of-sale system designed for small businesses in Malawi, built around how local shops actually sell.",
+			"Shop management for small businesses and solo traders in Malawi: point of sale, stock control, cash, Airtel Money, TNM and bank balances, rentals and real profit, in one simple system.",
 		url: "https://vettashop.vercel.app",
 		accent: ["#ff5f6d", "#8e1b2c"],
-		tags: ["POS", "Retail", "Malawi"],
+		tags: ["POS", "Inventory", "Malawi"],
+		thumbnail: "./assets/projects/vettashop.png",
 	},
 	{
 		id: "fintriqs",
@@ -47,10 +50,23 @@ export const projects: Project[] = [
 		tagline: "Smart invoicing for businesses, freelancers & creators",
 		category: "Fintech",
 		description:
-			"An invoicing platform that generates styled invoices without re-typing client, product and payment details every time. I owned the front-end: landing page, dashboards and layouts.",
+			"Create polished invoices, save product catalogs and store payment details, so billing clients takes no repetitive admin. I owned the front-end: landing page, dashboards and layouts.",
 		url: "https://fintriqs.vercel.app",
 		accent: ["#ffb347", "#d9480f"],
 		tags: ["Invoicing", "Dashboard", "Freelancers"],
+		thumbnail: "./assets/projects/fintriqs.png",
+	},
+	{
+		id: "raveona",
+		name: "Raveona",
+		tagline: "A niche dating community in Malawi",
+		category: "Community",
+		description:
+			"A dating community for individuals in Malawi's top tax bracket. Every profile is reviewed by a person, so every introduction is intentional.",
+		url: "https://raveona.vercel.app",
+		accent: ["#f9a8d4", "#701a75"],
+		tags: ["Dating", "Curated", "Malawi"],
+		thumbnail: "./assets/projects/raveona.png",
 	},
 	{
 		id: "happy-life",
@@ -121,13 +137,14 @@ export const projects: Project[] = [
 	{
 		id: "kashcraze",
 		name: "KashCraze",
-		tagline: "Real-money multiplayer board games",
+		tagline: "1v1 skill games with real stakes",
 		category: "Gaming",
 		description:
-			"Players stake real money to challenge each other at simple board games, and the winner takes the whole prize pool. Tournaments with larger pools are coming soon.",
+			"Players face off 1v1 with real stakes. Skill decides the winner, fair play is enforced, and payouts land instantly in the winner's wallet.",
 		url: "https://kashcraze.me",
 		accent: ["#f472b6", "#831843"],
-		tags: ["Multiplayer", "Prize pools", "Tournaments soon"],
+		tags: ["1v1", "Real stakes", "Instant payouts"],
+		thumbnail: "./assets/projects/kashcraze.png",
 	},
 	{
 		id: "techpool",
