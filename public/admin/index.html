@@ -6,8 +6,427 @@
 		<meta name="robots" content="noindex, nofollow" />
 		<title>Admin · Martin Jack</title>
 		<link rel="icon" type="image/svg+xml" href="/assets/logo-mj.svg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap" rel="stylesheet" />
+		<style>
+			/* Branded sign-in screen laid over Sveltia CMS. Its buttons press Sveltia's own
+			   sign-in buttons underneath, then it fades out once the CMS is signed in. */
+			:root {
+				--ink: #121212;
+				--paper: #f6f5f3;
+				--kinetic: #ff6122;
+				--muted: rgba(18, 18, 18, 0.5);
+			}
+			#mj-auth {
+				position: fixed;
+				inset: 0;
+				z-index: 2147483000;
+				display: grid;
+				place-items: center;
+				padding: 16px;
+				overflow-y: auto;
+				font-family: "Geist", ui-sans-serif, system-ui, sans-serif;
+				color: var(--ink);
+				background:
+					radial-gradient(60% 50% at 0% 100%, rgba(255, 97, 34, 0.35), transparent 70%),
+					radial-gradient(50% 60% at 100% 0%, rgba(255, 255, 255, 0.08), transparent 70%),
+					#1a1a1a;
+				transition: opacity 0.5s ease, visibility 0.5s;
+				-webkit-font-smoothing: antialiased;
+			}
+			#mj-auth.is-done,
+			#mj-auth.is-aside {
+				opacity: 0;
+				visibility: hidden;
+				pointer-events: none;
+			}
+			#mj-auth * {
+				box-sizing: border-box;
+				/* Sveltia's global styles set their own font on headings and buttons */
+				font-family: "Geist", ui-sans-serif, system-ui, sans-serif;
+			}
+			.mj-card {
+				display: grid;
+				grid-template-columns: 1fr 1.05fr;
+				gap: 28px;
+				width: min(880px, 100%);
+				padding: 28px;
+				border-radius: 28px;
+				background: white;
+				box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.6);
+			}
+
+			/* left: dark panel with orange light streaks */
+			.mj-art {
+				position: relative;
+				min-height: 460px;
+				overflow: hidden;
+				border-radius: 20px;
+				background: #050505;
+				color: white;
+				padding: 30px 26px;
+			}
+			.mj-art::before {
+				content: "";
+				position: absolute;
+				inset: 30% -10% 0;
+				background: repeating-linear-gradient(
+					90deg,
+					rgba(255, 97, 34, 0) 0 10px,
+					rgba(255, 97, 34, 0.85) 12px 14px,
+					rgba(255, 140, 80, 0.35) 16px 22px,
+					rgba(255, 97, 34, 0) 26px 34px
+				);
+				filter: blur(3px);
+				-webkit-mask-image: linear-gradient(180deg, transparent, #000 45%, #000 85%, transparent);
+				mask-image: linear-gradient(180deg, transparent, #000 45%, #000 85%, transparent);
+				animation: mj-shimmer 6s ease-in-out infinite alternate;
+			}
+			.mj-art::after {
+				content: "";
+				position: absolute;
+				inset: auto -20% -30%;
+				height: 60%;
+				background: radial-gradient(closest-side, rgba(255, 97, 34, 0.55), transparent);
+				filter: blur(20px);
+			}
+			@keyframes mj-shimmer {
+				from {
+					transform: translateX(0);
+					opacity: 0.85;
+				}
+				to {
+					transform: translateX(-24px);
+					opacity: 1;
+				}
+			}
+			@media (prefers-reduced-motion: reduce) {
+				.mj-art::before {
+					animation: none;
+				}
+			}
+			.mj-art h1 {
+				position: relative;
+				z-index: 1;
+				margin: 0;
+				font-size: 28px;
+				font-weight: 500;
+				line-height: 1.08;
+				letter-spacing: -0.035em;
+			}
+			.mj-art h1 span {
+				color: var(--kinetic);
+			}
+			.mj-art p {
+				position: relative;
+				z-index: 1;
+				margin: 14px 0 0;
+				max-width: 270px;
+				font-size: 13px;
+				line-height: 1.6;
+				color: rgba(255, 255, 255, 0.6);
+			}
+
+			/* right: sign-in */
+			.mj-form {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				padding: 12px 8px;
+				text-align: center;
+			}
+			.mj-brand {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 8px;
+				font-size: 17px;
+				font-weight: 600;
+				letter-spacing: -0.02em;
+			}
+			.mj-brand img {
+				width: 34px;
+				height: 34px;
+			}
+			.mj-form h2 {
+				margin: 14px 0 0;
+				font-size: 22px;
+				font-weight: 500;
+				letter-spacing: -0.02em;
+			}
+			.mj-sub {
+				margin: 8px auto 0;
+				max-width: 300px;
+				font-size: 13px;
+				line-height: 1.55;
+				color: var(--muted);
+			}
+			.mj-repo {
+				margin: 26px 0 0;
+				display: flex;
+				align-items: center;
+				gap: 10px;
+				padding: 12px 16px;
+				border: 1px solid rgba(18, 18, 18, 0.12);
+				border-radius: 999px;
+				text-align: left;
+				font-size: 13px;
+			}
+			.mj-repo small {
+				display: block;
+				font-size: 10px;
+				letter-spacing: 0.12em;
+				text-transform: uppercase;
+				color: var(--muted);
+			}
+			.mj-dot {
+				width: 8px;
+				height: 8px;
+				flex: none;
+				border-radius: 50%;
+				background: #22c55e;
+				box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.15);
+			}
+			.mj-btn {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 10px;
+				width: 100%;
+				border: 0;
+				border-radius: 999px;
+				padding: 14px 18px;
+				font: inherit;
+				font-size: 14px;
+				font-weight: 500;
+				cursor: pointer;
+				transition: transform 0.15s ease, background-color 0.2s ease, opacity 0.2s;
+			}
+			.mj-btn:hover {
+				transform: translateY(-1px);
+			}
+			.mj-btn:focus-visible {
+				outline: 2px solid var(--kinetic);
+				outline-offset: 3px;
+			}
+			.mj-btn:disabled {
+				opacity: 0.55;
+				cursor: progress;
+				transform: none;
+			}
+			.mj-primary {
+				margin-top: 14px;
+				background: var(--kinetic);
+				color: white;
+				box-shadow: 0 14px 28px -12px rgba(255, 97, 34, 0.8);
+			}
+			.mj-primary:hover {
+				background: #f04f10;
+			}
+			.mj-secondary {
+				margin-top: 10px;
+				background: #efeeec;
+				color: var(--ink);
+			}
+			.mj-secondary:hover {
+				background: #e6e4e1;
+			}
+			.mj-or {
+				display: flex;
+				align-items: center;
+				gap: 12px;
+				margin: 22px 0 6px;
+				font-size: 12px;
+				color: var(--muted);
+			}
+			.mj-or::before,
+			.mj-or::after {
+				content: "";
+				flex: 1;
+				border-top: 1px solid rgba(18, 18, 18, 0.12);
+			}
+			.mj-status {
+				min-height: 18px;
+				margin: 12px 0 0;
+				font-size: 12px;
+				color: var(--muted);
+			}
+			.mj-status.is-error {
+				color: #d92d20;
+			}
+			.mj-foot {
+				margin: 14px 0 0;
+				font-size: 11px;
+				color: var(--muted);
+			}
+			.mj-foot a {
+				color: var(--kinetic);
+				font-weight: 500;
+				text-decoration: none;
+			}
+			.mj-foot a:hover {
+				text-decoration: underline;
+			}
+
+			@media (max-width: 720px) {
+				.mj-card {
+					grid-template-columns: 1fr;
+					padding: 16px;
+					gap: 8px;
+				}
+				.mj-art {
+					min-height: 190px;
+					padding: 22px;
+				}
+				.mj-art h1 {
+					font-size: 23px;
+				}
+				.mj-art p {
+					display: none;
+				}
+			}
+		</style>
 	</head>
 	<body>
+		<div id="mj-auth" role="dialog" aria-modal="true" aria-labelledby="mj-title">
+			<div class="mj-card">
+				<div class="mj-art">
+					<h1>Write The Yap.<br /><span>Ship</span> The Work.</h1>
+					<p>Projects, rants and portfolio images, committed straight to GitHub and live a minute later.</p>
+				</div>
+
+				<div class="mj-form">
+					<div class="mj-brand">
+						<img src="/assets/logo-mj.svg" alt="" />
+						Martin Jack
+					</div>
+					<h2 id="mj-title">Sign in to your studio</h2>
+					<p class="mj-sub">Welcome back. Sign in with GitHub to manage your projects, yaps and images.</p>
+
+					<div class="mj-repo">
+						<span class="mj-dot" aria-hidden="true"></span>
+						<span>
+							<small>Publishing to</small>
+							devmartin-9000/martin-9000 · production
+						</span>
+					</div>
+
+					<button class="mj-btn mj-primary" id="mj-github" type="button" disabled>
+						<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+							<path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/>
+						</svg>
+						<span>Continue with GitHub</span>
+						<span aria-hidden="true">→</span>
+					</button>
+					<p class="mj-status" id="mj-status" role="status">Loading…</p>
+
+					<div class="mj-or">Or continue with</div>
+					<button class="mj-btn mj-secondary" id="mj-token" type="button" disabled>Access token</button>
+					<button class="mj-btn mj-secondary" id="mj-local" type="button" disabled>Local repository</button>
+
+					<p class="mj-foot">Not Martin? <a href="/">Back to the portfolio</a></p>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			(function () {
+				var overlay = document.getElementById("mj-auth");
+				var status = document.getElementById("mj-status");
+				var buttons = {
+					github: document.getElementById("mj-github"),
+					token: document.getElementById("mj-token"),
+					local: document.getElementById("mj-local"),
+				};
+				// labels on Sveltia's own sign-in screen that our buttons press
+				var targets = {
+					github: /sign in with github/i,
+					token: /access token/i,
+					local: /local repository/i,
+				};
+				// Sveltia wraps names like "GitHub" in invisible bidi isolate marks; strip them before matching
+				function text(el) {
+					return (el.textContent || "").replace(/[⁦-⁩‎‏]/g, "");
+				}
+				function find(pattern) {
+					var all = document.querySelectorAll("button");
+					for (var i = 0; i < all.length; i++) {
+						if (!overlay.contains(all[i]) && pattern.test(text(all[i]))) return all[i];
+					}
+					return null;
+				}
+				// signed in once the CMS shows the collections from config.yml
+				function signedIn() {
+					var shell = document.querySelector(".app-shell");
+					return !!shell && /Yap Zone/.test(text(shell)) && /Projects/.test(text(shell));
+				}
+				function setStatus(message, kind) {
+					status.textContent = message;
+					status.className = "mj-status" + (kind ? " is-" + kind : "");
+				}
+				function done() {
+					overlay.classList.add("is-done");
+					observer.disconnect();
+				}
+
+				function sveltiaDialogOpen() {
+					return !!document.querySelector("dialog[open]");
+				}
+
+				function sync() {
+					if (signedIn()) return done();
+					// stepped aside for Sveltia's token/folder dialog: come back if it was cancelled
+					if (overlay.classList.contains("is-aside")) {
+						var waiting = Date.now() < Number(overlay.dataset.asideUntil || 0);
+						if (!waiting && !sveltiaDialogOpen() && find(targets.github)) {
+							overlay.classList.remove("is-aside");
+							setStatus("");
+						}
+						return;
+					}
+					if (find(targets.github)) {
+						Object.keys(buttons).forEach(function (k) {
+							if (k !== "github" || status.className.indexOf("is-waiting") === -1) {
+								buttons[k].disabled = !find(targets[k]);
+							}
+						});
+						if (status.textContent === "Loading…") setStatus("");
+					}
+				}
+
+				var observer = new MutationObserver(sync);
+				observer.observe(document.body, { childList: true, subtree: true });
+				setInterval(sync, 800);
+
+				buttons.github.addEventListener("click", function () {
+					var target = find(targets.github);
+					if (!target) return;
+					buttons.github.disabled = true;
+					setStatus("Waiting for GitHub… finish signing in in the pop-up.", "waiting");
+					target.click();
+					// re-enable if the pop-up was closed without signing in
+					setTimeout(function () {
+						if (!overlay.classList.contains("is-done")) {
+							buttons.github.disabled = false;
+							setStatus("Didn't work? Allow pop-ups for this site and try again.", "error");
+						}
+					}, 30000);
+				});
+				// these open Sveltia's own dialogs, so step aside and let them show
+				["token", "local"].forEach(function (k) {
+					buttons[k].addEventListener("click", function () {
+						var target = find(targets[k]);
+						if (!target) return;
+						// give Sveltia's dialog (or the browser's folder picker) a moment to open
+						overlay.dataset.asideUntil = String(Date.now() + 1500);
+						overlay.classList.add("is-aside");
+						target.click();
+					});
+				});
+			})();
+		</script>
+
 		<!-- Sveltia CMS reads ./config.yml and commits every change to GitHub -->
 		<script src="https://unpkg.com/@sveltia/cms@0.256.0/dist/sveltia-cms.js"></script>
 	</body>
