@@ -18,6 +18,14 @@ html {
 	scroll-behavior: smooth;
 }
 
+/* Invisible scrollbars everywhere: scrolling still works by wheel, touch and keyboard */
+* {
+	scrollbar-width: none;
+}
+*::-webkit-scrollbar {
+	display: none;
+}
+
 body {
 	background: #dcdce0;
 	color: var(--color-ink);
