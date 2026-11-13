@@ -83,3 +83,14 @@ body {
 		scroll-behavior: auto;
 	}
 }
+
+/* Portrait fades: sideways for the motion trail, downwards into the giant word */
+.portrait-trail,
+.portrait-main {
+	mask-image: linear-gradient(90deg, #000 40%, transparent 85%), linear-gradient(180deg, #000 70%, transparent);
+	mask-composite: intersect;
+}
+
+.portrait-main {
+	mask-image: linear-gradient(90deg, #000 55%, transparent 95%), linear-gradient(180deg, #000 70%, transparent);
+}
