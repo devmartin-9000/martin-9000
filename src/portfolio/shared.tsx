@@ -1,15 +1,35 @@
 import { ArrowRight } from "lucide-react";
-import type { ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
-/** Project preview image, or a name placeholder when no thumbnail is set yet. */
-export function Thumb({ project, className }: { project: { name: string; thumbnail: string }; className?: string }) {
-	if (project.thumbnail) {
+/**
+ * Project preview image. Tries, in order: the live site's own link-preview image (via
+ * /api/preview, cached at the edge), the thumbnail set in /admin, the generated card, and
+ * finally a name placeholder. Each step only kicks in if the previous image fails to load.
+ */
+export function Thumb({
+	project,
+	className,
+}: {
+	project: { id: string; name: string; url: string; thumbnail: string };
+	className?: string;
+}) {
+	const sources = [
+		project.url && `/api/preview?id=${encodeURIComponent(project.id)}`,
+		project.thumbnail,
+		`/og/projects/${encodeURIComponent(project.id)}.png`,
+	].filter(Boolean) as string[];
+	const [attempt, setAttempt] = useState(0);
+	const src = sources[attempt];
+
+	if (src) {
 		return (
 			<img
-				src={project.thumbnail}
+				key={src}
+				src={src}
 				alt={`${project.name} preview`}
 				loading="lazy"
+				onError={() => setAttempt((a) => a + 1)}
 				className={cn("h-full w-full object-cover", className)}
 			/>
 		);

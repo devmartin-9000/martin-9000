@@ -101,8 +101,9 @@ collections:
         required: false
         default: ""
         hint: >-
-          Landscape works best (about 1.9:1), e.g. a screenshot of the landing page.
-          Also used as the project's link preview; empty gets an automatic card.
+          Optional fallback. The site shows the live project's own link-preview image
+          automatically; this is used only when the live site has none or it won't load.
+          Landscape works best (about 1.9:1).
       - name: featured
         label: Featured
         widget: boolean

@@ -1,5 +1,8 @@
 {
 	"$schema": "https://openapi.vercel.sh/vercel.json",
+	"functions": {
+		"api/preview.js": { "includeFiles": "src/content/projects/**" }
+	},
 	"rewrites": [
 		{ "source": "/yap", "destination": "/yap/index.html" },
 		{ "source": "/yap/:id", "destination": "/yap/:id/index.html" },

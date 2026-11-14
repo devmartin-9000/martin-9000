@@ -5,7 +5,7 @@
  * address gets its own static HTML with the right <title>, description, canonical link, Open Graph
  * and Twitter tags and JSON-LD. Preview images:
  *   - a yap uses its "Share image" from /admin, otherwise a generated card showing its title
- *   - a project uses its thumbnail, otherwise a generated card
+ *   - a project uses its live site's own preview image, else its /admin thumbnail, else a card
  *   - the home, Yap Zone and Projects pages get generated cards
  * Also writes sitemap.xml and robots.txt. Everything is derived from src/content, so a new
  * yap published from /admin gets its preview on the next Vercel build automatically.
@@ -14,6 +14,7 @@ import fs from "node:fs";
 import path from "node:path";
 import satori from "satori";
 import { Resvg } from "@resvg/resvg-js";
+import { livePreviewImage } from "../api/_lib/live-preview.js";
 
 const SITE = (process.env.SITE_URL || "https://martin-jack.vercel.app").replace(/\/$/, "");
 const DIST = "dist";
@@ -310,18 +311,19 @@ page("/projects", {
 	],
 });
 
-// each project
+// each project: the live site's own preview image, else the thumbnail from /admin, else a card.
+// The card is always generated, because /api/preview falls back to it at runtime too.
+const live = await Promise.all(projects.map((p) => livePreviewImage(p.url)));
 for (const [i, p] of projects.entries()) {
-	const image = p.thumbnail
-		? abs(p.thumbnail)
-		: await generated(`og/projects/${p.id}.png`, {
-				kicker: `Project ${pad(i + 1)} · ${p.category}`,
-				title: p.name,
-				subtitle: p.tagline || undefined,
-				footerLeft: (p.stack || []).slice(0, 4).join(" · "),
-				footerRight: `by ${profile.first}`,
-				watermark: "ship",
-			});
+	const card = await generated(`og/projects/${p.id}.png`, {
+		kicker: `Project ${pad(i + 1)} · ${p.category}`,
+		title: p.name,
+		subtitle: p.tagline || undefined,
+		footerLeft: (p.stack || []).slice(0, 4).join(" · "),
+		footerRight: `by ${profile.first}`,
+		watermark: "ship",
+	});
+	const image = live[i] || (p.thumbnail ? abs(p.thumbnail) : card);
 	const description = clip(p.tagline ? `${p.tagline}. ${p.description}` : p.description || `${p.name}, built by ${profile.name}.`);
 	page(`/projects/${p.id}`, {
 		title: `${p.name}${p.tagline ? ` · ${p.tagline}` : ""} | ${profile.first}'s projects`,
