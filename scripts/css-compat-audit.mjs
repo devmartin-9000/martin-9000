@@ -12,9 +12,20 @@ import fs from "node:fs";
 import path from "node:path";
 import postcss from "postcss";
 
-const dir = "dist/assets";
-const files = fs.readdirSync(dir).filter((f) => f.endsWith(".css"));
-if (!files.length) throw new Error("No CSS in dist/assets. Run `npm run build` first.");
+// every stylesheet plus every <style> block in every built HTML page (incl. /admin)
+const walk = (d) => fs.readdirSync(d, { withFileTypes: true }).flatMap((e) => (e.isDirectory() ? walk(path.join(d, e.name)) : [path.join(d, e.name)]));
+if (!fs.existsSync("dist")) throw new Error("No dist folder. Run `npm run build` first.");
+const sources = walk("dist").flatMap((file) => {
+	if (file.endsWith(".css")) return [{ file, css: fs.readFileSync(file, "utf8") }];
+	if (!file.endsWith(".html")) return [];
+	const html = fs.readFileSync(file, "utf8");
+	const blocks = [...html.matchAll(/<style[^>]*>([\s\S]*?)<\/style>/gi)].map((m) => m[1]);
+	const inline = [...html.matchAll(/\sstyle="([^"]*)"/gi)].map((m, i) => `.inline-style-${i}{${m[1]}}`);
+	const css = [...blocks, ...inline].join("\n");
+	return css.trim() ? [{ file, css }] : [];
+});
+const files = sources.map((s) => s.file);
+if (!files.some((f) => f.endsWith(".css"))) throw new Error("No CSS in dist/assets. Run `npm run build` first.");
 
 // Features newer than Chrome 101, with the version that introduced them.
 const PROPS = {
@@ -81,8 +92,8 @@ const supportsOf = (node) => {
 const testsFor = (cond, needle) => cond.toLowerCase().includes(needle);
 
 const problems = [];
-for (const file of files) {
-	const root = postcss.parse(fs.readFileSync(path.join(dir, file), "utf8"));
+for (const { file, css: source } of sources) {
+	const root = postcss.parse(source);
 
 	const css = root.toString();
 	// every declaration, grouped by selector + property, to look for fallbacks
@@ -145,7 +156,9 @@ for (const file of files) {
 }
 
 if (!problems.length) {
-	console.log(`css-compat-audit: OK, nothing in ${files.join(", ")} needs newer than Chrome 101 without a fallback.`);
+	console.log(
+		`css-compat-audit: OK. ${files.length} files checked (stylesheets + <style>/inline CSS in every page); nothing needs newer than Chrome 101 without a fallback.`
+	);
 } else {
 	const byWhat = Object.groupBy ? Object.groupBy(problems, (p) => p.what) : problems.reduce((g, p) => ((g[p.what] ??= []).push(p), g), {});
 	console.log(`css-compat-audit: ${problems.length} issue(s) for Chrome 101\n`);
