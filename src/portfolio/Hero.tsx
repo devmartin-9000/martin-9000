@@ -1,11 +1,15 @@
 import { featured, profile, rants, site } from "@/lib/data";
+import { cn } from "@/lib/utils";
 import { ArrowDot, PillButton, Thumb } from "./shared";
 
 /**
- * Your portrait, set in /admin → Site settings. A cut-out on a transparent or
- * white background works best. Empty shows the placeholder silhouette.
+ * Your portrait, set in /admin → Site settings. A regular photo is framed with a soft oval
+ * fade into the page; tick "cut-out" there for a transparent-background image instead.
+ * Empty shows the placeholder silhouette.
  */
 const PORTRAIT = site.portrait;
+const CUTOUT = site.portraitCutout;
+const fit = CUTOUT ? "object-contain object-bottom" : "object-cover object-[50%_30%]";
 
 /** First featured project (lowest order) gets the dark floating card. */
 const latest = featured[0] as (typeof featured)[number] | undefined;
@@ -38,12 +42,17 @@ function Silhouette({ className }: { className?: string }) {
 /** Portrait with the horizontal motion-blur trail from the reference. */
 function Portrait() {
 	const layer = PORTRAIT ? (
-		<img src={PORTRAIT} alt="" className="h-full w-full object-contain object-bottom" />
+		<img src={PORTRAIT} alt="" className={cn("h-full w-full", fit)} />
 	) : (
 		<Silhouette className="h-full w-full text-[#9d958d]" />
 	);
 	return (
-		<div className="relative mx-auto aspect-[400/460] w-[min(520px,82vw)] md:translate-x-[8%]">
+		<div
+			className={cn(
+				"relative mx-auto aspect-[400/460] w-[min(520px,82vw)] md:translate-x-[8%]",
+				PORTRAIT && !CUTOUT && "portrait-photo"
+			)}
+		>
 			{/* blur trail */}
 			<div className="absolute inset-0 origin-left translate-x-[18%] scale-x-[1.35] opacity-60 blur-[18px] portrait-trail" aria-hidden>
 				{layer}
@@ -53,7 +62,13 @@ function Portrait() {
 			</div>
 			<div className="portrait-main absolute inset-0">
 				{PORTRAIT ? (
-					<img src={PORTRAIT} alt={profile.name} className="h-full w-full object-contain object-bottom" />
+					<img
+						src={PORTRAIT}
+						alt={profile.name}
+						fetchPriority="high"
+						decoding="async"
+						className={cn("h-full w-full", fit)}
+					/>
 				) : (
 					layer
 				)}
@@ -109,12 +124,15 @@ export default function Hero() {
 					<Portrait />
 				</div>
 
+				{/* latest project + latest yap: a row under the photo on phones (so they never cover it),
+				    floating beside it from md up (display: contents lets them position against the hero) */}
+				<div className="relative z-20 mb-[12vw] mt-5 grid grid-cols-2 items-start gap-3 md:contents">
 				{/* floating latest-project card */}
 				{latest && (
 					<a
 						href={`/projects/${encodeURIComponent(latest.id)}`}
 						data-reveal="3"
-						className="group absolute bottom-[30%] right-5 z-20 w-[160px] md:bottom-auto rounded-[22px] bg-[#141414] p-2 text-white shadow-[0_30px_50px_-20px_rgba(0,0,0,0.6)] md:right-10 md:top-4 md:w-[230px]"
+						className="group relative z-20 rounded-[22px] bg-[#141414] p-2 text-white shadow-[0_30px_50px_-20px_rgba(0,0,0,0.6)] md:absolute md:right-10 md:top-4 md:w-[230px]"
 					>
 						<div className="aspect-[1.9] overflow-hidden rounded-[14px] bg-white">
 							<Thumb project={latest} className="object-top transition-transform duration-500 group-hover:scale-[1.05]" />
@@ -134,7 +152,7 @@ export default function Hero() {
 					<a
 						href={`/yap/${encodeURIComponent(latestYap.id)}`}
 						data-reveal="5"
-						className="group absolute bottom-[8%] left-5 z-20 flex w-[170px] flex-col rounded-[22px] bg-gradient-to-b from-[#f6f3ee] to-[#e9e3da] p-4 text-ink shadow-[0_30px_50px_-24px_rgba(0,0,0,0.45)] ring-1 ring-white/70 md:bottom-auto md:left-auto md:right-10 md:top-[290px] md:w-[230px]"
+						className="group relative z-20 flex flex-col rounded-[22px] bg-gradient-to-b from-[#f6f3ee] to-[#e9e3da] p-4 text-ink shadow-[0_30px_50px_-24px_rgba(0,0,0,0.45)] ring-1 ring-white/70 md:absolute md:right-10 md:top-[290px] md:w-[230px]"
 					>
 						<span className="flex items-center justify-between gap-2">
 							<span className="text-[9px] uppercase tracking-[0.2em] text-ink/45">Latest yap</span>
@@ -154,6 +172,7 @@ export default function Hero() {
 						</span>
 					</a>
 				)}
+				</div>
 			</div>
 
 			{/* giant word */}

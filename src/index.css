@@ -140,6 +140,14 @@ body {
 	mask-image: linear-gradient(90deg, #000 55%, transparent 95%), linear-gradient(180deg, #000 70%, transparent);
 }
 
+/* A regular photo (not a cut-out) has a background, so fade it out on every side as a soft
+   oval; the blurred copies behind it still drift right into the motion trail. */
+.portrait-photo .portrait-main,
+.portrait-photo .portrait-trail {
+	mask-image: radial-gradient(ellipse 50% 50% at 50% 44%, #000 58%, transparent 100%);
+	mask-composite: add;
+}
+
 /* Yap Zone reader: styles for the Markdown written in the admin editor */
 .yap-body > * + * {
 	margin-top: 1.1em;

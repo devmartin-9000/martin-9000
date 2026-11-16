@@ -108,11 +108,16 @@ export const rants: Rant[] = Object.entries(yapFiles)
 	.sort((a, b) => b.date.localeCompare(a.date))
 	.map((r, i, all) => ({ ...r, no: all.length - i }));
 
-type Site = { portrait: string };
+type Site = {
+	portrait: string;
+	/** true for a transparent-background cut-out; false frames a regular photo */
+	portraitCutout: boolean;
+};
 
-const siteFiles = import.meta.glob<Site>("/src/content/site.json", { eager: true, import: "default" });
+const siteFiles = import.meta.glob<Partial<Site>>("/src/content/site.json", { eager: true, import: "default" });
 
-export const site: Site = Object.values(siteFiles)[0] ?? { portrait: "" };
+const siteFile = Object.values(siteFiles)[0] as Partial<Site> | undefined;
+export const site: Site = { portrait: siteFile?.portrait ?? "", portraitCutout: siteFile?.portraitCutout ?? false };
 
 export type Job = {
 	id: string;

@@ -161,4 +161,9 @@ collections:
             widget: image
             required: false
             default: ""
-            hint: A cut-out on a transparent or white background works best. Leave empty for the placeholder.
+            hint: Any photo works; it fades softly into the page. Leave empty for the placeholder.
+          - name: portraitCutout
+            label: Portrait is a cut-out
+            widget: boolean
+            default: false
+            hint: Tick only if the image has a transparent background (no scenery behind you).
