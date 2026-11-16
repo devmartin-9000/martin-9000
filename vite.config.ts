@@ -53,9 +53,41 @@ const livePreviewApi = (): Plugin => {
   };
 };
 
+/**
+ * Tailwind v4 composes rings, shadows, gradients and transforms from --tw-* variables whose
+ * defaults come from @property. For browsers without it, Tailwind ships the same defaults in
+ * `@layer properties`, but gated behind an @supports test that only old Safari and Firefox
+ * pass. Older Chromium engines fail it, so a ring's box-shadow references an undefined variable,
+ * becomes invalid and the outline vanishes (badges, chips, card edges), and gradients fail too.
+ * This drops the gate so every browser gets the defaults. They stay in Tailwind's lowest layer
+ * and equal the @property initial values, so modern browsers render exactly as before.
+ */
+const universalPropertyDefaults = (): Plugin => ({
+  name: "universal-property-defaults",
+  apply: "build",
+  generateBundle(_options, bundle) {
+    for (const asset of Object.values(bundle)) {
+      if (asset.type !== "asset" || !asset.fileName.endsWith(".css")) continue;
+      const css = String(asset.source);
+      const start = css.indexOf("@layer properties{@supports");
+      if (start === -1) continue;
+      const supportsAt = start + "@layer properties{".length;
+      const open = css.indexOf("{", supportsAt); // the @supports block's opening brace
+      let depth = 0;
+      let close = open;
+      for (; close < css.length; close++) {
+        if (css[close] === "{") depth++;
+        else if (css[close] === "}" && --depth === 0) break;
+      }
+      // keep the block's contents, drop "@supports (…){" and its matching "}"
+      asset.source = css.slice(0, supportsAt) + css.slice(open + 1, close) + css.slice(close + 1);
+    }
+  },
+});
+
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), tailwindcss(), prerenderedRoutes(), livePreviewApi()],
+  plugins: [react(), tailwindcss(), prerenderedRoutes(), livePreviewApi(), universalPropertyDefaults()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

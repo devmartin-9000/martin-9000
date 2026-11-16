@@ -93,6 +93,11 @@ const testsFor = (cond, needle) => cond.toLowerCase().includes(needle);
 
 const problems = [];
 for (const { file, css: source } of sources) {
+	// Tailwind's --tw-* defaults must apply everywhere (see universalPropertyDefaults in vite.config.ts);
+	// gated, browsers without @property lose every ring, shadow and gradient.
+	if (/@layer properties\s*\{\s*@supports/.test(source)) {
+		problems.push({ file, what: "Tailwind property defaults gated by @supports", since: 85, where: "@layer properties" });
+	}
 	const root = postcss.parse(source);
 
 	const css = root.toString();
