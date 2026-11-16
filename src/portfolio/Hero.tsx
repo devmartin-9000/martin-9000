@@ -90,11 +90,14 @@ export default function Hero() {
 					</p>
 
 					<p className="mt-6 text-[10px] font-semibold uppercase tracking-[0.25em] text-ink/40">What I do</p>
+					{/* Real border, not ring-*: older Chromium (e.g. Chrome 101 on Android) drops the
+					    ring's box-shadow on elements that also use backdrop-blur. 1px less padding keeps
+					    the chip exactly the size it had with the ring. */}
 					<ul className="mt-3 flex max-w-[420px] flex-wrap gap-1.5">
 						{whatIDo.map((item) => (
 							<li
 								key={item}
-								className="flex items-center gap-1.5 rounded-full bg-white/80 px-3 py-1.5 text-[12px] text-ink/75 ring-1 ring-ink/10 backdrop-blur"
+								className="flex items-center gap-1.5 rounded-full border border-ink/10 bg-white/80 px-[11px] py-[5px] text-[12px] text-ink/75 backdrop-blur"
 							>
 								<span className="h-1.5 w-1.5 rounded-full bg-kinetic" />
 								{item}
