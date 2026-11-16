@@ -4,6 +4,7 @@ import type { IncomingMessage, ServerResponse } from 'http';
 import react from '@vitejs/plugin-react'
 import path from 'path';
 import { pathToFileURL } from 'url';
+import type { AtRule, Plugin as PostcssPlugin } from 'postcss';
 import tailwindcss from '@tailwindcss/vite';
 
 /**
@@ -61,33 +62,29 @@ const livePreviewApi = (): Plugin => {
  * becomes invalid and the outline vanishes (badges, chips, card edges), and gradients fail too.
  * This drops the gate so every browser gets the defaults. They stay in Tailwind's lowest layer
  * and equal the @property initial values, so modern browsers render exactly as before.
+ *
+ * It runs as a PostCSS step inside Vite's CSS pipeline, i.e. before the stylesheet is hashed,
+ * so the file name changes with the content. (Editing the file after hashing would keep the
+ * old name, and browsers holding the long-cached old file would never fetch the fix.)
  */
-const universalPropertyDefaults = (): Plugin => ({
-  name: "universal-property-defaults",
-  apply: "build",
-  generateBundle(_options, bundle) {
-    for (const asset of Object.values(bundle)) {
-      if (asset.type !== "asset" || !asset.fileName.endsWith(".css")) continue;
-      const css = String(asset.source);
-      const start = css.indexOf("@layer properties{@supports");
-      if (start === -1) continue;
-      const supportsAt = start + "@layer properties{".length;
-      const open = css.indexOf("{", supportsAt); // the @supports block's opening brace
-      let depth = 0;
-      let close = open;
-      for (; close < css.length; close++) {
-        if (css[close] === "{") depth++;
-        else if (css[close] === "}" && --depth === 0) break;
+const ungatePropertyDefaults: PostcssPlugin = {
+  postcssPlugin: "ungate-tailwind-property-defaults",
+  AtRule: {
+    supports(rule) {
+      const parent = rule.parent;
+      if (parent?.type === "atrule" && (parent as AtRule).name === "layer" && (parent as AtRule).params === "properties") {
+        rule.replaceWith(rule.nodes ?? []);
       }
-      // keep the block's contents, drop "@supports (…){" and its matching "}"
-      asset.source = css.slice(0, supportsAt) + css.slice(open + 1, close) + css.slice(close + 1);
-    }
+    },
   },
-});
+};
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), tailwindcss(), prerenderedRoutes(), livePreviewApi(), universalPropertyDefaults()],
+  plugins: [react(), tailwindcss(), prerenderedRoutes(), livePreviewApi()],
+  css: {
+    postcss: { plugins: [ungatePropertyDefaults] },
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
