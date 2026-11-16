@@ -123,7 +123,7 @@ export default function Hero() {
 						className="group relative z-20 rounded-[22px] bg-[#141414] p-2 text-white shadow-[0_30px_50px_-20px_rgba(0,0,0,0.6)] md:absolute md:right-10 md:top-4 md:w-[230px]"
 					>
 						<div className="aspect-[1.9] overflow-hidden rounded-[14px] bg-white">
-							<Thumb project={latest} className="object-top transition-transform duration-500 group-hover:scale-[1.05]" />
+							<Thumb project={latest} className="object-top transition-transform duration-500 group-hover:[transform:scale(1.05)]" />
 						</div>
 						<div className="flex items-end justify-between gap-2 px-2 pb-2 pt-3">
 							<span>

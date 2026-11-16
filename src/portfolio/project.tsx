@@ -20,7 +20,7 @@ export function ProjectCard({ project, onOpen, reveal }: { project: Project; onO
 			className="group flex flex-col overflow-hidden rounded-[18px] bg-[#121212] p-1.5 text-white sm:rounded-[22px] sm:p-2"
 		>
 			<div className="relative aspect-[1.9] overflow-hidden rounded-[13px] bg-white sm:rounded-[16px]">
-				<Thumb project={project} className="object-top transition-transform duration-700 group-hover:scale-[1.04]" />
+				<Thumb project={project} className="object-top transition-transform duration-700 group-hover:[transform:scale(1.04)]" />
 				<span className="absolute left-2 top-2 rounded-full bg-black/70 px-2 py-0.5 text-[8px] font-medium text-white/80 backdrop-blur sm:left-3 sm:top-3 sm:px-2.5 sm:py-1 sm:text-[9px]">
 					{number(project)} / {project.category}
 				</span>
