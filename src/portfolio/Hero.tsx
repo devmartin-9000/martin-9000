@@ -39,13 +39,8 @@ function Silhouette({ className }: { className?: string }) {
 	);
 }
 
-/** Portrait with the horizontal motion-blur trail from the reference. */
+/** The hero portrait, faded softly into the page. */
 function Portrait() {
-	const layer = PORTRAIT ? (
-		<img src={PORTRAIT} alt="" className={cn("h-full w-full", fit)} />
-	) : (
-		<Silhouette className="h-full w-full text-[#9d958d]" />
-	);
 	return (
 		<div
 			className={cn(
@@ -53,13 +48,6 @@ function Portrait() {
 				PORTRAIT && !CUTOUT && "portrait-photo"
 			)}
 		>
-			{/* blur trail */}
-			<div className="absolute inset-0 origin-left translate-x-[18%] scale-x-[1.35] opacity-60 blur-[18px] portrait-trail" aria-hidden>
-				{layer}
-			</div>
-			<div className="absolute inset-0 origin-left translate-x-[8%] scale-x-[1.12] opacity-50 blur-[6px] portrait-trail" aria-hidden>
-				{layer}
-			</div>
 			<div className="portrait-main absolute inset-0">
 				{PORTRAIT ? (
 					<img
@@ -70,7 +58,7 @@ function Portrait() {
 						className={cn("h-full w-full", fit)}
 					/>
 				) : (
-					layer
+					<Silhouette className="h-full w-full text-[#9d958d]" />
 				)}
 			</div>
 			{!PORTRAIT && (
@@ -178,9 +166,9 @@ export default function Hero() {
 			{/* giant word */}
 			<p
 				aria-hidden
-				className="pointer-events-none relative z-10 -mt-[8vw] select-none text-center text-[clamp(7rem,27vw,24rem)] font-semibold leading-[0.8] tracking-[-0.06em] text-white [text-shadow:0_18px_40px_rgba(0,0,0,0.12),0_1px_0_rgba(0,0,0,0.04)] md:-mt-[9vw]"
+				className="pointer-events-none relative z-10 -mt-[8vw] select-none whitespace-nowrap text-center text-[clamp(5rem,20vw,18rem)] font-semibold leading-[0.8] tracking-[-0.06em] text-white [text-shadow:0_18px_40px_rgba(0,0,0,0.12),0_1px_0_rgba(0,0,0,0.04)] md:-mt-[7vw]"
 			>
-				build
+				I build
 			</p>
 		</section>
 	);
